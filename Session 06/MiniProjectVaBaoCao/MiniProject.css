@@ -1,0 +1,129 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #f0f9ff;
+    color: #1f2937;
+    font-size: 18px;
+}
+
+.menu {
+    background-color: #e0f2fe;
+    text-align: center;
+}
+
+.menu a {
+    color: #0369a1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    color: #ffffff;
+    background-color: #0284c7;
+}
+
+h1 {
+    color: #0f766e;
+    text-align: center;
+    background-color: #ccfbf1;
+    font-size: 32px;
+}
+
+h2 {
+    color: #155e75;
+    font-size: 24px;
+}
+
+.section {
+    background-color: #ffffff;
+}
+
+.service-item {
+    color: #0f172a;
+}
+
+.service-item:hover {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+th {
+    background-color: #bae6fd;
+    color: #075985;
+}
+
+td {
+    background-color: #f8fafc;
+}
+
+th,
+td {
+    border: 1px solid #475569;
+    padding: 20px;
+}
+
+tr:hover td {
+    background-color: #e0f2fe;
+}
+
+.section {
+    background-color: #ffffff;
+}
+
+.section form {
+    background-color: #f8fafc;
+    text-align: center;
+}
+
+.section form label {
+    display: block;
+    color: #134e4a;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.section form input,
+.section form select,
+.section form textarea {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.section form input:focus,
+.section form select:focus,
+.section form textarea:focus {
+    background-color: #ecfeff;
+}
+
+.section form textarea::placeholder {
+    color: #64748b;
+}
+
+.section form input[type="submit"] {
+    background-color: #0ea5a4;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.section form input[type="submit"]:hover {
+    background-color: #0f766e;
+}
+
+.footer {
+    background-color: #0f766e;
+    color: #f0fdfa;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer p {
+    margin: 4px 0;
+}
