@@ -1,0 +1,37 @@
+body{
+    background-color: rgba(240, 249, 255);
+}
+h1{
+    text-align: center;
+    background-color: rgba(204, 251, 241);
+    color:rgba(21, 120, 110);
+}
+.tieude2{
+    background-color: rgba(224, 242, 254);
+    color: rgba(21, 116, 166);
+    text-align: center;
+    text-decoration: none;
+}
+.tieude2:hover{
+    cursor: pointer;
+    background-color: blue;
+    color:white;
+    font-style:normal;
+}
+h3{
+    text-align: center;
+}
+form{
+    text-align: center;
+    padding:30px;
+}
+.last{
+    text-align: center;
+    background-color: rgba(15, 118, 110);
+    color:white;
+    
+}
+button{
+    background-color: rgb(66, 66, 151);
+    color:white;
+}

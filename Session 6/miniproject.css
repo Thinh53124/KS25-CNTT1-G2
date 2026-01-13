@@ -1,0 +1,50 @@
+body{
+    background-color: rgba(240, 249, 255);
+}
+.Title{
+    text-align: center;
+}
+.tieude1{
+    background-color: rgba(204, 251, 241);
+    color:rgba(21, 120, 110);
+}
+.tieude2{
+    text-decoration: none;
+    color: rgba(21, 116, 166);
+}
+.tieude2:hover{
+    cursor: pointer;
+    background-color: blue;
+    color:white;
+    font-style:normal;
+}
+.linkweb{
+    background-color: rgba(224, 242, 254);
+
+}
+.picture{
+    text-align: center;
+}
+.introduction{
+    background-color: white;
+    font-size:larger;
+}
+h2{
+    color:rgba(34, 101, 122);
+}
+.service{
+    background-color: white;
+}
+.service2{
+    font-size:larger;
+}
+.service2:hover{
+    background-color: rgba(219, 234, 254);
+    color:rgb(30, 64, 193);
+}
+.last{
+    text-align: center;
+    background-color: rgba(15, 118, 110);
+    color:white;
+    
+}

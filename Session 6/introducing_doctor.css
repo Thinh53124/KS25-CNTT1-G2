@@ -1,0 +1,44 @@
+body{
+    background-color: #fff7ed;
+    font-family: cursive;
+}
+h1{
+    background-color: #fde68a;
+    color:#92400e;
+    text-align: center;
+}
+.title2{
+    background-color: #fed7aa;
+    color:#92400e;
+    text-align: center;
+}
+h4{
+    background-color:#fed7aa;
+    text-align: center;
+}
+.title2:hover{
+    background-color: #78350f;
+    color:white;
+    cursor: pointer;
+}
+.introduction{
+    background-color: white;
+}
+h2{
+    color:#92400e;
+}
+.doctorlist:hover{
+    background-color: #78350f;
+    color:yellow;
+}
+.doctors{
+    background-color: white;
+}
+.foot{
+    background-color: #78350f;
+    text-align: center;
+    color:white;
+}
+.pic{
+    text-align: center;
+}

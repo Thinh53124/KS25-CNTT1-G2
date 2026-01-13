@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+    <h1>Danh sách dịch vụ</h1>
+    <h3 class="linkweb"><a href="./miniproject.html" class="tieude2">Trang chủ</a> <a href="./dichvu.html"
+            class="tieude2">Dịch Vụ</a><a href="./register.html" class="tieude2">Đăng ký lịch khám</a></h3>
+    <form action="myserver.com" method="GET" width="100">
+        <label for="username">Họ và tên</label>
+        <br>
+        <input id="username" type="text" name="username" placeholder="Nhập họ tên">
+        <br>
+        <label for="email">Email:</label>
+        <br>
+        <input id="email" type="email" name="email" placeholder="example@gmail.com">
+        <br>
+        <label for="service">Chọn dịch vụ</label>
+        <br>
+        <select name="service" id="service">
+            <option value="Khamcaorang">Khám cao răng tổng quát</option>
+            <option value="Laycaorang">Lấy cao răng</option>
+            <option value="Tayrang">Tẩy trắng răng</option>
+            <option value="niengrang">Niềng răng</option>
+        </select>
+<br>
+<label for="date">Ngày khám</label>
+<br>
+<input type="date" name="date" id="date">
+<br>
+<label for="note">Ghi chú thêm</label>
+<br>
+<textarea name="note" id="note" placeholder="Yêu cầu thêm...">
+</textarea>
+<br>
+<button type="submit">Gửi đăng ký</button>
+    </form>
+</body>
+<footer>
+    <div class="last">
+        <p>&copy;2026 Nha Khoa Chăm Sóc Nụ Cười Việt<br>Địa chỉ:123 Đường Nụ Cười-Hotline:0900 000 000</p>
+    </div>
+</footer>
+</html>
