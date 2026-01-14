@@ -1,0 +1,108 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: cursive;
+}
+
+.package-card {
+    background-color: white;
+    border-radius: 20px;
+    width: 560px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #3bffef;
+    padding: 25px 80px 25px 25px;
+    position: relative;
+}
+
+.card-header h1 {
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+}
+
+.hot-badge {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    background-color: #ff0000;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+.info-item {
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #666;
+}
+
+.info-item .label {
+    color: #666;
+}
+
+.info-item .value {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.price .label {
+    font-style: italic;
+}
+
+.price .amount {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.btn-book {
+    background-color: #3bffef;
+    color: black;
+    border: none;
+    padding: 20px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.btn-book:hover {
+    background-color: #1ae024;
+}
+
+hr{
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+    opacity: 0.5;
+}

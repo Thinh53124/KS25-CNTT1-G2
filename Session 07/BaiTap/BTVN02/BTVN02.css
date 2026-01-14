@@ -1,0 +1,21 @@
+*{
+    text-align: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card{
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    border: 3px solid #1eff29;
+    border-radius: 10px;
+}
+
+.service-card p{
+    font-size: 24px;
+}

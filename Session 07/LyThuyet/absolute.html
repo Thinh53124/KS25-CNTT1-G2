@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position: absolute</title>
+    <link rel="stylesheet" href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+            background-color: cyan;
+            margin: 30px;
+            position: relative;
+        }
+        .content{
+            width: 50px;
+            height: 50px;
+            background-color: magenta;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        position: absolute
+        + Tìm phần tử cha gần nhất có thuộc tính position có giá trị khác static thì sẽ lấy phần tử cha đó làm mốc
+        + Không thấy sẽ lấy màn hình trình duyệt
+    -->
+    <div class="container">
+        <div class="content">
+            KS25_CNTT1
+        </div>
+    </div>
+</body>
+</html>

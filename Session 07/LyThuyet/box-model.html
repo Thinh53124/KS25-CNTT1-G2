@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Model</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box2 {
+            margin: 10px 15px; /* Đơn vị tuyệt đối: 1px = 2,54/300 cm, ngoài px còn ph, em, rem, % */
+            border: 5px solid cyan; /* độ dày của viền*/
+        }
+        .box1{
+            /* padding: 5px; */
+            width: 100px;
+            height: 100px;
+            padding: 25px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Box-model: Mô hình hộp
+         + Margin: Là khoảng cách từ border đến phần tử khác
+         + Border: Độ dày của viền
+         + Padding: Khoảng cách từ border đến nội dung
+         + Content: Nội dung
+    -->
+    <div class="box1" style="background-color: rgb(223, 124, 124);">cntt1</div>
+    <div class="box2" style="background-color: rgb(177, 126, 202);">well</div>
+</body>
+
+</html>
