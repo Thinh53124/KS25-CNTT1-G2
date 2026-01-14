@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.about {
+    background: linear-gradient(rgb(8, 32, 68), rgb(20, 88, 179));
+    height: 500px;
+    padding: 50px 150px;
+}
+
+.about .slogan {
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(8, 32, 68);
+    color: white;
+}
+
+.about .date {
+    border: 1px solid black;
+    border-radius: 30px;
+    height: 50px;
+    padding: 10px;
+    background-color: #1A73E8;
+    transition: all 2s;
+    color: white;
+}
+
+.about .date:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+
+}
+
+.about .service {
+    border: 1px solid black;
+    border-radius: 30px;
+    height: 50px;
+    padding: 10px;
+    background-color: #1A73E8;
+    transition: all 2s;
+    color: white;
+}
+
+.about .service:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+h1{
+    color:white;
+}
+.contentintitle{
+    color:white;
+}
+.box{
+    border: 1px solid rgba(255,255,255,0.25);
+    width: 200px;
+    height: 80px;
+    font-size: larger;
+    color:white;
+    border-radius: 10px;
+    transition: all 1.5s;
+    padding:10px;
+    background: linear-gradient(180deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.08),);
+}
+.box:hover{
+    transform: translateY(-3px);
+}
+.opa{
+    opacity: 0.5;
+}
+main{
+    padding:50px 150px;
+}
+.bordercontent{
+    border: 1px solid #e6f0ff;
+    border-radius:5px;
+     width: 800px;
+     height: auto;
+     padding: 20px;
+     position: relative;
+     transition: all 1s;
+     box-shadow:  0 0 0 1px rgba(59,130,246,0.05),
+    0 10px 25px rgba(0,0,0,0.04);
+}
+.bordercontent:hover{
+    transform: translateY(-5px);
+}
+ul{
+    padding:20px;
+}
+.hot{
+    border: 1px solid #1A73E8;
+    border-radius: 30px;
+    width: 40px;
+    position: absolute;
+    background-color: #DFEBFC;
+    color:#1A73E8;
+    top:15px;
+    right:15px;
+    text-align: center;
+    font-family: cursive;
+}
+.checkpraise{
+    color:#3081EA;
+    transition: all 2s;
+}
+.checkpraise:hover{
+    cursor: pointer;
+    transform: translateX(5px);
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bai7session7.css">
+</head>
+<body>
+    <div class="container">
+        <H1>Biểu Mẫu Feedback Phòng Khám Nha Khoa</H1>
+        <form action="myserver" method="GET">
+            <label for="username">Họ và tên</label>
+            <br>
+            <input type="text" id="username" name="username" placeholder="Nhập Họ tên" style="border-radius:5px">
+            <br>
+            <label for="Email">Email</label>
+            <br>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" style="border-radius:5px">
+            <br>
+            <label for="serviceused">Dịch vụ đã sử dụng</label>
+            <br>
+            <select name="serviceused" id="serviceused" style="border-radius:5px">
+                <option value="Khamrangtongquat">Khám răng tổng quát</option>
+                <option value="cayrang">Cấy răng</option>
+                <option value="tayrang">Tẩy trắng răng</option>
+                <option value="nhorang">Nhổ răng</option>
+            </select>
+            <br>
+            <label for="happy">Mức độ hài lòng</label>
+            <br>
+            <select name="happy" id="happy" style="border-radius:5px">
+                <option value="veryhappy">Rất hài lòng</option>
+                <option value="haapy">hài lòng</option>
+                <option value="sad">không hài lòng</option>
+                <option value="verysad">Rất không hài lòng</option>
+            </select>
+            <br>
+            <label for="contentfeedback">Nội dung phản hồi</label>
+            <br>
+            <textarea name="contentfeedback" id="contentfeedback" placeholder="hãy cho chúng tôi biết cảm nhận của bạn....." style="border-radius:5px"></textarea>
+        </form>
+        <button type="submit">Gửi feedback</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: cursive;
+}
+body{
+    background-color: #EBEEF3;
+}
+
+.container{
+    border: 2px solid black;
+    border-radius: 15px;
+    width:500px;
+    background-color: white;
+}
+.title{
+    position: relative;
+}
+h2{
+    padding:20px 20px;
+}
+.trangthai{
+    display:inline-block;
+    border:1px solid white;
+    padding:3px;
+    border-radius: 15px;
+    position: absolute;
+    right:10px;
+    top:15px;
+    background-color:#FFE2B3;
+    color:#B36C0C;
+}
+.progress-bar1{
+    width:400px;
+    height:12px;
+    border-radius: 15px;
+    margin:10px;
+    background-color: #EBEEF3;
+    overflow: hidden;
+}
+.progress-bar2{
+    width: 300px;
+    height:12px;
+    border-radius: 15px;
+    background-color: green;
+    transition: all 2s;
+}
+.content{
+    padding-left:20px;
+}
+.content2{
+    padding-left: 20px;
+    opacity: 0.5;
+}

@@ -1,0 +1,50 @@
+.careteeth{
+    width:300px;
+    border:2px solid black;
+    border-radius: 10px;
+    box-shadow: inset;
+}
+header{
+    font-family:cursive;
+    text-align:center;
+    padding:5px;
+    background-color: aquamarine;
+    position: relative;
+}
+ .Hot{
+    color:white;
+    width:40px;
+    background-color: red;
+    border-radius: 10px;
+    position: absolute;
+    right:0;
+ }
+.service{
+    opacity: 0.5;
+    display: inline-block;
+}
+.contentservice{
+    color: rgb(61, 218, 69);
+}
+.careteethinside{
+    background-color: white;
+    border:solid white;
+    margin:50px;
+}
+hr{
+    opacity: 0.5;
+}
+button{
+    border-radius: 10px;
+    color:black;
+    background-color: aquamarine;
+    border:solid white;
+    padding:10px;
+    width:150px;
+    transition: all 3s;
+}
+button:hover{
+    background-color:green;
+    cursor: pointer;
+    transform: translateY(-5px);
+}

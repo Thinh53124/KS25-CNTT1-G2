@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .container{
+            width:500px;
+            height:500px;
+            border:1px solid black;
+            background-color: green;
+            margin:30px;
+            position: relative;
+        }
+        .content{
+            width:50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top:0;
+            right:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <!-- position:absolute
+     1.tìm phần tử cha chứa nó gần nhất có thuộc tính position có giá trị khác tatic sẽ lấy phần tử đó làm mốc
+     2.Nếu không có phần tử cha,sẽ ám theo màn hình trình duyệt-->
+     <div class="container">
+        <div class="content">
+            K25_CNTT1
+        </div>
+     </div>
+</body>
+</html>
