@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dn{
+            border:none;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            transition: all 0.1s linear;
+        }
+        .dn:hover{
+            background-color: red;
+            cursor: pointer;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    transition: chuyển đổi
+    cấu trúc: tên thuộc tính + thời gian thực hiện + timing function: tốc độ hiệu ứng + delay
+    -->
+    <button class="dn">
+        login
+    </button>
+</body>
+</html>
