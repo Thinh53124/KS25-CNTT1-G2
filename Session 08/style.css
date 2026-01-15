@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff7ed;
+  color: #3f2a1d;
+}
+
+.header {
+  background-color: #fde68a;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  font-size: 36px;
+  color: #78350f;
+}
+
+.header p {
+  font-size: 18px;
+}
+
+.menu {
+  background-color: #fed7aa;
+  text-align: center;
+  padding: 10px;
+}
+
+.menu a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #7c2d12;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: white;
+  background-color: #c2410c;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  max-width: 420px;
+  border-radius: 10px;
+}
+.hero-text-left {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  max-width: 420px;
+  border-radius: 10px;
+}
+
+.section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 28px;
+  color: #92400e;
+  margin-bottom: 30px;
+}
+
+.doctor-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.doctor-card {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 220px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background-color: #fffbeb;
+}
+
+.trust ul {
+  list-style: none;
+}
+
+.trust li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  background-color: #78350f;
+  color: #fff7ed;
+  text-align: center;
+  padding: 20px;
+}
+
+.about-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.about-list li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  background-color: #fffbeb;
+}
+
+.doctor-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.doctor-card {
+  background-color: #ffffff;
+  width: 260px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 14px;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.doctor-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.doctor-card h3 {
+  color: #78350f;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.doctor-card p {
+  font-size: 15px;
+  color: #92400e;
+}
+
+.doctor-card span {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+}
+
+.doctor-card:hover {
+  transform: translateY(-12px);
+  background-color: #fffbeb;
+}
