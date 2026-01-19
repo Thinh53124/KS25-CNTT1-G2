@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.food img{
+    width: 50%;
+    height: 50%;
+}
+
+.food p{
+    font-weight: 800;
+}

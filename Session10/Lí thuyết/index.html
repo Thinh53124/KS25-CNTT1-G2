@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            background-color: black ;
+            /* justify-content: space-evenly; */
+            height: 400px;
+            /* align-items: flex-end; */
+            flex-wrap: wrap;
+            gap: 20px;
+            align-content: center;
+        }
+
+        .item { 
+            background-color: red;
+            width: 300px;
+            border: 1px solid blue;
+            height: 50px;
+
+        }
+
+        .item{
+            order: 4;
+        }
+        .item2{
+            order: 1;
+        }
+        .item3{
+            order: 2;
+        }
+        .item4{
+            order: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--
+    flex box: Dùng để tạo layout cho các phần tử HTML 
+    1. flex - container: phần tử cha
+    2. flex - item: phần tử con
+    3. để 1 phần tử (khối) có thể sử dụng được các thuộc tính của flex-box
+    display: flex (none, block, inline, inline-block)
+    4. các trục trong flex-box
+        chia làm 2 trục
+        trục chính: main axis
+        trục phụ: cross axis
+        ==> luôn luôn vuông góc với nhau
+    5. các thuộc tính (properties) trong flex box
+        5.1 flex direction: quyết định vị trí của main-axis và cross-axis cái nào nằm ngang cái nào nằm dọc
+        - giá trị mawdcj định là row
+        - nếu flex direction: column: main-axis nằm dọc còn cross nằm ngang.
+        5.2 justify- content: sẽ luôn luôn căn chính theo trục MAIN AXIS
+            các giá trị thuộc tính:
+            + flex start
+            + flex-end
+            + center
+            = space around
+            + space between
+            + space evenly: khoảng cách phần tử cách đều nhau
+        5.3: align-item: sẽ luôn ăn theo trục phụ (CROSS-AXIS)
+            flex-start
+            flex-end
+            center
+        5.4:flex wrap: nowrap: trạng thái mặc định
+        5.5 gap: khoảng cách giữa các flex item
+        5.6 align-content: là khoảng cách giữa cá dòng căn theo trục Y
+        (bắt buộc thuộc tính flex-wrap: warp)
+    -->
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+    </div>
+</body>
+</html>
