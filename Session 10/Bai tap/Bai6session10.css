@@ -1,0 +1,84 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+}
+
+.Head{
+    display:flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+.menu{
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+    margin-left:auto;
+}
+.menulink{
+    padding:20px;
+}
+.post{
+    display:flex;
+    justify-content: center;
+}
+.titlepart{
+    text-align: center;
+}
+.poster{
+    border:1px solid #cccc;
+    width: 40%;
+    border-radius:10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-items: center;
+    padding:20px;
+}
+.poster .image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.tips{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.highmaterial{
+    border:1px solid #cccc;
+    width: 40%;
+    border-radius:10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-items: center;
+    padding:20px;
+}
+.foodin2026{
+    border:1px solid #cccc;
+    width: 40%;
+    border-radius:10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-items: center;
+    padding:20px;
+}
+.michelinchef{
+     border:1px solid #cccc;
+    width: 40%;
+    border-radius:10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-items: center;
+    padding:20px;
+}
+.last{
+    display: flex;
+    text-align: center;
+    background-color: black;
+    height: 50px;
+    color:white;
+    align-items: center;
+    justify-content: center;
+}

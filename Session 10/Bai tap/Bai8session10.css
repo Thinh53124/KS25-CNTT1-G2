@@ -1,0 +1,62 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+}
+.Headweb{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #1E1E1E;
+    color: white;
+    align-items: center;
+    flex-direction: row;
+    height: 104.39px;
+}
+.Headweb h1{
+    padding:150px;
+    color:#D4AF37;
+}
+.menu{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 200px;
+}
+.menulink{
+    padding-right:20px;
+}
+.imagehead img{
+    width: 100%;
+}
+.aboutfood{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:-20px;
+}
+main h2{
+    text-align: center;
+    padding-top: 80px;
+    font-size: 50px;
+    padding-bottom: 50px;
+}
+.aboutus{
+    background-color: rgba(30,30,30,0.9);
+    color:white;
+    text-align: center;
+    margin:0 auto;
+    height: 453.38px;
+}
+.aboutus h2{
+    color: #D4AF37;
+}
+.last{
+    display: flex;
+    align-items: center;
+    background-color: #1E1E1E;
+    color:white;
+    justify-content: center;
+    height: 85.5px;
+}

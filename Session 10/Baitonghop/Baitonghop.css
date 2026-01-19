@@ -1,0 +1,92 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+}
+body{
+    background-color: #EEEAE6;
+    display:flex;
+    flex-direction: column;
+}
+h1{
+    color:yellow;
+    padding-left:20px;
+}
+.head{
+    background-color: black;
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+}
+.optionlink{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-left:auto;
+    color:white;
+}
+.menulink{
+    padding:20px;
+}
+.menu{
+    display:flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin:20px;
+} 
+main{
+    flex:1;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+h2{
+    color:#D4AF37;
+}
+.Appe{
+    border:1px solid black;
+    border-radius:10px;
+    width: 25%;
+    justify-content: center;
+    padding:20px;
+    background-color: white;
+}
+.maincourse{
+    border:1px solid black;
+    border-radius:10px;
+    width: 25%;
+    justify-content: center;
+    padding:20px;
+    background-color: white;
+}
+.desert{
+    border:1px solid black;
+    border-radius:10px;
+    width: 25%;
+    justify-content: center;
+    padding:20px;
+    background-color: white;
+}
+footer{
+    background-color: black;
+    height: 45px;
+}
+.last{
+    background-color: black;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top:20px;
+}
+.lastmini{
+    margin-left: auto;
+    display:flex;
+    padding-right: 20px;
+    align-items: center;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
