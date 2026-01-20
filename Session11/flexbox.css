@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+}
+
+nav {
+    height: 96.3px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+}
+
+.brand {
+    color: #e76f51;
+    font-size: 35.2px;
+    font-weight: 400;
+}
+
+.navbar {
+    width: 373.21px;
+    height: 28.1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #3c2f2f;
+    font-size: 17.6px;
+    font-weight: 500px;
+    transition: 0.4s;
+}
+
+.header_button {
+    width: 164.5px;
+    height: 49.5px;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: #e76f51;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_button {
+    color: white;
+    text-decoration: none;
+}
+
+.head {
+    background-image: url("./Section.png");
+    background-position: center;
+    background-size: cover;
+    height: 960px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 30px;
+}
+
+.head h1 {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.head p {
+    width: 595.2px;
+    height: 63.8px;
+    text-align: center;
+    font-size: 22.4px;
+    opacity: 0.7;
+    line-height: 35.84px;
+}
+
+.head_button {
+    width: 252.5px;
+    height: 63.2px;
+    border-radius: 50px;
+    font-size: 20.8px;
+    font-weight: 600;
+    background-color: #e76f51;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.head_button {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    background-color: #fff8f0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content_head {
+    color: #e76f51;
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.menu {
+    width: 1200px;
+    height: 682.9px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.content_box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    height: auto;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    width: 320px;
+    height: 446.1px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    border-radius: 20px;
+}
+
+.item p {
+    padding: 0px 20px;
+}
+
+.item img {
+    width: 320px;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.item_food {
+    font-size: 25.6px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.price {
+    color: #e76f51;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.describe {
+    font-size: 16px;
+    color: #666666;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.menu_content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.normal_menu {
+    width: 280px;
+    height: 68.1px;
+    font-size: 17.6px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    transition: 0.3s linear;
+}
+
+.normal_menu:hover {
+    transform: scale(1.1);
+}
+
+.price2 {
+    color: #e76f51;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+footer {
+    width: 100%;
+    height: 234.2px;
+    background-color: #3c2f2f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 150px;
+    gap: 30px;
+    color: #eeeeee;
+}
+
+.footer_content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid #666666;
+}
+
+.footer_box {
+    width: 290.6px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer_box h3 {
+    color: #e76f51;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+footer p {
+    color: #eeeeee;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.8;
+    line-height: 25.6px;
+    height: 100px;
+}
+
+.menu2 {
+    width: 1200px;
+    height: 451.2px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
