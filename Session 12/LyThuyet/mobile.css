@@ -1,0 +1,9 @@
+.mobile{
+    background-color: cyan;
+}
+
+@media screen and (min-width: 768px) {
+    .mobile{
+        background-color: violet
+    }
+}
