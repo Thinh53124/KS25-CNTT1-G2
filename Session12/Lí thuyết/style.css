@@ -1,0 +1,35 @@
+/* reset css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: blue;
+}
+
+/* responsive */
+/* desktop first */
+@media screen and (max-width: 1200px) { /* <=1200 px */
+    .container{
+        background-color: red;
+    }
+}
+
+@media screen and(max-width: 992px) {
+    .container{
+        background-color: violet;
+    }
+}
+
+@media screen and (max-width:600px) {
+    /* 800 */
+    .container{
+
+    }    
+}
+
+p{
+    font-size: 16px;
+}
