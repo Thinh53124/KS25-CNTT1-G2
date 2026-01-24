@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f6fa;
+    padding: 40px;
+}
+
+.course-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.course-list {
+    display: flex;
+    gap: 25px;
+}
+
+.course-card {
+    background: #fff;
+    width: 320px;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.course-img {
+    height: 160px;
+    background: #ddd;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.course-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    padding: 4px 10px;
+    color: #fff;
+}
+
+.studying {
+    border-radius: 6px;
+    background: #4f7cff;
+}
+
+.done {
+    border-radius: 6px;
+    background: #2ecc71;
+}
+
+.save {
+    border-radius: 6px;
+    background: #f39c12;
+}
+
+.category {
+    font-size: 13px;
+    color: #4f7cff;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.info {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.progress p {
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.bar {
+    height: 6px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #4f7cff;
+    border-radius: 5px;
+}
+
+.p20 {
+    width: 20%;
+}
+
+.p100 {
+    width: 100%;
+}
+
+.price{
+    display: flex;
+}
+
+.new-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4f7cff;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.primary {
+    background: #4f7cff;
+    color: #fff;
+}
+
+.outline {
+    background: #fff;
+    border: 1px solid #4f7cff;
+    color: #4f7cff;
+}
+
+.old-price{
+    text-decoration: line-through;
+}
+
+@media (max-width: 900px) {
+    .course-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

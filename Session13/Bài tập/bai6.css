@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #fcfcfc;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.logo img{
+    height: 45px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.nav-links a.active {
+    background-color: #f0f2ff;
+    color: #6358dc;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.hero-section {
+    background-color: #6358dc;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-section h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 8%;
+}
+
+.tab-filters {
+    display: flex;
+    gap: 15px;
+}
+
+.tab-item {
+    padding: 10px 20px;
+    border: 1px solid #eee;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #555;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.tab-item.active {
+    background-color: #6358dc;
+    color: white;
+    border-color: #6358dc;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .user-profile {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 24px;
+    }
+
+    .tab-filters {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tab-item {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+}

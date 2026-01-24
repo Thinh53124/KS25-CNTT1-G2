@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+.hero {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.btn-hero {
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+    font-weight: bold;
+}
+
+.features {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.feature-item {
+    flex: 1;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.fa-laptop {
+    color: #5dade2;
+}
+
+.fa-users {
+    color: #58d68d;
+}
+
+.fa-briefcase {
+    color: #ec7063;
+}
+
+.feature-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.registration {
+    padding: 40px 0 80px;
+    text-align: center;
+}
+
+.registration h2 {
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.reg-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.reg-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fcfcfc;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #198754;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #157347;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .feature-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}

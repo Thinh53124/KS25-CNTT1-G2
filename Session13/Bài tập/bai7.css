@@ -1,0 +1,83 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.stats-container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.stats-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Layout Desktop: Hàng ngang */
+.stats-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: #fcfdfe; /* Màu nền nhẹ cho card */
+    padding: 25px 10px;
+    border-radius: 10px;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5c6bc0; /* Màu tím xanh giống trong ảnh */
+    margin-bottom: 8px;
+}
+
+.label {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Responsive cho Mobile: Chuyển thành hàng dọc */
+@media (max-width: 768px) {
+    .stats-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 10px;
+    }
+}
