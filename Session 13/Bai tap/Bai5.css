@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #f9fafb;
+    padding: 40px;
+}
+
+.statistics{
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.statistics h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.statlist{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.statitem{
+    flex: 1;
+    background: #f8f9ff;
+    border-radius: 10px;
+    padding: 25px 10px;
+    text-align: center;
+}
+
+.icon{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.number{
+    font-size: 26px;
+    font-weight: bold;
+    color: #5b5bf0;
+    margin-bottom: 5px;
+}
+
+.text{
+    font-size: 14px;
+    color: #666;
+}
+@media (max-width: 480px){
+    .statitem{
+        width: 100%;
+    }
+}
