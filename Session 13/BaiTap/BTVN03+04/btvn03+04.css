@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px 24px;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.logo-rikkei {
+    font-size: 24px;
+    font-weight: 700;
+    color: #dc3545;
+}
+
+.logo-edu {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.logo-icon {
+    font-size: 20px;
+    margin-left: 4px;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+.nav-link.active {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+}
+
+.user-name {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Main Content - Banner */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 100%;
+    padding: 100px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.banner-subtitle {
+    font-size: 18px;
+    color: #ffffff;
+    opacity: 0.95;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Filter Section */
+.filter-section {
+    background-color: #ffffff;
+    padding: 32px 24px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 12px;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: flex-start;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #d0d0d0;
+}
+
+.filter-btn.active {
+    background-color: #667eea;
+    color: #ffffff;
+    border-color: #667eea;
+}
+
+.filter-btn.active:hover {
+    background-color: #5568d3;
+    border-color: #5568d3;
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+    .header {
+        padding: 16px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .logo-section {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .logo {
+        justify-content: center;
+    }
+    
+    .tagline {
+        text-align: center;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+    }
+    
+    .nav-link {
+        width: 100%;
+        padding: 12px 16px;
+        display: block;
+        text-align: center;
+    }
+    
+    .nav-link.active {
+        background-color: #e3f2fd;
+        color: #007bff;
+    }
+    
+    .user-profile {
+        width: 100%;
+        padding-top: 12px;
+        border-top: 1px solid #e0e0e0;
+        justify-content: center;
+    }
+    
+    .banner {
+        padding: 60px 20px;
+    }
+    
+    .banner-title {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+    
+    .banner-subtitle {
+        font-size: 16px;
+    }
+    
+    .filter-section {
+        padding: 24px 16px;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 12px;
+    }
+    
+    .logo-rikkei,
+    .logo-edu {
+        font-size: 20px;
+    }
+    
+    .tagline {
+        font-size: 11px;
+    }
+    
+    .nav-link {
+        font-size: 15px;
+    }
+    
+    .user-name {
+        font-size: 15px;
+    }
+    
+    .banner {
+        padding: 40px 16px;
+    }
+    
+    .banner-title {
+        font-size: 28px;
+    }
+    
+    .banner-subtitle {
+        font-size: 14px;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .filter-section {
+        padding: 20px 12px;
+    }
+    
+    .filter-buttons {
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}

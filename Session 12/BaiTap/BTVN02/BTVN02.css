@@ -22,7 +22,6 @@ body {
     width: 100%;
     max-width: 360px;
     background-color: #ffffff;
-    border-radius: 16px;
     box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
     overflow: hidden;
     display: flex;
@@ -33,7 +32,6 @@ body {
     position: absolute;
     top: 12px;
     right: 16px;
-    background-color: rgba(15, 23, 42, 0.12);
     color: #ffffff;
     font-size: 12px;
     padding: 4px 10px;
@@ -52,15 +50,12 @@ body {
 .course-card__icon {
     width: 64px;
     height: 64px;
-    border-radius: 999px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
     font-size: 24px;
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.12);
 }
 
 .course-card__bottom {
@@ -112,6 +107,7 @@ body {
 .course-card__info-row {
     display: flex;
     flex-wrap: wrap;
+    
     gap: 10px 16px;
     font-size: 13px;
     color: #4b5563;
