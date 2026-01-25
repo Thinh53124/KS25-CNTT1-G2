@@ -3,142 +3,397 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cẩm Nang Lập Trình</title>
+    <meta name="description" content="Rikkei Education - Nền tảng học trực tuyến hàng đầu với các khóa học chất lượng cao">
+    <title>Rikkei Education - Khóa Học Trực Tuyến Chất Lượng Cao</title>
     <link rel="stylesheet" href="style.css">
-     
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="header-nav">
-            <a href="#gioithieu">🧑‍💻 Giới thiệu</a>
-            <a href="#lotrinh">📚 Lộ trình học</a>
-            <a href="#tuvan">📝 Đăng ký tư vấn</a>
-            <a href="#lienhe">📞 Liên hệ</a>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                <img src="https://rikkei.edu.vn/wp-content/uploads/2025/09/Logo.png" alt="Rikkei Education Logo">
+            </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home">Trang chủ</a></li>
+                        <li><a href="#courses">Khóa học</a></li>
+                        <li><a href="#about">Giới thiệu</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" class="btn btn-outline">Đăng nhập</a>
+                    <a href="#" class="btn btn-primary">Đăng ký</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Banner -->
-    <div class="banner">
-        <h1>Cẩm Nang Lập Trình</h1>
-        <p class="hotline">Học lập trình từ con số 0</p>
-        <button class="cta-button">Đăng ký tư vấn ngay</button>
-    </div>
-
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Giới thiệu -->
-        <div id="gioithieu" class="intro-box">
-            <h2>Lập trình - Kỹ năng của tương lai</h2>
-            <p>Trong thời đại số hóa mạnh mẽ như hiện nay, lập trình đã trở thành một trong những kỹ năng quan trọng nhất, mở ra vô vàn cơ hội nghề nghiệp với mức lương hấp dẫn từ 12-45 triệu đồng/tháng. Từ phát triển website, ứng dụng di động, đến trí tuệ nhân tạo và khoa học dữ liệu - tất cả đều cần đến lập trình viên.</p>
-            <p>Không cần bằng cấp cao hay kinh nghiệm trước đó, bạn hoàn toàn có thể bắt đầu từ con số 0 và trở thành lập trình viên chuyên nghiệp chỉ trong 6-12 tháng. Với lộ trình học rõ ràng từ HTML/CSS cơ bản đến Full-Stack Developer, cùng sự hỗ trợ tận tình từ đội ngũ giảng viên có kinh nghiệm thực tế, bạn sẽ nhanh chóng chinh phục ước mơ làm IT.</p>
-            <p class="highlight">✅ Học thực hành 100% - Lộ trình rõ ràng - Cam kết đầu ra</p>
-        </div>
-     
-
-         <!-- Lộ trình học -->
-        <div id="lotrinh" class="table-section">
-            <h2>Lộ trình học Full-Stack Developer</h2>
-            <p>Con đường trở thành lập trình viên Full-Stack trong 6-12 tháng</p>
-            <table class="price-table">
-                <thead>
-                    <tr>
-                        <th>Bước</th>
-                        <th>Nội dung</th>
-                        <th>Thời gian</th>
-                        <th>Công cụ/Ngôn ngữ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>1</strong></td>
-                        <td>Nền tảng Web - HTML/CSS</td>
-                        <td>1-2 tháng</td>
-                        <td>HTML5, CSS3, Responsive Design</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2</strong></td>
-                        <td>JavaScript cơ bản & nâng cao</td>
-                        <td>2-3 tháng</td>
-                        <td>ES6+, DOM, API, Async/Await</td>
-                    </tr>
-                    <tr>
-                        <td><strong>3</strong></td>
-                        <td>Frontend Framework</td>
-                        <td>2 tháng</td>
-                        <td>React.js hoặc Vue.js</td>
-                    </tr>
-                    <tr>
-                        <td><strong>4</strong></td>
-                        <td>Backend Development</td>
-                        <td>2-3 tháng</td>
-                        <td>Node.js, Express, RESTful API</td>
-                    </tr>
-                    <tr>
-                        <td><strong>5</strong></td>
-                        <td>Database & Deployment</td>
-                        <td>1-2 tháng</td>
-                        <td>MongoDB/MySQL, Docker, AWS/Heroku</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Form đăng ký -->
-        <div id="tuvan" class="form-section">
-            <h2>Đăng ký nhận tư vấn miễn phí</h2>
-            <p>Để lại thông tin để chúng tôi tư vấn lộ trình học phù hợp nhất cho bạn</p>
-            <form class="contact-form">
-                <label for="name">Họ và tên *</label>
-                <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required>
-
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
-
-                <label for="phone">Số điện thoại *</label>
-                <input type="tel" id="phone" name="phone" placeholder="0123456789" required>
-
-                <label>Giới tính *</label>
-                <div class="radio-group">
-                    <label class="radio-label">
-                        <input type="radio" name="gender" value="nam" required>
-                        <span>Nam</span>
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="gender" value="nu">
-                        <span>Nữ</span>
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="gender" value="khac">
-                        <span>Khác</span>
-                    </label>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Học Tập Không Giới Hạn</h2>
+                    <p>Khám phá hàng nghìn khóa học chất lượng cao từ các chuyên gia hàng đầu. Nâng cao kỹ năng và phát triển sự nghiệp của bạn ngay hôm nay.</p>
+                    <div class="hero-buttons">
+                        <a href="#courses" class="btn btn-primary btn-large">Khám phá khóa học</a>
+                        <a href="#about" class="btn btn-outline btn-large">Tìm hiểu thêm</a>
+                    </div>
                 </div>
-
-                <label for="message">Mục tiêu học tập của bạn *</label>
-                <textarea id="message" name="message" rows="6" placeholder="Ví dụ: Tôi muốn học lập trình để chuyển nghề, tìm việc IT..." required></textarea>
-
-                <button type="submit" class="submit-btn">Gửi đăng ký</button>
-            </form>
-        </div>
-       
-
-        <!-- Liên hệ -->
-        <div id="lienhe" class="contact-section">
-            <h2>Liên hệ với chúng tôi</h2>
-            <p>Hãy liên hệ để được tư vấn chi tiết về khóa học và lộ trình phù hợp</p>
-            <div class="contact-info">
-                <p>📍 Địa chỉ: 123 Nguyễn Huệ, Quận 1, TP.HCM</p>
-                <p>📞 Hotline: 0337 610 701</p>
-                <p>📧 Email: contact@camnanglaptrinhh.com</p>
-                <p>🕒 Giờ làm việc: 8:00 - 21:00 (T2-CN)</p>
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <div class="card-icon">📚</div>
+                        <h3>1000+</h3>
+                        <p>Khóa học</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="card-icon">👨‍🎓</div>
+                        <h3>50,000+</h3>
+                        <p>Học viên</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="card-icon">⭐</div>
+                        <h3>4.8/5</h3>
+                        <p>Đánh giá</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Tại Sao Chọn Rikkei Education?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Học Linh Hoạt</h3>
+                    <p>Học mọi lúc, mọi nơi với nền tảng trực tuyến tiện lợi</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3>Giảng Viên Chuyên Nghiệp</h3>
+                    <p>Đội ngũ giảng viên giàu kinh nghiệm và tận tâm</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3>Chứng Chỉ Uy Tín</h3>
+                    <p>Nhận chứng chỉ được công nhận sau khi hoàn thành</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Giá Cả Hợp Lý</h3>
+                    <p>Chi phí phải chăng, nhiều ưu đãi hấp dẫn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">Khóa Học Nổi Bật</h2>
+            <p class="section-subtitle">Khám phá các khóa học được yêu thích nhất</p>
+            
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <div class="course-badge">Bán chạy</div>
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop" alt="Lập Trình Web" class="course-thumbnail">
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Lập trình</div>
+                        <h3>Lập Trình Web Từ Cơ Bản Đến Nâng Cao</h3>
+                        <p>Học HTML, CSS, JavaScript và các framework hiện đại</p>
+                        <div class="course-meta">
+                            <span>⏱️ 40 giờ</span>
+                            <span>📊 Cơ bản</span>
+                            <span>⭐ 4.9 (2,345)</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">
+                                <span class="old-price">2,999,000đ</span>
+                                <span class="new-price">1,999,000đ</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Đăng ký ngay</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <div class="course-badge hot">Hot</div>
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=400&fit=crop" alt="UI/UX Design" class="course-thumbnail">
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Thiết kế</div>
+                        <h3>UI/UX Design Chuyên Nghiệp</h3>
+                        <p>Thiết kế giao diện người dùng đẹp mắt và trải nghiệm tối ưu</p>
+                        <div class="course-meta">
+                            <span>⏱️ 35 giờ</span>
+                            <span>📊 Trung cấp</span>
+                            <span>⭐ 4.8 (1,890)</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">
+                                <span class="old-price">2,499,000đ</span>
+                                <span class="new-price">1,699,000đ</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Đăng ký ngay</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop" alt="Phát Triển Mobile" class="course-thumbnail">
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Mobile</div>
+                        <h3>Phát Triển Ứng Dụng Di Động</h3>
+                        <p>Xây dựng ứng dụng iOS và Android với React Native</p>
+                        <div class="course-meta">
+                            <span>⏱️ 45 giờ</span>
+                            <span>📊 Nâng cao</span>
+                            <span>⭐ 4.7 (1,234)</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">
+                                <span class="old-price">3,499,000đ</span>
+                                <span class="new-price">2,299,000đ</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Đăng ký ngay</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop" alt="Digital Marketing" class="course-thumbnail">
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Marketing</div>
+                        <h3>Digital Marketing Toàn Diện</h3>
+                        <p>Chiến lược marketing online hiệu quả cho doanh nghiệp</p>
+                        <div class="course-meta">
+                            <span>⏱️ 30 giờ</span>
+                            <span>📊 Cơ bản</span>
+                            <span>⭐ 4.6 (987)</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">
+                                <span class="old-price">1,999,000đ</span>
+                                <span class="new-price">1,299,000đ</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Đăng ký ngay</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <div class="course-badge">Mới</div>
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop" alt="Machine Learning" class="course-thumbnail">
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">AI & Data</div>
+                        <h3>Machine Learning Cơ Bản</h3>
+                        <p>Nhập môn trí tuệ nhân tạo và học máy với Python</p>
+                        <div class="course-meta">
+                            <span>⏱️ 50 giờ</span>
+                            <span>📊 Trung cấp</span>
+                            <span>⭐ 4.9 (756)</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">
+                                <span class="old-price">3,999,000đ</span>
+                                <span class="new-price">2,799,000đ</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Đăng ký ngay</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop" alt="Quản Trị Dự Án" class="course-thumbnail">
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Kinh doanh</div>
+                        <h3>Quản Trị Dự Án Chuyên Nghiệp</h3>
+                        <p>Kỹ năng quản lý dự án hiệu quả với Agile và Scrum</p>
+                        <div class="course-meta">
+                            <span>⏱️ 25 giờ</span>
+                            <span>📊 Cơ bản</span>
+                            <span>⭐ 4.7 (654)</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">
+                                <span class="old-price">1,799,000đ</span>
+                                <span class="new-price">1,199,000đ</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Đăng ký ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Về Rikkei Education</h2>
+                <p>Rikkei Education là nền tảng học trực tuyến hàng đầu Việt Nam, cung cấp hơn 1000 khóa học chất lượng cao trong nhiều lĩnh vực khác nhau.</p>
+                    <p>Chúng tôi cam kết mang đến trải nghiệm học tập tốt nhất với đội ngũ giảng viên chuyên nghiệp, nội dung cập nhật và phương pháp giảng dạy hiện đại.</p>
+                    <ul class="about-list">
+                        <li>✓ Hơn 50,000 học viên tin tưởng</li>
+                        <li>✓ 1000+ khóa học đa dạng</li>
+                        <li>✓ Chứng chỉ được công nhận</li>
+                        <li>✓ Hỗ trợ học viên 24/7</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>50,000+</h3>
+                        <p>Học viên</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>1,000+</h3>
+                        <p>Khóa học</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100+</h3>
+                        <p>Giảng viên</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>4.8/5</h3>
+                        <p>Đánh giá</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
+            <p class="section-subtitle">Có câu hỏi? Chúng tôi luôn sẵn sàng hỗ trợ bạn</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Địa chỉ</h3>
+                        <p>123 Đường ABC, Quận 1<br>TP. Hồ Chí Minh, Việt Nam</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3>Điện thoại</h3>
+                        <p>+84 123 456 789<br>+84 987 654 321</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>info@rikkeieducation.vn<br>support@rikkeieducation.vn</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">⏰</div>
+                        <h3>Giờ làm việc</h3>
+                        <p>Thứ 2 - Thứ 6: 8:00 - 18:00<br>Thứ 7: 8:00 - 12:00</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nội dung</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Gửi tin nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2026 Cẩm Nang Lập Trình - Nơi khởi đầu sự nghiệp IT của bạn</p>
-        <p>Học thực chiến | Có việc làm | Hỗ trợ trọn đời </p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://rikkei.edu.vn/wp-content/uploads/2025/09/Logo.png" alt="Rikkei Education Logo">
+                </div>
+                <p>Nền tảng học trực tuyến hàng đầu Việt Nam, mang đến kiến thức chất lượng cho mọi người.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Khóa học</h4>
+                    <ul>
+                        <li><a href="#">Lập trình</a></li>
+                        <li><a href="#">Thiết kế</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Kinh doanh</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Về chúng tôi</h4>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Giảng viên</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Trung tâm trợ giúp</a></li>
+                        <li><a href="#">Điều khoản</a></li>
+                        <li><a href="#">Chính sách</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rikkei Education. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
