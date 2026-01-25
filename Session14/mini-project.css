@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: white;
+}
+
+.logo .Rikkei {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.auth-buttons{
+    display: flex;  
+}
+
+.auth-buttons .btn-login {
+    background: none;
+    border: 1px solid #6366f1;
+    color: #6366f1;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.auth-buttons .btn-register {
+    background: #6366f1;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.hero {
+    background-color: #6366f1;
+    padding: 80px 8%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn-primary {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-outline {
+    border: 1.5px solid white;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #6366f1;
+}
+
+.hero-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-large {
+    grid-column: span 2;
+}
+
+.card h3 {
+    font-size: 32px;
+    color: #6366f1;
+    margin-bottom: 5px;
+}
+
+.card p {
+    color: #777;
+    font-size: 14px;
+}
+
+.icon,
+.icon-star {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature h2 {
+    text-align: center;
+    color: #1a2a47;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.item {
+    background: #ffffff;
+    border-radius: 10px;
+    height: 250px;
+    padding: 70px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.item h3 {
+    font-size: 18px;
+    color: #1a2a47;
+    margin-bottom: 15px;
+}
+
+.item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform .3s;
+}
+
+.col1{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.col2{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+}
+
+.image {
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.badge.blue {
+    background: #4f6df5;
+}
+
+.badge.pink {
+    background: #ff4d8d;
+}
+
+.content {
+    padding: 16px;
+}
+
+.category {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.content h3 {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.price {
+    margin-bottom: 12px;
+}
+
+.price del {
+    font-size: 14px;
+    color: #999;
+    margin-right: 6px;
+}
+
+.price strong {
+    color: #4f6df5;
+    font-size: 18px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    background: #4f6df5;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3b54d4;
+}
+
+.footer {
+    background-color: #1a2233;
+    color: #a0aec0;
+    padding: 60px 0 30px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 150px;
+}
+
+.brand-col {
+    flex: 2;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.description {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 350px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    font-size: 14px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #2d3748;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
