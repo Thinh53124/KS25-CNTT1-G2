@@ -1,0 +1,330 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Inter',sans-serif;
+    font-weight: 700px;
+}
+.headbar{
+    border:1px solid black;
+    width: 100%;
+    height:81.59px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border:none;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap:80px;
+}
+.menulink{
+    border:1px solid #cccc;
+    border-radius: 5px;
+    padding:10px;
+    border:none;
+    transition: all 1s;
+}
+.menulink:hover{
+    cursor: pointer;
+    background-color: blueviolet;
+    color:white;
+}
+.login{
+    border:2px solid rgb(99, 102, 241);
+    border-radius: 5px;
+    background-color:white;
+    color:rgb(99, 102, 241);
+    padding:10px;
+    transition: all 1s;
+    text-decoration: none;
+}
+.login:hover{
+    cursor: pointer;
+    background-color: rgb(99, 102, 241);
+    color:white;
+}
+.register{
+    border:2px solid rgb(99, 102, 241);
+    border-radius: 5px;
+    background-color:white;
+    color:rgb(99, 102, 241);
+    padding:10px;
+    transition: all 1s;
+    text-decoration: none;
+}
+.register:hover{
+    cursor: pointer;
+    background-color: rgb(99, 102, 241);
+    color:white;
+}
+.banner{
+    width: 100%;
+    height: 609.56px;
+    background-color: rgb(99, 102, 241);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color:white;
+}
+.bottomcontent{
+    display: flex;
+    justify-content:space-around;
+}
+.searchmore{
+    border:1px solid white;
+    width: 150.02px;
+    height: 40px;
+    text-align: center;
+    padding-top:20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color:white;
+}
+.picturetop{
+    border:1px solid white;
+    background-color: white;
+    width: 553px;
+    height: 228.78px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:40px;
+    align-items: center;
+    border-radius: 10px;
+}
+.picturetop h2{
+    font-size: 50px;
+    color:rgb(99, 102, 241);
+}
+.picturetop img{
+    width: 40px;
+}
+.picturebottom{
+    display: flex;
+    gap:20px;
+    margin-top:20px;
+
+}
+.picture1{
+        border:1px solid white;
+    background-color: white;
+    width: 265px;
+    height: 228.78px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:40px;
+    align-items: center;
+    border-radius: 10px;    
+}
+.picture2{
+        border:1px solid white;
+    background-color: white;
+    width: 265px;
+    height: 228.78px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:40px;
+    align-items: center;
+    border-radius: 10px; 
+}
+.picture1 h2{
+    font-size: 30px;
+    color:rgb(99, 102, 241);
+}
+.picture2 h2{
+    font-size: 30px;
+    color:rgb(99, 102, 241);
+}
+.picture1 p{
+    opacity: 0.5;
+}
+.picture2 p{
+    opacity: 0.5;
+}
+.picturetop p{
+    opacity: 0.5;
+}
+.questioncard{
+    display: flex;
+    justify-content: space-around;
+}
+.cardquestion{
+    border:1px solid black;
+    width: 265px;
+    height: 353.58px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap:30px;
+    border-radius: 5px;
+    border:none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.cardquestion p{
+    opacity: 0.5;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.titlewhy{
+    text-align: center;
+    margin-top:20px;
+    margin-bottom: 20px;
+    font-size:30px;
+}
+.topcard{
+    border:1px solid black;
+    width: 363.66px;
+    height: 592.56px;
+    border:none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.picturetopcard{
+    border:1px solid #cccc;
+    width: 363.66px;
+    height: 200px;
+    border:none;
+    position: relative;
+}
+.picturetopcard img{
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+}
+.quantity{
+    position: absolute;
+    top:10px;
+    right:10px;
+    border:1px solid #cccc;
+    border:none;
+    background-color: rgb(99, 102, 241);
+    color:white;
+    border-radius: 5px;
+    padding:5px;
+}
+.contenttopcard{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    position: relative;
+    padding:12px;
+    margin-top:40px;
+}
+.type{
+    border:1px solid black;
+    border-radius: 5px;
+    background-color: rgb(249, 250, 251);
+    color:rgb(108, 111, 242);
+    border:none;
+    padding:5px;
+    width: 83.89px;
+    text-align: center;
+}
+.aboutcard{
+    display: flex;
+    justify-content: space-around;
+}
+.lastline{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.price{
+    display:flex;
+    flex-direction: column;
+}
+.price p{
+    opacity: 0.75;
+    text-decoration: line-through;
+}
+.price h2{
+    color:rgb(109, 112, 242);
+}
+.button{
+    text-decoration: none;
+    color:white;
+
+}
+.buttonregister{
+    border:1px solid black;
+    background-color: rgb(99, 102, 241);
+    padding:5px;
+    display: flex;
+    align-items: center;
+    border:none;
+    border-radius: 5px;
+}
+.info{
+    opacity: 0.5;
+}
+.studycardtop{
+    display: flex;
+    justify-content: space-around;
+}
+.titlecourse{
+    text-align: center;
+    margin:20px;
+    
+}
+.titlecourse p{
+    opacity: 0.5;
+    padding-top:20px;
+}
+.studycardbottom{
+    display: flex;
+    justify-content: space-around;
+    margin-top:20px;
+}
+.footdad{
+    height: 400px;
+    background-color: rgb(31, 41, 55);
+    color:white;
+}
+.foot{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.logo p{
+    opacity: 0.5;
+}
+.logo img{
+    width: 100px;
+}
+.linkpage{
+    display:flex;
+    justify-content: space-between;
+}
+.aboutus{
+    display: flex;
+    justify-content: space-between;
+    gap:50px;
+}
+.col p{
+    opacity: 0.5;
+}
+hr{
+    opacity: 0.5;
+}
+.copyright{
+    text-align: center;
+    margin-top:20px;
+}
