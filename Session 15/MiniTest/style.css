@@ -58,7 +58,8 @@ body {
 
 .card-footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
 }
 
 .price{
