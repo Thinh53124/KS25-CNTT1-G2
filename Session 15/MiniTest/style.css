@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.des {
+  color: #49bbbd;
+  font-weight: 700px;
+  text-decoration: none;
+  size: 20px;
+}
+
+.info {
+  font-weight: 500px;
+  size: 30px;
+  letter-spacing: 2%;
+}
+
+.cards {
+  display: flex;
+  gap: 50px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.card-img {
+  width: 335px;
+  height: 239px;
+  top: 115px;
+  left: 38px;
+  border-radius: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  color: #696984;
+}
+
+.card-info p{
+  color: #696984;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.price{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.name{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.old-price{
+    text-decoration: line-through;
+  color: #696984;
+}
+
+.new-price{
+    color: #49bbbd;
+    font-weight: 700;
+}

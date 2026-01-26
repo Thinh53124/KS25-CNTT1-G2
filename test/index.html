@@ -1,422 +1,659 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Trang thương mại điện tử hàng đầu với đa dạng sản phẩm chất lượng cao, giá tốt nhất thị trường"
-    />
-    <meta
-      name="keywords"
-      content="thương mại điện tử, mua sắm online, sản phẩm chất lượng, giá rẻ, giao hàng nhanh"
-    />
-    <meta name="author" content="E-Commerce Store" />
-    <title>
-      E-Commerce Store - Mua Sắm Online Uy Tín | Sản Phẩm Chất Lượng
-    </title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lập Trình Web Từ Cơ Bản Đến Nâng Cao - Khóa học chất lượng cao tại Rikkei Education">
+    <title>Lập Trình Web Từ Cơ Bản Đến Nâng Cao - Rikkei Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="course-detail.css">
+</head>
+<body>
     <!-- Header -->
-    <header>
-      <input type="checkbox" id="menuToggle" class="menu-checkbox" />
-      <nav>
-        <a href="index.html" class="logo">🛒 E-Store</a>
-        <ul class="nav-links">
-          <li><a href="#home">Trang Chủ</a></li>
-          <li><a href="#products">Sản Phẩm</a></li>
-          <li><a href="#categories">Danh Mục</a></li>
-          <li><a href="#about">Về Chúng Tôi</a></li>
-          <li><a href="#contact">Liên Hệ</a></li>
-        </ul>
-        <div class="nav-actions">
-          <button class="cart-btn">🛒 <span>Giỏ Hàng (0)</span></button>
-          <label for="menuToggle" class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://rikkei.edu.vn/wp-content/uploads/2025/09/Logo.png" alt="Rikkei Education Logo">
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html#home">Trang chủ</a></li>
+                        <li><a href="index.html#courses">Khóa học</a></li>
+                        <li><a href="index.html#about">Giới thiệu</a></li>
+                        <li><a href="index.html#contact">Liên hệ</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" class="btn btn-outline">Đăng nhập</a>
+                    <a href="#" class="btn btn-primary">Đăng ký</a>
+                </div>
+            </div>
         </div>
-      </nav>
-
-      <!-- Mobile Menu -->
-      <div class="mobile-menu">
-        <ul class="nav-links">
-          <li><a href="#home">Trang Chủ</a></li>
-          <li><a href="#products">Sản Phẩm</a></li>
-          <li><a href="#categories">Danh Mục</a></li>
-          <li><a href="#about">Về Chúng Tôi</a></li>
-          <li><a href="#contact">Liên Hệ</a></li>
-        </ul>
-        <button class="cart-btn">🛒 Giỏ Hàng <span>(0)</span></button>
-      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <h1>Khám Phá Thế Giới Mua Sắm</h1>
-        <p>
-          Hàng ngàn sản phẩm chất lượng với giá tốt nhất. Giao hàng nhanh, thanh
-          toán an toàn.
-        </p>
-        <div class="cta-buttons">
-          <a href="#products" class="btn btn-primary">Mua Ngay</a>
-          <a href="#categories" class="btn btn-secondary">Khám Phá</a>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.html#courses">Khóa học</a></li>
+                <li>Lập Trình Web</li>
+            </ul>
         </div>
-      </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="categories" id="categories">
-      <h2 class="section-title">Danh Mục Sản Phẩm</h2>
-      <div class="category-grid">
-        <div class="category-card">
-          <div class="category-icon">📱</div>
-          <h3>Điện Thoại</h3>
-          <p>Smartphone mới nhất</p>
+    <!-- Course Header -->
+    <section class="course-header">
+        <div class="container">
+            <div class="course-header-content">
+                <div class="course-header-left">
+                    <div class="course-badge-group">
+                        <span class="course-badge bestseller">Bán chạy nhất</span>
+                        <span class="course-category-badge">Lập trình</span>
+                    </div>
+                    <h1 class="course-title">Lập Trình Web Từ Cơ Bản Đến Nâng Cao</h1>
+                    <p class="course-subtitle">Học HTML, CSS, JavaScript và các framework hiện đại để trở thành Web Developer chuyên nghiệp</p>
+                    
+                    <div class="course-meta-info">
+                        <div class="meta-item">
+                            <span class="meta-icon">⭐</span>
+                            <span class="meta-text"><strong>4.9</strong> (2,345 đánh giá)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">👨‍🎓</span>
+                            <span class="meta-text"><strong>12,567</strong> học viên</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📅</span>
+                            <span class="meta-text">Cập nhật: <strong>Tháng 12/2025</strong></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">🌐</span>
+                            <span class="meta-text">Tiếng Việt</span>
+                        </div>
+                    </div>
+
+                    <div class="course-instructor-mini">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Nguyễn Văn A" class="instructor-avatar-small">
+                        <div class="instructor-info-mini">
+                            <span class="instructor-label">Giảng viên</span>
+                            <a href="#instructor" class="instructor-name-link">Nguyễn Văn A</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-header-right">
+                    <div class="course-preview-card">
+                        <div class="preview-image">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=450&fit=crop" alt="Lập Trình Web">
+                            <div class="play-overlay">
+                                <div class="play-button">▶</div>
+                                <span>Xem giới thiệu</span>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-content">
+                            <div class="course-price-section">
+                                <div class="price-main">
+                                    <span class="price-current">1,999,000đ</span>
+                                    <span class="price-old">2,999,000đ</span>
+                                </div>
+                                <div class="price-discount">Giảm 33%</div>
+                            </div>
+
+                            <div class="time-remaining">
+                                <span class="clock-icon">⏰</span>
+                                <span class="time-text">Ưu đãi kết thúc sau <strong>2 ngày</strong></span>
+                            </div>
+
+                            <a href="#" class="btn btn-primary btn-large btn-block">Đăng ký ngay</a>
+                            <a href="#" class="btn btn-outline btn-large btn-block">Thêm vào giỏ hàng</a>
+
+                            <div class="course-includes">
+                                <h4>Khóa học bao gồm:</h4>
+                                <ul class="includes-list">
+                                    <li>
+                                        <span class="include-icon">🎥</span>
+                                        <span>40 giờ video học</span>
+                                    </li>
+                                    <li>
+                                        <span class="include-icon">📄</span>
+                                        <span>25 bài tập thực hành</span>
+                                    </li>
+                                    <li>
+                                        <span class="include-icon">📱</span>
+                                        <span>Truy cập trên mọi thiết bị</span>
+                                    </li>
+                                    <li>
+                                        <span class="include-icon">♾️</span>
+                                        <span>Truy cập trọn đời</span>
+                                    </li>
+                                    <li>
+                                        <span class="include-icon">📜</span>
+                                        <span>Chứng chỉ hoàn thành</span>
+                                    </li>
+                                    <li>
+                                        <span class="include-icon">💬</span>
+                                        <span>Hỗ trợ 24/7</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="guarantee">
+                                <span class="guarantee-icon">✓</span>
+                                <span>Hoàn tiền 100% trong 30 ngày</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="category-card">
-          <div class="category-icon">💻</div>
-          <h3>Laptop</h3>
-          <p>Máy tính xách tay</p>
-        </div>
-        <div class="category-card">
-          <div class="category-icon">🎧</div>
-          <h3>Âm Thanh</h3>
-          <p>Tai nghe, loa</p>
-        </div>
-        <div class="category-card">
-          <div class="category-icon">⌚</div>
-          <h3>Đồng Hồ</h3>
-          <p>Smartwatch & đồng hồ</p>
-        </div>
-        <div class="category-card">
-          <div class="category-icon">📷</div>
-          <h3>Máy Ảnh</h3>
-          <p>Camera chuyên nghiệp</p>
-        </div>
-        <div class="category-card">
-          <div class="category-icon">🎮</div>
-          <h3>Gaming</h3>
-          <p>Thiết bị chơi game</p>
-        </div>
-      </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products" id="products">
-      <div class="products-container">
-        <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
-        <div class="product-grid">
-          <a href="product-detail.html" class="product-card">
-            <div class="product-image">
-              <img
-                src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&h=500&fit=crop"
-                alt="Smartphone Pro Max"
-              />
-              <span class="product-badge">-20%</span>
-            </div>
-            <div class="product-info">
-              <p class="product-category">Điện Thoại</p>
-              <h3 class="product-name">Smartphone Pro Max</h3>
-              <div class="product-rating">⭐⭐⭐⭐⭐ (4.8)</div>
-              <div class="product-price">
-                <span class="price-current">15.990.000₫</span>
-                <span class="price-old">19.990.000₫</span>
-              </div>
-              <button class="add-to-cart">Thêm Vào Giỏ</button>
-            </div>
-          </a>
+    <!-- Course Content -->
+    <section class="course-content-section">
+        <div class="container">
+            <div class="course-layout">
+                <!-- Main Content -->
+                <div class="course-main">
+                    <!-- What You'll Learn -->
+                    <div class="content-box">
+                        <h2 class="section-heading">Bạn sẽ học được gì</h2>
+                        <div class="learning-outcomes">
+                            <div class="outcome-item">
+                                <span class="check-icon">✓</span>
+                                <span>Nắm vững HTML5 và CSS3 để xây dựng giao diện web hiện đại</span>
+                            </div>
+                            <div class="outcome-item">
+                                <span class="check-icon">✓</span>
+                                <span>Lập trình JavaScript từ cơ bản đến nâng cao</span>
+                            </div>
+                            <div class="outcome-item">
+                                <span class="check-icon">✓</span>
+                                <span>Sử dụng thành thạo React.js để xây dựng ứng dụng web</span>
+                            </div>
+                            <div class="outcome-item">
+                                <span class="check-icon">✓</span>
+                                <span>Thiết kế responsive cho mọi thiết bị</span>
+                            </div>
+                            <div class="outcome-item">
+                                <span class="check-icon">✓</span>
+                                <span>Làm việc với API và xử lý dữ liệu</span>
+                            </div>
+                            <div class="outcome-item">
+                                <span class="check-icon">✓</span>
+                                <span>Triển khai website lên hosting và domain</span>
+                            </div>
+                            <div class="outcome-item">
+                                <span class="check-icon">✓</span>
+                                <span>Xây dựng 5+ dự án thực tế để bổ sung portfolio</span>
+                            </div>
+                            <div class="outcome-item">
+                                <span class="check-icon">✓</span>
+                                <span>Áp dụng best practices và coding standards</span>
+                            </div>
+                        </div>
+                    </div>
 
-          <a href="product-detail.html" class="product-card">
-            <div class="product-image">
-              <img
-                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=500&fit=crop"
-                alt="Laptop Gaming Ultra"
-              />
-              <span class="product-badge">Mới</span>
-            </div>
-            <div class="product-info">
-              <p class="product-category">Laptop</p>
-              <h3 class="product-name">Laptop Gaming Ultra</h3>
-              <div class="product-rating">⭐⭐⭐⭐⭐ (4.9)</div>
-              <div class="product-price">
-                <span class="price-current">29.990.000₫</span>
-              </div>
-              <button class="add-to-cart">Thêm Vào Giỏ</button>
-            </div>
-          </a>
+                    <!-- Course Description -->
+                    <div class="content-box">
+                        <h2 class="section-heading">Mô tả khóa học</h2>
+                        <div class="course-description">
+                            <p>Chào mừng bạn đến với khóa học <strong>Lập Trình Web Từ Cơ Bản Đến Nâng Cao</strong> - khóa học toàn diện nhất về phát triển web tại Rikkei Education!</p>
+                            
+                            <p>Khóa học này được thiết kế dành cho những người mới bắt đầu muốn trở thành Web Developer chuyên nghiệp. Bạn sẽ được học từ những kiến thức cơ bản nhất về HTML, CSS cho đến các công nghệ hiện đại như React.js, Node.js.</p>
 
-          <a href="product-detail.html" class="product-card">
-            <div class="product-image">
-              <img
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop"
-                alt="Wireless Headphones"
-              />
-              <span class="product-badge">Hot</span>
-            </div>
-            <div class="product-info">
-              <p class="product-category">Tai Nghe</p>
-              <h3 class="product-name">Wireless Headphones</h3>
-              <div class="product-rating">⭐⭐⭐⭐ (4.6)</div>
-              <div class="product-price">
-                <span class="price-current">2.990.000₫</span>
-                <span class="price-old">3.990.000₫</span>
-              </div>
-              <button class="add-to-cart">Thêm Vào Giỏ</button>
-            </div>
-          </a>
+                            <h3>Tại sao nên chọn khóa học này?</h3>
+                            <ul>
+                                <li><strong>Học từ cơ bản:</strong> Không cần kiến thức nền tảng, bạn sẽ được hướng dẫn từng bước một</li>
+                                <li><strong>Thực hành nhiều:</strong> Mỗi bài học đều có bài tập và dự án thực tế</li>
+                                <li><strong>Giảng viên kinh nghiệm:</strong> Được giảng dạy bởi các chuyên gia có hơn 10 năm kinh nghiệm</li>
+                                <li><strong>Cập nhật liên tục:</strong> Nội dung được cập nhật theo xu hướng công nghệ mới nhất</li>
+                                <li><strong>Hỗ trợ tận tình:</strong> Đội ngũ hỗ trợ sẵn sàng giải đáp mọi thắc mắc 24/7</li>
+                            </ul>
 
-          <a href="product-detail.html" class="product-card">
-            <div class="product-image">
-              <img
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop"
-                alt="Smart Watch Pro"
-              />
-              <span class="product-badge">-15%</span>
-            </div>
-            <div class="product-info">
-              <p class="product-category">Đồng Hồ</p>
-              <h3 class="product-name">Smart Watch Pro</h3>
-              <div class="product-rating">⭐⭐⭐⭐⭐ (4.7)</div>
-              <div class="product-price">
-                <span class="price-current">5.990.000₫</span>
-                <span class="price-old">6.990.000₫</span>
-              </div>
-              <button class="add-to-cart">Thêm Vào Giỏ</button>
-            </div>
-          </a>
+                            <h3>Sau khóa học, bạn có thể:</h3>
+                            <ul>
+                                <li>Tự tin xây dựng các website hoàn chỉnh từ A-Z</li>
+                                <li>Ứng tuyển vào các vị trí Junior/Mid-level Web Developer</li>
+                                <li>Freelance và nhận các dự án web development</li>
+                                <li>Tiếp tục học các khóa nâng cao về Full-stack Development</li>
+                            </ul>
 
-          <a href="product-detail.html" class="product-card">
-            <div class="product-image">
-              <img
-                src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=500&h=500&fit=crop"
-                alt="Camera DSLR Pro"
-              />
-              <span class="product-badge">Bán Chạy</span>
-            </div>
-            <div class="product-info">
-              <p class="product-category">Máy Ảnh</p>
-              <h3 class="product-name">Camera DSLR Pro</h3>
-              <div class="product-rating">⭐⭐⭐⭐⭐ (4.9)</div>
-              <div class="product-price">
-                <span class="price-current">18.990.000₫</span>
-              </div>
-              <button class="add-to-cart">Thêm Vào Giỏ</button>
-            </div>
-          </a>
+                            <p>Đăng ký ngay hôm nay để bắt đầu hành trình trở thành Web Developer chuyên nghiệp!</p>
+                        </div>
+                    </div>
 
-          <a href="product-detail.html" class="product-card">
-            <div class="product-image">
-              <img
-                src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&h=500&fit=crop"
-                alt="Gaming Mouse RGB"
-              />
-              <span class="product-badge">-30%</span>
+                    <!-- Curriculum -->
+                    <div class="content-box">
+                        <h2 class="section-heading">Nội dung khóa học</h2>
+                        <div class="curriculum-stats">
+                            <span>8 phần • 67 bài học • 40 giờ học</span>
+                        </div>
+                        
+                        <div class="curriculum-list">
+                            <!-- Section 1 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title-area">
+                                        <span class="section-icon">▼</span>
+                                        <h3 class="section-title">Phần 1: Giới thiệu và Cơ bản HTML</h3>
+                                    </div>
+                                    <div class="section-meta">
+                                        <span>8 bài học • 3 giờ</span>
+                                    </div>
+                                </div>
+                                <div class="section-content">
+                                    <div class="lecture-item">
+                                        <span class="lecture-icon">▶️</span>
+                                        <span class="lecture-title">Giới thiệu khóa học và lộ trình học</span>
+                                        <span class="lecture-duration">10:30</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <span class="lecture-icon">▶️</span>
+                                        <span class="lecture-title">Cài đặt môi trường phát triển</span>
+                                        <span class="lecture-duration">15:45</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <span class="lecture-icon">▶️</span>
+                                        <span class="lecture-title">HTML cơ bản: Tags và Elements</span>
+                                        <span class="lecture-duration">25:20</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <span class="lecture-icon">▶️</span>
+                                        <span class="lecture-title">Làm việc với Text và Links</span>
+                                        <span class="lecture-duration">20:15</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <span class="lecture-icon">▶️</span>
+                                        <span class="lecture-title">Images và Multimedia</span>
+                                        <span class="lecture-duration">18:30</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <span class="lecture-icon">📝</span>
+                                        <span class="lecture-title">Bài tập: Tạo trang HTML đầu tiên</span>
+                                        <span class="lecture-duration">30:00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 2 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title-area">
+                                        <span class="section-icon">▼</span>
+                                        <h3 class="section-title">Phần 2: CSS Cơ Bản và Nâng Cao</h3>
+                                    </div>
+                                    <div class="section-meta">
+                                        <span>10 bài học • 5 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 3 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title-area">
+                                        <span class="section-icon">▼</span>
+                                        <h3 class="section-title">Phần 3: Responsive Design</h3>
+                                    </div>
+                                    <div class="section-meta">
+                                        <span>7 bài học • 4 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 4 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title-area">
+                                        <span class="section-icon">▼</span>
+                                        <h3 class="section-title">Phần 4: JavaScript Cơ Bản</h3>
+                                    </div>
+                                    <div class="section-meta">
+                                        <span>12 bài học • 6 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 5 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title-area">
+                                        <span class="section-icon">▼</span>
+                                        <h3 class="section-title">Phần 5: JavaScript Nâng Cao</h3>
+                                    </div>
+                                    <div class="section-meta">
+                                        <span>10 bài học • 5.5 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 6 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title-area">
+                                        <span class="section-icon">▼</span>
+                                        <h3 class="section-title">Phần 6: React.js Fundamentals</h3>
+                                    </div>
+                                    <div class="section-meta">
+                                        <span>12 bài học • 7 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 7 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title-area">
+                                        <span class="section-icon">▼</span>
+                                        <h3 class="section-title">Phần 7: Làm việc với API</h3>
+                                    </div>
+                                    <div class="section-meta">
+                                        <span>6 bài học • 4 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 8 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title-area">
+                                        <span class="section-icon">▼</span>
+                                        <h3 class="section-title">Phần 8: Dự Án Cuối Khóa và Triển Khai</h3>
+                                    </div>
+                                    <div class="section-meta">
+                                        <span>8 bài học • 5.5 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Requirements -->
+                    <div class="content-box">
+                        <h2 class="section-heading">Yêu cầu</h2>
+                        <ul class="requirements-list">
+                            <li>Máy tính có kết nối internet</li>
+                            <li>Không cần kiến thức lập trình trước đó</li>
+                            <li>Tinh thần học hỏi và sẵn sàng thực hành</li>
+                            <li>Cam kết dành ít nhất 5-10 giờ/tuần để học</li>
+                        </ul>
+                    </div>
+
+                    <!-- Target Audience -->
+                    <div class="content-box">
+                        <h2 class="section-heading">Khóa học dành cho ai</h2>
+                        <ul class="audience-list">
+                            <li>Người mới bắt đầu muốn học lập trình web</li>
+                            <li>Sinh viên ngành CNTT muốn nâng cao kỹ năng</li>
+                            <li>Người muốn chuyển nghề sang lập trình</li>
+                            <li>Freelancer muốn mở rộng dịch vụ</li>
+                            <li>Designer muốn học code để tự implement design</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instructor -->
+                    <div class="content-box" id="instructor">
+                        <h2 class="section-heading">Giảng viên</h2>
+                        <div class="instructor-profile">
+                            <div class="instructor-header">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="Nguyễn Văn A" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h3 class="instructor-name">Nguyễn Văn A</h3>
+                                    <p class="instructor-title">Senior Full-stack Developer</p>
+                                    <div class="instructor-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-icon">⭐</span>
+                                            <span>4.9 Đánh giá</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-icon">👨‍🎓</span>
+                                            <span>45,678 Học viên</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-icon">🎥</span>
+                                            <span>15 Khóa học</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="instructor-bio">
+                                <p>Nguyễn Văn A là một Senior Full-stack Developer với hơn 10 năm kinh nghiệm trong ngành phát triển web. Anh đã làm việc cho nhiều công ty công nghệ lớn và tham gia xây dựng các dự án quy mô lớn.</p>
+                                <p>Với niềm đam mê chia sẻ kiến thức, anh đã đào tạo hơn 45,000 học viên trên khắp Việt Nam và nhận được đánh giá cao về phương pháp giảng dạy dễ hiểu, thực tế.</p>
+                                <p><strong>Chuyên môn:</strong> JavaScript, React.js, Node.js, MongoDB, AWS, Docker</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div class="content-box">
+                        <h2 class="section-heading">Đánh giá từ học viên</h2>
+                        
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <div class="rating-score">4.9</div>
+                                <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+                                <div class="rating-count">2,345 đánh giá</div>
+                            </div>
+                            
+                            <div class="rating-breakdown">
+                                <div class="rating-bar-item">
+                                    <span class="star-label">5 sao</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span class="rating-percent">85%</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span class="star-label">4 sao</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-fill" style="width: 12%"></div>
+                                    </div>
+                                    <span class="rating-percent">12%</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span class="star-label">3 sao</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-fill" style="width: 2%"></div>
+                                    </div>
+                                    <span class="rating-percent">2%</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span class="star-label">2 sao</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-fill" style="width: 1%"></div>
+                                    </div>
+                                    <span class="rating-percent">1%</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span class="star-label">1 sao</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span class="rating-percent">0%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <!-- Review 1 -->
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop" alt="Trần Thị B" class="reviewer-avatar">
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Trần Thị B</h4>
+                                        <div class="review-meta">
+                                            <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                                            <span class="review-date">2 tuần trước</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Khóa học rất chi tiết và dễ hiểu. Giảng viên giải thích rất rõ ràng, từng bước một. Mình đã hoàn thành khóa học và tự tin làm được nhiều dự án web. Rất đáng tiền!</p>
+                                </div>
+                                <div class="review-helpful">
+                                    <span>Hữu ích?</span>
+                                    <button class="helpful-btn">👍 Có (234)</button>
+                                </div>
+                            </div>
+
+                            <!-- Review 2 -->
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop" alt="Lê Văn C" class="reviewer-avatar">
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Lê Văn C</h4>
+                                        <div class="review-meta">
+                                            <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                                            <span class="review-date">1 tháng trước</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Mình là người chuyển nghề sang IT, khóa học này giúp mình rất nhiều. Nội dung cập nhật, bài tập thực tế. Sau 3 tháng học, mình đã apply được vị trí Junior Developer. Cảm ơn thầy và Rikkei Education!</p>
+                                </div>
+                                <div class="review-helpful">
+                                    <span>Hữu ích?</span>
+                                    <button class="helpful-btn">👍 Có (189)</button>
+                                </div>
+                            </div>
+
+                            <!-- Review 3 -->
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop" alt="Phạm Thị D" class="reviewer-avatar">
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Phạm Thị D</h4>
+                                        <div class="review-meta">
+                                            <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                                            <span class="review-date">1 tháng trước</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Khóa học tuyệt vời! Giảng viên nhiệt tình, support nhanh. Nội dung từ cơ bản đến nâng cao, phù hợp cho người mới. Mình đã làm được 3 dự án và đang freelance kiếm thêm thu nhập.</p>
+                                </div>
+                                <div class="review-helpful">
+                                    <span>Hữu ích?</span>
+                                    <button class="helpful-btn">👍 Có (156)</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-outline">Xem thêm đánh giá</button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="course-sidebar">
+                    <!-- Related Courses -->
+                    <div class="sidebar-box">
+                        <h3 class="sidebar-heading">Khóa học liên quan</h3>
+                        <div class="related-courses">
+                            <a href="#" class="related-course-item">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=100&h=60&fit=crop" alt="UI/UX Design">
+                                <div class="related-course-info">
+                                    <h4>UI/UX Design Chuyên Nghiệp</h4>
+                                    <div class="related-course-meta">
+                                        <span class="related-rating">⭐ 4.8</span>
+                                        <span class="related-price">1,699,000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="related-course-item">
+                                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=100&h=60&fit=crop" alt="Mobile Development">
+                                <div class="related-course-info">
+                                    <h4>Phát Triển Ứng Dụng Di Động</h4>
+                                    <div class="related-course-meta">
+                                        <span class="related-rating">⭐ 4.7</span>
+                                        <span class="related-price">2,299,000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="related-course-item">
+                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=100&h=60&fit=crop" alt="Machine Learning">
+                                <div class="related-course-info">
+                                    <h4>Machine Learning Cơ Bản</h4>
+                                    <div class="related-course-meta">
+                                        <span class="related-rating">⭐ 4.9</span>
+                                        <span class="related-price">2,799,000đ</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Share -->
+                    <div class="sidebar-box">
+                        <h3 class="sidebar-heading">Chia sẻ khóa học</h3>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn facebook">Facebook</a>
+                            <a href="#" class="share-btn twitter">Twitter</a>
+                            <a href="#" class="share-btn linkedin">LinkedIn</a>
+                            <a href="#" class="share-btn copy">Sao chép link</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="product-info">
-              <p class="product-category">Gaming</p>
-              <h3 class="product-name">Gaming Mouse RGB</h3>
-              <div class="product-rating">⭐⭐⭐⭐ (4.5)</div>
-              <div class="product-price">
-                <span class="price-current">1.490.000₫</span>
-                <span class="price-old">2.190.000₫</span>
-              </div>
-              <button class="add-to-cart">Thêm Vào Giỏ</button>
-            </div>
-          </a>
         </div>
-      </div>
-    </section>
-
-    <!-- Advertisement Banner -->
-    <section class="ad-banner">
-      <div class="ad-banner-content">
-        <h2>🎉 Khuyến Mãi Đặc Biệt</h2>
-        <p>
-          Giảm giá lên đến 50% cho tất cả sản phẩm. Chương trình chỉ diễn ra
-          trong tháng này!
-        </p>
-        <a href="#products" class="btn btn-primary">Mua Ngay</a>
-      </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section
-      class="about-section"
-      id="about"
-      itemscope
-      itemtype="https://schema.org/Organization"
-    >
-      <div class="about-container">
-        <div class="about-content">
-          <h2 class="section-title" itemprop="name">Về Chúng Tôi</h2>
-          <div class="about-grid">
-            <article class="about-text">
-              <h3>E-Store - Thương Mại Điện Tử Hàng Đầu</h3>
-              <p itemprop="description">
-                E-Store là một trong những nền tảng thương mại điện tử hàng đầu
-                tại Việt Nam, được thành lập với sứ mệnh mang đến cho khách hàng
-                trải nghiệm mua sắm online tốt nhất. Chúng tôi chuyên cung cấp
-                đa dạng các sản phẩm công nghệ, điện tử chất lượng cao với giá
-                cả cạnh tranh nhất thị trường.
-              </p>
-              <p>
-                Với hơn 10 năm kinh nghiệm trong lĩnh vực thương mại điện tử,
-                E-Store đã và đang phục vụ hàng triệu khách hàng trên toàn quốc.
-                Chúng tôi tự hào là đối tác tin cậy của các thương hiệu lớn
-                trong và ngoài nước, cam kết mang đến những sản phẩm chính hãng,
-                chất lượng cao.
-              </p>
-            </article>
-
-            <div class="about-features">
-              <div class="feature-item">
-                <div class="feature-icon">✨</div>
-                <h4>Chất Lượng Đảm Bảo</h4>
-                <p>
-                  Tất cả sản phẩm đều được kiểm tra kỹ lưỡng, đảm bảo chất lượng
-                  và chính hãng 100%
-                </p>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">🚚</div>
-                <h4>Giao Hàng Nhanh</h4>
-                <p>
-                  Hệ thống logistics hiện đại, giao hàng toàn quốc trong 24-48
-                  giờ
-                </p>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">💳</div>
-                <h4>Thanh Toán An Toàn</h4>
-                <p>
-                  Hỗ trợ nhiều phương thức thanh toán, bảo mật thông tin tuyệt
-                  đối
-                </p>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">🛡️</div>
-                <h4>Bảo Hành Chính Hãng</h4>
-                <p>
-                  Chế độ bảo hành đầy đủ, hỗ trợ kỹ thuật 24/7 từ các trung tâm
-                  chính hãng
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-stats">
-            <div class="stat-item">
-              <div class="stat-number" itemprop="numberOfEmployees">500+</div>
-              <div class="stat-label">Nhân Viên</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">1M+</div>
-              <div class="stat-label">Khách Hàng</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">50K+</div>
-              <div class="stat-label">Sản Phẩm</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">10+</div>
-              <div class="stat-label">Năm Kinh Nghiệm</div>
-            </div>
-          </div>
-
-          <div class="about-values">
-            <h3>Giá Trị Cốt Lõi</h3>
-            <div class="values-grid">
-              <div class="value-item">
-                <h4>🎯 Tận Tâm</h4>
-                <p>
-                  Luôn đặt khách hàng làm trung tâm, phục vụ với tất cả tận tâm
-                  và nhiệt huyết
-                </p>
-              </div>
-              <div class="value-item">
-                <h4>⚡ Nhanh Chóng</h4>
-                <p>
-                  Quy trình làm việc hiệu quả, phản hồi nhanh chóng mọi yêu cầu
-                  của khách hàng
-                </p>
-              </div>
-              <div class="value-item">
-                <h4>🔒 Uy Tín</h4>
-                <p>
-                  Xây dựng niềm tin qua từng giao dịch, minh bạch và trung thực
-                  trong mọi hoạt động
-                </p>
-              </div>
-              <div class="value-item">
-                <h4>🌟 Chất Lượng</h4>
-                <p>
-                  Không ngừng nâng cao chất lượng dịch vụ, đảm bảo sự hài lòng
-                  tuyệt đối
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Về Chúng Tôi</h3>
-          <p>
-            E-Store là trang thương mại điện tử hàng đầu, cung cấp đa dạng sản
-            phẩm chất lượng cao với giá cả hợp lý. Chúng tôi cam kết mang đến
-            trải nghiệm mua sắm tốt nhất cho khách hàng.
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link">📘</a>
-            <a href="#" class="social-link">📷</a>
-            <a href="#" class="social-link">🐦</a>
-            <a href="#" class="social-link">📺</a>
-          </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://rikkei.edu.vn/wp-content/uploads/2025/09/Logo.png" alt="Rikkei Education Logo">
+                    </div>
+                    <p>Nền tảng học trực tuyến hàng đầu Việt Nam, mang đến kiến thức chất lượng cho mọi người.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Khóa học</h4>
+                    <ul>
+                        <li><a href="#">Lập trình</a></li>
+                        <li><a href="#">Thiết kế</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Kinh doanh</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Về chúng tôi</h4>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Giảng viên</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Trung tâm trợ giúp</a></li>
+                        <li><a href="#">Điều khoản</a></li>
+                        <li><a href="#">Chính sách</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rikkei Education. All rights reserved.</p>
+            </div>
         </div>
-        <div class="footer-section">
-          <h3>Liên Kết Nhanh</h3>
-          <ul>
-            <li><a href="#home">Trang Chủ</a></li>
-            <li><a href="#products">Sản Phẩm</a></li>
-            <li><a href="#categories">Danh Mục</a></li>
-            <li><a href="#about">Về Chúng Tôi</a></li>
-            <li><a href="#contact">Liên Hệ</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Dịch Vụ</h3>
-          <ul>
-            <li><a href="#">Chính Sách Đổi Trả</a></li>
-            <li><a href="#">Vận Chuyển</a></li>
-            <li><a href="#">Thanh Toán</a></li>
-            <li><a href="#">Bảo Hành</a></li>
-            <li><a href="#">Hỗ Trợ 24/7</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Liên Hệ</h3>
-          <ul>
-            <li>📧 Email: support@estore.com</li>
-            <li>📞 Hotline: 1900-1234</li>
-            <li>📍 Địa chỉ: 123 Đường ABC, Hà Nội</li>
-            <li>🕐 Giờ làm việc: 8:00 - 22:00</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 E-Store. Tất cả quyền được bảo lưu. | Thiết kế bởi Senior
-          Frontend Developer
-        </p>
-      </div>
     </footer>
-  </body>
+</body>
 </html>
