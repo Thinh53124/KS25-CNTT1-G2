@@ -209,6 +209,7 @@
 
 .preview-content {
     padding: var(--spacing-lg);
+    position: sticky;
 }
 
 .course-price-section {

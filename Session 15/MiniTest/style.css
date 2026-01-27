@@ -30,6 +30,7 @@ body {
 
 .cards {
   display: flex;
+  border-radius: 5px;
   gap: 50px;
 }
 
