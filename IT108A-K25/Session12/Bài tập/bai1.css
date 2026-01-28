@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.header h1 {
+    background: #40C9FF;
+    background: linear-gradient(90deg, rgba(64, 201, 255, 1) 0%, rgba(232, 28, 255, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.header .navigation a {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    padding: 10px;
+}
+
+.header button {
+    background-color: #0d6efd;
+    color: #FFFFFF;
+    width: 100px;
+    border-radius: 5px;
+}
