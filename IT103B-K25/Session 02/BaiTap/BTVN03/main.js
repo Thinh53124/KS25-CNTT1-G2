@@ -7,12 +7,12 @@ bookStatus = bookStatus.toLowerCase().trim();
 
 if (bookType === "khoa học" || bookType === "lịch sử") {
     if (bookStatus === "có sẵn") {
-        document.write("Sách này có sẵn trong thư viện");
+        document.writeln("Sách này có sẵn trong thư viện");
     } else {
-        document.write("Sách đã được mượn");
+        document.writeln("Sách đã được mượn");
     }
 } else if (bookType === "văn học" || bookType === "truyện") {
-    document.write("Sách này có thể đọc giải trí");
+    document.writeln("Sách này có thể đọc giải trí");
 } else {
-    document.write("Thể loại sách không được hỗ trợ");
+    document.writeln("Thể loại sách không được hỗ trợ");
 }

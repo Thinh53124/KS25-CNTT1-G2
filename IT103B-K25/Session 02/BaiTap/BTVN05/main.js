@@ -6,17 +6,17 @@ let currentYear = new Date().getFullYear();
 bookStatus = bookStatus.toLowerCase().trim()
 
 if(currentYear - bookPublishYear <= 5 && bookPublishYear < currentYear && bookStatus === "có sẵn"){
-    document.write("Sách này mới và có sẵn để mượn");
+    document.writeln("Sách này mới và có sẵn để mượn");
 }
 else if(currentYear - bookPublishYear <= 10 && bookPublishYear < currentYear && bookStatus === "đã mượn"){
-    document.write("Sách này đã mượn nhưng khá mới, có thể mượn lại sau");
+    document.writeln("Sách này đã mượn nhưng khá mới, có thể mượn lại sau");
 }
 else if(currentYear - bookPublishYear > 10 && bookPublishYear < currentYear && bookStatus === "đã mượn"){
-    document.write("Sách này đã mượn và khá cũ");
+    document.writeln("Sách này đã mượn và khá cũ");
 }
 else if(currentYear - bookPublishYear > 5 && bookPublishYear < currentYear && bookStatus === "có sẵn"){
-    document.write("Sách này có sẵn nhưng đã lâu năm");
+    document.writeln("Sách này có sẵn nhưng đã lâu năm");
 }
 else{
-    document.write("Sách không hợp lệ");
+    document.writeln("Sách không hợp lệ");
 }

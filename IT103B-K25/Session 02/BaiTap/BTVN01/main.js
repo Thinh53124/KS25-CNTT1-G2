@@ -8,9 +8,9 @@ console.log(d.toUTCString());
 let year = d.getFullYear();
 
 if (bookYear == year){
-    document.write("Sách mới!!")
+    document.writeln("Sách mới!!")
 } else if (bookYear >= year - 5){
-    document.write("Sách khá mới")
+    document.writeln("Sách khá mới")
 } else {
-    document.write("Sách cũ")
+    document.writeln("Sách cũ")
 }
