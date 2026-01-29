@@ -4,7 +4,7 @@ let bookStatus = prompt("Nhập tình trạng sách (có sẵn, đã mượn, kh
 let bookBorrowDay = +prompt("Nhập số ngày mượn: ");
 let bookPass = confirm("Bạn có thẻ thư viện chưa?");
 
-bookStatus = bookStatus.toLowerCase()
+bookStatus = bookStatus.toLowerCase().trim()
 
 if(bookStatus === "có sẵn" && bookPass){
     document.write("Chúc mừng, bạn có thể mượn sách này");

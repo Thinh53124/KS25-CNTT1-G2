@@ -2,8 +2,8 @@ let bookName = prompt("Nhập tên sách:");
 let bookType = prompt("Nhập thể loại sách (Khoa học, Lịch sử, Văn học, Truyện):");
 let bookStatus = prompt("Nhập tình trạng sách (có sẵn / đã mượn):");
 
-bookType = bookType.toLowerCase();
-bookStatus = bookStatus.toLowerCase();
+bookType = bookType.toLowerCase().trim();
+bookStatus = bookStatus.toLowerCase().trim();
 
 if (bookType === "khoa học" || bookType === "lịch sử") {
     if (bookStatus === "có sẵn") {

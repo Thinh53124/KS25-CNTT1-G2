@@ -3,7 +3,7 @@ let bookStatus = prompt("Nhập trạng thái sách (có sẵn, đã mượn): "
 let bookPublishYear = +prompt("Nhập năm xuất bản sách: ");
 let currentYear = new Date().getFullYear();
 
-bookStatus = bookStatus.toLowerCase()
+bookStatus = bookStatus.toLowerCase().trim()
 
 if(currentYear - bookPublishYear <= 5 && bookPublishYear < currentYear && bookStatus === "có sẵn"){
     document.write("Sách này mới và có sẵn để mượn");
