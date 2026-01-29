@@ -1,17 +1,17 @@
-let tenSach = prompt("Nhập tên sách:");
-let theLoai = prompt("Nhập thể loại sách (Khoa học, Lịch sử, Văn học, Truyện):");
-let tinhTrang = prompt("Nhập tình trạng sách (có sẵn / đã mượn):");
+let bookName = prompt("Nhập tên sách:");
+let bookType = prompt("Nhập thể loại sách (Khoa học, Lịch sử, Văn học, Truyện):");
+let bookStatus = prompt("Nhập tình trạng sách (có sẵn / đã mượn):");
 
-theLoai = theLoai.toLowerCase();
-tinhTrang = tinhTrang.toLowerCase();
+bookType = bookType.toLowerCase();
+bookStatus = bookStatus.toLowerCase();
 
-if (theLoai === "khoa học" || theLoai === "lịch sử") {
-    if (tinhTrang === "có sẵn") {
+if (bookType === "khoa học" || bookType === "lịch sử") {
+    if (bookStatus === "có sẵn") {
         document.write("Sách này có sẵn trong thư viện");
     } else {
         document.write("Sách đã được mượn");
     }
-} else if (theLoai === "văn học" || theLoai === "truyện") {
+} else if (bookType === "văn học" || bookType === "truyện") {
     document.write("Sách này có thể đọc giải trí");
 } else {
     document.write("Thể loại sách không được hỗ trợ");
