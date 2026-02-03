@@ -102,7 +102,7 @@ if (!isLogin) {
                 line += "[" + i + "-" + j + "] ";
               }
             }
-            document.writeln(line);
+            document.writeln(line + <br>) ;
           }
         }
         break;
