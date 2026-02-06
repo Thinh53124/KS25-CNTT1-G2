@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600px;
+}
+
+.formlogin {
+    border: 1px solid #cccc;
+    width: 600px;
+    height: auto;
+    background-color: white;
+    padding: 12px;
+}
+
+.title {
+    text-align: center;
+}
+
+.gmail input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 95%;
+    border-color: #cccc;
+    border-radius: 5px;
+}
+
+.passwordlogin input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 95%;
+    border-radius: 5px;
+    border-color: #cccc;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #F5F6F7;
+}
+
+.rememberorforget {
+    margin-top:10px;
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    margin-top:20px;
+    background-color: #0D6EFD;
+    color:white;
+    width:98%;
+    padding:8px;
+    border-radius: 5px;
+    border:none;
+    text-align: center;
+}
+.forgotpass{
+    color: #002CF2;
+}
+.noacc{
+    margin-top:10px;
+    text-align: center;
+}
+.register{
+    text-decoration: none;
+}
+.forgotpass:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,137 @@
+*{
+    padding:0;
+    margin:0;
+    font-family:'Inter',sans-serif;
+    font-weight: 600px;
+}
+.logo{
+    border:1px solid #cccc;
+    background-color: rgb(233, 234, 249);
+    color:rgb(99, 102, 241);
+    border:none;
+    padding-top:10px;
+    height: 28px;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    width: 83px;
+    margin-top: 20px;
+    margin-left: 47%;
+}
+.title{
+    text-align: center;
+    margin-top: 30px;
+}
+.title p{
+    opacity: 0.5;
+}
+.title h1{
+    font-size: 45px;
+}
+.service{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: center;
+}
+.card{
+    margin-top:20px;
+    border:1px solid black;
+    border-radius: 8px;
+    border:none;
+    width: 416px;
+    height: 439.77px;
+    padding:24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    gap:20px;
+    transition: all 1s;
+}
+.namecard{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.namecard h2{
+    font-size: 30px;
+}
+.pricemonth{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.namecard .price{
+    font-size: 50px;
+    color:#6366F1;
+}
+.namecard .month{
+    margin-top:20px;
+    opacity: 0.5;
+}
+.infoservice{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top:40px;
+    gap:20px;
+}
+.button{
+    border:1px solid #1C77FD;
+    border-radius: 10px;
+    width: 364px;
+    height: 38px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top:50px;
+    margin-left: 25px;
+}
+.buttonservice{
+    text-decoration: none;
+    color:#1C77FD;
+}
+.cardmid{
+    margin-top:20px;
+    border:3px solid #888AF3;
+    border-radius: 8px;
+    width: 436.8px;
+    height: 461.75px;
+    padding:24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    gap:20px;
+    transition: all 2s;
+}
+.cardmid:hover{
+    transform: translateY(-5px);
+    cursor:default;
+}
+.card:hover{
+    transform: translateY(-5px);
+    cursor:default;
+}
+.buttonmid{
+    border:1px solid #1C77FD;
+    border-radius: 10px;
+    width: 364px;
+    height: 38px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #0D6EFD;
+    margin-top:50px;
+    margin-left: 25px;
+}
+.buttonservicemid{
+    text-decoration: none;
+    color:white;
+}
+.button:hover{
+    cursor: pointer;
+}
+.buttonmid:hover{
+    cursor: pointer;
+}

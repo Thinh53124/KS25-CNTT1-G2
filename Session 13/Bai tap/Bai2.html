@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Bai2.css">
+</head>
+
+<body>
+    <div class="formlogin">
+        <div class="title">
+            <h1>Đăng nhập</h1>
+            <p>Đăng nhập để sử dụng hệ thống e-learning</p>
+        </div>
+        <form action="myserver.com" method="GET">
+            <div class="gmail">
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" id="email" placeholder="Nhập địa chỉ email">
+            </div>
+            <div class="passwordlogin">
+                <label for="password">Mật khẩu</label>
+                <br>
+                <input type="password" name="password" id="password" placeholder="Nhập mật khẩu">
+            </div>
+            <div class="bottom">
+                <div class="rememberorforget">
+                    <div class="input">
+                        <input type="checkbox" name="rememberacc" value="account">Ghi nhớ đăng nhập
+                    </div>
+                    <p class="forgotpass">Quên mật khẩu?</p>
+                </div>
+            </div>
+            <button type="submit">Đăng nhập</button>
+            <div class="noacc">
+            <p>Chưa có tài khoản?<a href="http://" class="register">Đăng ký ngay</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
