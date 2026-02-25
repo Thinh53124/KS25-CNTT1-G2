@@ -6,3 +6,4 @@ function orderReports() {
         console.log(`${order} mang về ${revenues[index]} USD`);
     });
 }
+console.log(orderReports());
