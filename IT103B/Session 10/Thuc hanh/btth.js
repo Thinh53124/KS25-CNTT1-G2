@@ -1,96 +1,112 @@
 let squad = [
   { id: 1, name: "Nguyen Van A", goals: 10, position: "FW" },
+
   { id: 2, name: "Tran Van B", goals: 5, position: "MF" },
+
   { id: 3, name: "Le Van C", goals: 0, position: "DF" },
+
   { id: 4, name: "Pham Van D", goals: 12, position: "FW" },
+
   { id: 5, name: "Dang Van E", goals: 0, position: "GK" },
 ];
 
+let choice;
+
 do {
-  let input;
+  choice = +prompt(`--- FOOTBALL MANAGER PRO ---
 
-  do {
-    input = prompt(`--- FOOTBALL MANAGER PRO ---
-    1. Xem đội hình
-    2. Thêm cầu thủ
-    3. Tìm kiếm (theo ID)
-    4. Cập nhật bàn thắng
-    5. Xóa cầu thủ (Chuyển nhượng)
-    0. Thoát`);
+1. Xem đội hình
 
-    if (input === null || input.trim() === "" || isNaN(input)) {
-      alert("Vui lòng nhập số hợp lệ!");
-    }
-  } while (input === null || input.trim() === "" || isNaN(input));
+2. Thêm cầu thủ
 
-  choose = Number(input);
+3. Tìm kiếm (theo ID)
 
-  switch (choose) {
+4. Cập nhật bàn thắng
+
+5. Xóa cầu thủ (Chuyển nhượng)
+
+0. Thoát`);
+  switch (choice) {
     case 0:
-      alert("Đang thoát chương trình");
       break;
-
     case 1:
       displayPlayers();
       break;
-
     case 2:
-      addPlayer();
+      addPlayers();
       break;
-
     case 3:
-      findById();
+      findPlayer();
       break;
-
     case 4:
-      updateGoals()
+      updatePlayer();
       break;
-
     case 5:
-      
+      deletePlayer();
       break;
-
     default:
-      alert("Vui lòng nhập số hợp lệ!");
+      alert("Lựa chọn không hợp lệ!!!");
       break;
   }
-} while (choose !== 0);
+} while (choice != 0);
 
 function displayPlayers() {
-    for (let i = 0; i < squad.length; i++) {
-        console.log(
-            `Mã: ${squad[i].id} - ${squad[i].name} (${squad[i].position} - ${squad[i].goals})`
-        );
-    }
+  for (let i = 0; i < squad.length; i++) {
+    console.log(
+      `Mã: ${squad[i].id} - ${squad[i].name} (${squad[i].position}): ${squad[i].goals} bàn`,
+    );
+  }
 }
 
-function addPlayer() {
-    let name = prompt("Nhập tên cầu thủ");
-    let position = prompt("Nhập vị trí cầu thủ");
-    let goals = prompt("Nhập số bàn thắng cầu thủ");
-    let id = Math.floor(Math.random() * 999999) + Date.now();
-    //Khởi tạo đối tượng
-    let new_player = {
-        id: id,
-        name: name,
-        goals: goals,
-        position: position,
-    };
-    squad.push(new_player);
-    alert("Thêm cầu thủ thành công!");
+function addPlayers() {
+  let name = prompt("Nhập tên cầu thủ");
+  let position = prompt("Nhập vị trí của cầu thủ");
+  let goal = +prompt("Nhập số bàn thắng của cầu thủ");
+  let id = Math.floor(Math.random() * 9999999) + Date.now();
+  let new_player = {
+    id: id,
+    name: name,
+    position: position,
+    goals: goal,
+  };
+  squad.push(new_player);
+  alert("Thêm cầu thủ thành công");
 }
 
-function findById() {
-    let id = prompt("Nhập id cầu thủ cần tìm");
-    let result = squad.find((item)=>item.id==id);
-    if(result){
-        alert("có",result);
-    }else{
-        alert(`Không tìm thấy cầu thủ với id: ${id}`);
-    }
+function findPlayer() {
+  let id = prompt("Nhập id cầu thủ cần tìm kiếm");
+  let result = squad.find((value) => value.id == id);
+  if (result) {
+    alert(`Có tìm thấy cầu thủ có id: ${id}`);
+  } else {
+    alert(`Không tìm thấy cầu thủ có id: ${id}`);
+  }
 }
 
-function updateGoals() {
-    let id = prompt("Nhập id cầu thủ  vừa ghi bàn");
-    
-}
+let updatePlayer = () => {
+  let wannaUpdate = +prompt("Vui lòng nhập ID mà Cầu thủ vừa ghi bàn !");
+  let result1 = squad.findIndex((value) => value.id === wannaUpdate);
+
+  if (result1 !== -1) {
+    squad[result1].goals++;
+    alert(
+      `Đã cập nhập bàn thắng cho cầu thủ ${squad[result1].name} thành ${squad[result1].goals}`,
+    );
+  } else {
+    alert("Không tìm thấy cầu thủ!");
+  }
+};
+
+let deletePlayer = () => {
+  let wannaDeletePlayer = +prompt(
+    "Vui lòng nhập ID mà Cầu thủ muốn chuyển nhượng !",
+  );
+  let result2 = squad.findIndex((value) => value.id === wannaDeletePlayer);
+
+  if (result2 !== -1) {
+    squad.splice(result2, 1);
+    alert("Đã chuyển nhượng thành công !");
+  } else {
+    alert("Không tìm thấy cầu thủ!");
+  }
+};
