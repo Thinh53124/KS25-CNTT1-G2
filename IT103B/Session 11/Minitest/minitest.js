@@ -10,12 +10,12 @@ function findById(products) {
     let id = prompt("Nhập tên sản phẩm:");
 
     let results = products.filter(item =>
-        item.name.toLowerCase().includes(id.toLowerCase())
+        item.id.toLowerCase().includes(id.toLowerCase())
     );
 
     if (results.length > 0) {
         let output = results.map(item =>
-            `${item.id} - ${item.name} - ${item.price}$`
+            `id: ${item.id} - name: ${item.name} - price: ${item.price} - category: ${item.category} - inStock: ${item.inStock}`
         ).join("\n");
 
         alert(output);
@@ -23,3 +23,4 @@ function findById(products) {
         alert("Không tìm thấy sản phẩm!");
     }
 }
+findById(products);
