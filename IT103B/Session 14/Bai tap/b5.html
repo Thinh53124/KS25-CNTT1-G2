@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Danh Sách Sản Phẩm Tết</title>
+<style>
+.product-item{
+border:1px solid #ccc;
+padding:10px;
+margin:5px 0;
+display:block;
+}
+button{
+margin-right:5px;
+}
+</style>
+</head>
+<body>
+
+<h1>Danh Sách Sản Phẩm Cho Tết</h1>
+
+<input type="text" id="search-input" placeholder="Tìm sản phẩm ... " oninput="searchProduct()">
+
+<ul id="product-list"></ul>
+
+<form onsubmit="addProduct(event)">
+<input type="text" id="product-name" placeholder="Tên sản phẩm">
+<input type="number" id="product-price" placeholder="Giá (VND)">
+<button type="submit">Thêm Sản Phẩm</button>
+</form>
+
+<script src="b5.js"></script>
+</body>
+</html>
