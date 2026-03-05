@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf5e6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #c0392b;
+    color: #f1c40f;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.left-col {
+    flex: 2;
+}
+
+.right-col {
+    flex: 1;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 29%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #e74c3c;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    font-size: 1.1em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.product-card .price {
+    color: #d35400;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.btn-add {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background-color: #c0392b;
+}
+
+.cart-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 5px solid #f1c40f;
+    position: sticky;
+    top: 20px;
+}
+
+#cart-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border-bottom: 2px solid #eee;
+}
+
+#cart-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.cart-item-price {
+    color: #555;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.btn-remove {
+    background: #95a5a6;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-remove:hover {
+    background: #7f8c8d;
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.cart-summary h3 {
+    color: #c0392b;
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 12px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.empty-msg {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+}
