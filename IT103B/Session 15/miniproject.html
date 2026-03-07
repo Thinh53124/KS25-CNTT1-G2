@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Công Việc - Todo List</title>
+    <link rel="stylesheet" href="todo-list.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1>📝 Quản Lý Công Việc</h1>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Nhập công việc mới..."
+            autocomplete="off"
+          />
+
+          <button id="addBtn" class="btn-add" onclick="addTask()">
+            Thêm
+          </button>
+        </div>
+      </header>
+
+      <!-- Body -->
+      <main class="task-list" id="taskList">
+        <div class="empty-state">
+          <div class="empty-state-icon">📋</div>
+          <div class="empty-state-text">
+            Chưa có công việc nào. Hãy thêm công việc mới!
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="task-counter">
+          <span id="taskCounter">0 / 0</span>
+        </div>
+
+        <div id="completionBadge"></div>
+      </footer>
+    </div>
+
+    <script src="miniproject.js"></script>
+  </body>
+</html>
