@@ -1,32 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Công Việc - Todo List</title>
+    <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-    <h1>To-Do List CNTT1</h1>
-    <input type="text" id="task-name" placeholder="Nhập tên công việc">
-    <button onclick="addTask()">Thêm công việc</button>
-    <ul id="list">
-        <!-- <li><input type="checkbox">Học JS <button>Sửa</button><button>Xóa</button></li>
-        <li><input type="checkbox">Học DOM <button>Sửa</button><button>Xóa</button></li>
-        <li><input type="checkbox">Chơi game <button>Sửa</button><button>Xóa</button></li> -->
-    </ul>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📝 Quản Lý Công Việc</h1>
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Nhập công việc mới..." autocomplete="off" />
+                <button id="addBtn" class="btn-add">Thêm</button>
+            </div>
+        </header>
+
+        <!-- Body - Task List -->
+        <main class="task-list" id="taskList">
+            <!-- Tasks will be dynamically added here -->
 
 
+        </main>
 
-
-
-
-
-
-
-    <script src="./main.js"></script>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="task-counter">
+                <span id="completedCount">0</span> /
+                <span id="totalCount">0</span> công việc hoàn thành
+            </div>
+            <div id="allDoneBadge" class="all-done-badge hidden">
+                ✔ Hoàn thành tất cả
+            </div>
+        </footer>
+    </div>
+    <script src="main.js"></script>
 </body>
 
 </html>

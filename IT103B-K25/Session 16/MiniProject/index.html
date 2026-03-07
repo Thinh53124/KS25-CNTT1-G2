@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Quản Lý Nhân Viên</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Quản Lý Nhân Viên</h1>
+    </header>
+
+    <section class="form-section">
+      <form>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fullName">Họ và tên <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="vd: ten@gmail.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="dateOfBirth">Ngày sinh <span class="required">*</span></label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" />
+          </div>
+
+          <div class="form-group">
+            <label for="position">Chức vụ <span class="required">*</span></label>
+            <select id="position" name="position">
+              <option value="">-- Chọn chức vụ --</option>
+              <option value="Nhân viên">Nhân viên</option>
+              <option value="Trưởng nhóm">Trưởng nhóm</option>
+              <option value="Trưởng phòng">Trưởng phòng</option>
+              <option value="Giám đốc">Giám đốc</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Thêm Nhân Viên</button>
+          <button type="reset" class="btn btn-secondary">Nhập Lại</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <div class="table-header">
+        <h2>Danh Sách Nhân Viên</h2>
+        <span class="badge">3 nhân viên</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Họ và tên</th>
+              <th>Email</th>
+              <th>Ngày sinh</th>
+              <th>Chức vụ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Nguyễn Văn A</td>
+              <td>a.nguyen@example.com</td>
+              <td>01/01/1995</td>
+              <td>Nhân viên</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Trần Thị B</td>
+              <td>b.tran@example.com</td>
+              <td>12/03/1993</td>
+              <td>Trưởng nhóm</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Lê Văn C</td>
+              <td>c.le@example.com</td>
+              <td>20/07/1990</td>
+              <td>Trưởng phòng</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Tổng số nhân viên: 3</span>
+    </footer>
+  </div>
+
+</body>
+
+</html>

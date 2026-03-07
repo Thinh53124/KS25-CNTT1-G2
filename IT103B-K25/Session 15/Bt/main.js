@@ -1,84 +1,146 @@
-/*  
-PHÂN TÍCH
-QUẢN LÝ CÔNG VIỆC
-CÓ DANH SÁCH TẤT CẢ CÁC CÔNG VIỆC CẦN CÁI GÌ ĐỂ QUẢN LÝ DANH SÁCH CÔNG VIỆC == > MẢNG
-TỪNG CÔNG VIỆC == > DÙNG OBJECT LƯU THÔNG 1 CÔNG VIỆC CỤ THỂ (ID, NAME, STATUS)
-
-
-THÊM CÔNG VIỆC
-B1: TẠO SỰ KIỆN KHI NGƯỜI DÙNG BẤM NÚT THÊM CÔNG VIỆC
-B2: LẤY THÔNG TIN NGƯỜI DÙNG NHẬP TRONG Ô INPUT
-B3: TẠO ĐỐI TƯỢNG CÔNG VIỆC
-B4: TẠO MẢNG CHỨA DANH SÁCH TẤT CẢ CÔNG VIỆC RỒI PUSH CÔNG VIỆC MỚI VÀO
-B5: TẠO HÀM ĐỂ RENDER DANH SÁCH CÔNG VIỆC
-
-
-************
-XÓA CÔNG VIỆC
-B1: LẤY THÔNG TIN CÔNG VIỆC CẦN XÓA
-B2: TẠO XÁC NHẬN XEM NGƯỜI DÙNG CÓ CHẮC CHẮN MUỐN XÓA HAY KHÔNG?
-*/
-// Hàm thêm công việc mới
-let tasks = [];
-
-function addTask() {
-  //Lấy element
-  let elementInput = document.getElementById("task-name");
-  if (elementInput.value.trim() === "") {
-    alert("Không để trống nhé cưng!");
-    return;
-  }
-  let task = {
-    id: Math.floor(Math.random() * 90293 + Date.now()),
-    taskName: elementInput.value,
-    status: false,
-  };
-  tasks.push(task);
-  renderTask();
-  elementInput.value = "";
-  elementInput.focus();
-}
-
-// Hàm hiển thị danh sách công việc
-function renderTask() {
-  let str = "";
-  for (let i = 0; i < tasks.length; i++) {
-    str += `
-    <li>
-      <input type="checkbox" ${tasks[i].status ? "checked" : ""} onclick="selectInput(${i})">
-      <span style="${tasks[i].status ? "text-decoration: line-through" : ""}">
-        ${tasks[i].taskName}
-      </span>
-      <button>Sửa</button>
-      <button onclick="deleteTask(${tasks[i].id})">Xóa</button>
-    </li>
-  `;
-  }
-
-  // Lấy elementUl
-  document.getElementById("list").innerHTML = str;
-}
-
-// Tạo hàm đi xóa công việc
-
-function deleteTask(id_task) {
-  let confirmDelete = confirm("Cưng có chắc không cưng?");
-  if (confirmDelete) {
-    for (let i = 0; i < tasks.length; i++) {
-      if (tasks[i].id == id_task) {
-        tasks.splice(i, 1);
-        renderTask();
-      }
+let toDoList = [];
+// render lại danh sách !
+let sizeId = 0;
+rendetTask();
+// chức năng 1: thêm công việc mới 
+document.getElementById("addBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+    let key = document.getElementById("taskInput").value;
+    if (key.trim() === "") {
+        alert("Vui lòng nhập tên công việc!");
+        document.getElementById("taskInput").focus();
+        return;
     }
-  } else {
-    alert("OK không xóa nhé cưng");
-  }
+    toDoList.push({
+        id: ++sizeId,
+        name: key,
+        completed: false,
+    });
+    document.getElementById("totalCount").textContent = toDoList.length;
+    rendetTask();
+    input = document.getElementById("taskInput");
+    input.value = "";
+    input.focus();
+});
+document.getElementById("taskInput").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        document.getElementById("addBtn").click();
+    }
+})
+// chức năng 2: Hiển thị danh sách công việc
+function rendetTask() {
+    let taksList = document.getElementById("taskList");
+    if (toDoList.length === 0) {
+        taksList.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">📋</div>
+          <div class="empty-state-text">
+            Chưa có công việc nào. Hãy thêm công việc mới!
+          </div>
+        </div>`;
+        return;
+    }
+    let html = "";
+    toDoList.forEach((task) => {
+        html += `
+        <div class="task-item ${task.completed ? "completed" : ""}"  data-id="${task.id}">
+          <input type="checkbox" class="task-checkbox"  ${task.completed ? "checked" : ""} /><span class="task-text ${task.completed ? "completed" : ""}"
+            >${task.name}</span>
+          <div class="task-actions">
+            <button class="btn-edit" onclick = "editInput(${task.id})">✏️ Sửa</button
+            ><button class="btn-delete">🗑️ Xóa</button>
+          </div>
+        </div>`;
+    });
+    
+    let complete = toDoList.filter(c => c.completed).length;
+    let total = toDoList.length;
+    document.getElementById("completedCount").textContent = complete;
+    document.getElementById("totalCount").textContent = toDoList.length;
+    const badge = document.getElementById("allDoneBadge");
+    if (total > 0 && complete === total) {
+        badge.classList.remove("hidden");
+    }else{
+        badge.classList.add("hidden");
+    }
+    taksList.innerHTML = html;
 }
+// chức năng 3: Đánh dấu hoàn thành
+document.getElementById("taskList").addEventListener("change", (e) => {
+    if (e.target.classList.contains("task-checkbox")) {
+        let idx = Number(e.target.closest(".task-item").dataset.id);
+        let task = toDoList.find(t => t.id === idx);
+        task.completed = e.target.checked;
+        rendetTask();
+    }
+});
+// chức năng 4: Sửa công việc 
 
-//Tạo hàm khi người dùng nhấn vào input checkbox
-function selectInput(index) {
-  tasks[index].status = !tasks[index].status;
-  renderTask()
-}
+document.getElementById("taskList").addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn-edit")) {
+        let taskItem = e.target.closest(".task-item");
+        let idx = +taskItem.dataset.id;
+        let task = toDoList.find(t => t.id === idx);
+        taskItem.classList.add("editing");
+        taskItem.innerHTML = `
+        <input type="checkbox" 
+                   class="task-checkbox"
+                   ${task.completed ? "checked" : ""} />
 
+            <input type="text" 
+                   class="task-edit-input" 
+                   value="${task.name}" />
 
+            <div class="task-actions">
+                <button class="btn-save">💾 Lưu</button>
+                <button class="btn-cancel">❌ Hủy</button>
+            </div>
+            `;
+    }
+    if (e.target.classList.contains("btn-save")) {
+        let taskItem = e.target.closest(".task-item");
+        let idx = +taskItem.dataset.id;
+        let task = toDoList.find(t => t.id === idx);
+
+        let newName = taskItem.querySelector(".task-edit-input").value;
+
+        if (newName.trim() === "") {
+            alert("Tên công việc không để trống");
+            return;
+        }
+        task.name = newName;
+        rendetTask();
+    }
+    if (e.target.classList.contains("btn-cancel")) {
+        rendetTask();
+    }
+});
+document.getElementById("taskList").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && e.target.classList.contains("task-edit-input")) {
+        let taskItem = e.target.closest(".task-item");
+        let idx = +taskItem.dataset.id;
+        let task = toDoList.find(t => t.id === idx);
+
+        let newName = e.target.value;
+        if (newName.trim() === "") {
+            alert("tên  không được để trống !");
+            return;
+        }
+        task.name = newName;
+        rendetTask();
+    }
+});
+// chức năng 5: xóa công việc
+document.getElementById("taskList").addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn-delete")) {
+        let idx = +e.target.closest(".task-item").dataset.id;
+        let task = toDoList.findIndex(c => c.id === idx);
+        let comfim = window.confirm(`Bạn có chắc chắn muốn xóa công việc ?`);
+        if (comfim) {
+            toDoList.splice(task, 1);
+            rendetTask();
+        } else {
+            rendetTask();
+        }
+    }
+});
