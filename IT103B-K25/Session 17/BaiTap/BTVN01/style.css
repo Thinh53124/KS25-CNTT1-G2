@@ -1,83 +1,96 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-html {
-  display: flex;
-  flex-direction: column;
-}
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #faf5e6;
-  padding: 0 20px;
-}
-header {
-  padding: 30px 10px;
-  text-align: center;
-  background-color: red;
-  margin-top: 20px;
-  width: 100%;
-  color: white;
-  line-height: 35px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  transition: all 0.25s linear;
-}
-header:hover {
-  transform: rotate(360deg) translateY(200px) scale(1.3);
-  background: linear-gradient(
-    305deg,
-    rgba(97, 92, 124, 255) 12%,
-    rgba(37, 10, 46, 255) 36%,
-    rgba(104, 121, 158, 255) 54%,
-    rgba(67, 107, 75, 255) 77%,
-    rgba(114, 154, 118, 1) 93%
-  );
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.toDoList {
-  background-color: white;
+body {
+  background: #f4efe7;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px 10px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-.contener {
+
+/* CARD */
+
+.container {
+  width: 460px;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADER */
+
+header {
+  background: #d92c2c;
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+header h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* LIST */
+
+.todo-list {
+  padding: 20px;
+}
+
+/* ITEM */
+
+.todo-item {
+  background: #efe4cc;
+  border-left: 6px solid orange;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 20px;
-  background-color: #fff8e2;
-  border-radius: 10px;
-  border-left: 6px solid salmon;
-  transition: all 0.25s linear;
+  transition: 0.2s;
 }
-.contener span {
-  opacity: 0.5;
-  font-style: italic;
+
+.todo-item:hover {
+  transform: translateX(5px);
 }
-.contener:hover {
-  transform: translateX(10px);
-}
-.badage img {
-  width: 30px;
-  height: 30px;
-}
-.badage {
+
+/* LEFT SIDE */
+
+.todo-left {
   display: flex;
-  gap: 20px;
   align-items: center;
+  gap: 10px;
 }
+
+.todo-left span {
+  font-size: 18px;
+}
+
+/* STATUS */
+
+.status {
+  font-style: italic;
+  color: #777;
+}
+
+/* FOOTER */
+
 footer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  background: #f1f1f1;
   text-align: center;
-  background-color: white;
-  padding: 20px 0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  padding: 14px;
+  font-size: 13px;
+  color: #666;
 }

@@ -1,26 +1,39 @@
 const todos = [
   { id: 1, task: "Mua bánh chưng", done: false },
-  { id: 2, task: "Dọn nhà đón tết", done: false },
+  { id: 2, task: "Dọn nhà đón Tết", done: false },
   { id: 3, task: "Gói bánh chưng", done: false },
   { id: 4, task: "Trang trí nhà cửa", done: false },
 ];
-let listItem = document.querySelector(".toDoList");
-localStorage.setItem("toDoList", JSON.stringify(todos));
 
-let renderAllTask = () => {
+let todoList = document.getElementById("todo-list");
+
+if (!localStorage.getItem("myTodos")) {
+  localStorage.setItem("myTodos", JSON.stringify(todos));
+}
+
+let data = JSON.parse(localStorage.getItem("myTodos"));
+
+function renderTodos() {
   let line = "";
-  JSON.parse(localStorage.getItem("toDoList")).forEach((c) => {
+
+  data.forEach((t) => {
     line += `
-             <div class="contener">
-                <div class="badage">
-                    <img src="./rauMa.jpg" alt="">
-                    <h3>${c.task}</h3>
-                </div>
-                
-                <span>${c.done ? "Đã làm" : "Chưa làm"}</span>
-            </div>
-        `;
+<div class="todo-item">
+
+<div class="todo-left">
+<span>🌸</span>
+<p>${t.task}</p>
+</div>
+
+<span class="status">
+${t.done ? "Đã làm" : "Chưa làm"}
+</span>
+
+</div>
+`;
   });
-  listItem.innerHTML = line;
-};
-renderAllTask();
+
+  todoList.innerHTML = line;
+}
+
+renderTodos();
