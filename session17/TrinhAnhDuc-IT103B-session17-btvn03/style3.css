@@ -1,0 +1,21 @@
+.add-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.add-box input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.add-box button {
+    padding: 8px 12px;
+    background: orange;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}

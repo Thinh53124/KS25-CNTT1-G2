@@ -1,0 +1,18 @@
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-input {
+    flex: 1;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}

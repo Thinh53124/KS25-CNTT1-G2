@@ -1,0 +1,26 @@
+li {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: #fef3c7;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* nhóm bên trái */
+.todo-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* nút xóa */
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+}
