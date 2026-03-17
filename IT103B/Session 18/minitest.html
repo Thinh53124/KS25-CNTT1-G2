@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý danh bạ</title>
+    <link rel="stylesheet" href="./minitest.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1>Quản lý danh bạ</h1>
+      </header>
+
+      <!-- Form thêm danh bạ -->
+      <section class="form-section">
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Họ tên:</label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              placeholder="Nhập họ tên"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-phone">Số điện thoại:</label>
+            <input
+              type="tel"
+              id="contact-phone"
+              name="phone"
+              placeholder="Nhập số điện thoại"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email:</label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              placeholder="Nhập email"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-add">Thêm</button>
+        </form>
+      </section>
+
+      <!-- Bảng danh sách danh bạ -->
+      <section class="table-section">
+        <div class="table-wrapper">
+          <table class="contact-table">
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Họ tên</th>
+                <th>Số điện thoại</th>
+                <th>Email</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody id="contact-tbody">
+              <tr>
+                <td>1</td>
+                <td>Nguyễn Văn An</td>
+                <td>0901234567</td>
+                <td>nguyenvanan@email.com</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-edit">Sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Trần Thị Bình</td>
+                <td>0912345678</td>
+                <td>tranthibinh@email.com</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-edit">Sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Lê Văn Cường</td>
+                <td>0923456789</td>
+                <td>levancuong@email.com</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-edit">Sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Phạm Thị Dung</td>
+                <td>0934567890</td>
+                <td>phamthidung@email.com</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-edit">Sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Hoàng Văn Em</td>
+                <td>0945678901</td>
+                <td>hoangvanem@email.com</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-edit">Sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script src="minitest.js"></script>
+  </body>
+</html>
