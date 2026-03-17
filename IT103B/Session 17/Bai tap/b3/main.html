@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../main.css" />
+</head>
+<body>
+    <div class="container">
+  <header class="header">
+    <h1>Quản lý danh bạ</h1>
+  </header>
+
+  <section class="form-section">
+    <form id="contact-form">
+      <input id="contact-name" placeholder="Họ tên" required>
+      <input id="contact-phone" placeholder="SĐT" required>
+      <input id="contact-email" placeholder="Email" required>
+      <button type="submit">Thêm</button>
+    </form>
+  </section>
+
+  <section class="table-section">
+    <table>
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Họ tên</th>
+          <th>SĐT</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody id="contact-tbody"></tbody>
+    </table>
+  </section>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
