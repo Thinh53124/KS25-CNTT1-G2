@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Project: Product & Cart</title>
+    <link rel="stylesheet" href="./Miniprojectss19.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header-inner">
+          <div>
+            <h1>Mini Shop</h1>
+            <p class="subtitle">
+              Danh sách sản phẩm &amp; giỏ hàng (DOM + Event + LocalStorage)
+            </p>
+          </div>
+
+          <div class="header-actions">
+            <button id="clear-cart-btn" class="btn btn-danger">
+              Xóa Giỏ Hàng
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <!-- PRODUCTS -->
+        <section class="panel panel-products">
+          <div class="panel-header">
+            <h2>Sản phẩm</h2>
+            <div class="panel-meta">
+              <span class="badge" id="product-count-badge">6 sản phẩm</span>
+            </div>
+          </div>
+
+          <div id="products-empty" class="empty hidden">
+            <div class="empty-title">Không có sản phẩm</div>
+            <div class="empty-subtitle">
+              Danh sách sản phẩm hiện đang trống.
+            </div>
+          </div>
+
+          <div id="products-grid" class="products-grid">
+            <!-- Card 1 -->
+            <!-- <article class="card">
+              <div class="card-img">
+                <img
+                  src="https://picsum.photos/seed/mp19-tws/1200/800"
+                  alt="Tai nghe Bluetooth TWS"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Tai nghe Bluetooth TWS</h3>
+                <p class="card-desc">Chống ồn nhẹ, pin 20h, kết nối ổn định.</p>
+                <div class="card-footer">
+                  <div class="price">320.000 VNĐ</div>
+                  <button class="btn btn-primary">Thêm vào giỏ</button>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Card 2 -->
+            <!-- <article class="card">
+              <div class="card-img">
+                <img
+                  src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=1200&q=60"
+                  alt="Bàn phím cơ 87 phím"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Bàn phím cơ 87 phím</h3>
+                <p class="card-desc">Switch blue, led trắng, gõ sướng tay.</p>
+                <div class="card-footer">
+                  <div class="price">790.000 VNĐ</div>
+                  <button class="btn btn-primary">Thêm vào giỏ</button>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Card 3 -->
+            <!-- <article class="card">
+              <div class="card-img">
+                <img
+                  src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=1200&q=60"
+                  alt="Chuột không dây công thái học"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Chuột không dây công thái học</h3>
+                <p class="card-desc">Thiết kế ergonomic, sạc USB-C.</p>
+                <div class="card-footer">
+                  <div class="price">450.000 VNĐ</div>
+                  <button class="btn btn-primary">Thêm vào giỏ</button>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Card 4 -->
+            <!-- <article class="card">
+              <div class="card-img">
+                <img
+                  src="https://picsum.photos/seed/mp19-usb/1200/800"
+                  alt="USB 64GB"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">USB 64GB</h3>
+                <p class="card-desc">Nhỏ gọn, tốc độ đọc/ghi ổn định.</p>
+                <div class="card-footer">
+                  <div class="price">120.000 VNĐ</div>
+                  <button class="btn btn-primary">Thêm vào giỏ</button>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Card 5 -->
+            <!-- <article class="card">
+              <div class="card-img">
+                <img
+                  src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?auto=format&fit=crop&w=1200&q=60"
+                  alt="Đế tản nhiệt laptop"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Đế tản nhiệt laptop</h3>
+                <p class="card-desc">2 quạt gió, đỡ mỏi cổ tay.</p>
+                <div class="card-footer">
+                  <div class="price">210.000 VNĐ</div>
+                  <button class="btn btn-primary">Thêm vào giỏ</button>
+                </div>
+              </div>
+            </article> -->
+
+            <!-- Card 6 -->
+            <!-- <article class="card">
+              <div class="card-img">
+                <img
+                  src="https://picsum.photos/seed/mp19-cable/1200/800"
+                  alt="Cáp sạc Type-C 1m"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Cáp sạc Type-C 1m</h3>
+                <p class="card-desc">Bọc dù, hỗ trợ sạc nhanh.</p>
+                <div class="card-footer">
+                  <div class="price">80.000 VNĐ</div>
+                  <button class="btn btn-primary">Thêm vào giỏ</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section> -->
+
+        <!-- CART -->
+        <section class="panel panel-cart">
+          <div class="panel-header">
+            <h2>Giỏ hàng</h2>
+            <div class="panel-meta">
+              <span class="badge" id="cart-lines-badge">1 dòng</span>
+              <span class="badge badge-soft" id="cart-qty-badge">14 món</span>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-label">Tổng dòng</div>
+              <div class="stat-value" id="stat-lines">1</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Tổng số lượng</div>
+              <div class="stat-value" id="stat-qty">14</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Tổng tiền</div>
+              <div class="stat-value" id="stat-total">2.940.000 VNĐ</div>
+            </div>
+          </div>
+
+          <div id="cart-empty" class="empty hidden">
+            <div class="empty-title">Giỏ hàng đang trống</div>
+            <div class="empty-subtitle">
+              Hãy bấm <strong>Thêm vào giỏ</strong> ở sản phẩm bên trái.
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" aria-label="Bảng giỏ hàng">
+              <thead>
+                <tr>
+                  <th>Tên</th>
+                  <th class="right">Giá</th>
+                  <th class="center">SL</th>
+                  <th class="right">Thành tiền</th>
+                  <th class="center">Hành động</th>
+                </tr>
+              </thead>
+              <!-- <tbody id="cart-tbody">
+                <tr>
+                  <td>Đế tản nhiệt laptop</td>
+                  <td class="right">210.000 VNĐ</td>
+                  <td class="center">14</td>
+                  <td class="right">2.940.000 VNĐ</td>
+                  <td class="center">Xóa</td>
+                </tr>
+              </tbody> -->
+            </table>
+          </div>
+
+          <p class="hint">
+            Gợi ý: thao tác <code>+</code>/<code>-</code> để tăng giảm số lượng,
+            <code>Xóa</code> để bỏ item khỏi giỏ.
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <small>
+          Mở file <code>index.html</code> để chạy. Không cần cài đặt gì thêm.
+        </small>
+      </footer>
+    </div>
+<script src="./Miniprojectss19.js"></script>
+  </body>
+</html>
