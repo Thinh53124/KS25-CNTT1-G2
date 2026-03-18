@@ -34,18 +34,18 @@ function render() {
 
   todos.forEach((t) => {
     html += `
-<div class="todo-item ${t.done ? "done" : ""}" data-id="${t.id}">
+        <div class="todo-item ${t.done ? "done" : ""}" data-id="${t.id}">
 
-<div class="circle"></div>
+        <div class="circle"></div>
 
-<div class="text">${t.task}</div>
+        <div class="text">${t.task}</div>
 
-<div class="actions">
-<button class="edit">✏️</button>
-<button class="delete">🗑️</button>
-</div>
+        <div class="actions">
+        <button class="edit">✏️</button>
+        <button class="delete">🗑️</button>
+        </div>
 
-</div>
+        </div>
 `;
   });
 
@@ -57,7 +57,9 @@ function render() {
 function addTask() {
   let value = input.value.trim();
 
-  if (!value) return;
+  if (!value) {
+    return;
+  }
 
   let newTask = {
     id: Date.now(),

@@ -1,0 +1,168 @@
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Sản Phẩm</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header --></div>
+      <header class="header">
+        <h1>🛍️ Quản Lý Sản Phẩm</h1>
+        <p class="subtitle">Hệ thống quản lý với LocalStorage</p>
+      </header>
+
+      <!-- Form Section -->
+      <section class="form-section">
+        <h2 id="formTitle">Thêm Sản Phẩm Mới</h2>
+        <form id="productForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productName"
+                >Tên Sản Phẩm <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="productName"
+                placeholder="Nhập tên sản phẩm..."
+                autocomplete="off"
+                required=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="productCategory"
+                >Danh Mục <span class="required">*</span></label
+              >
+              <select id="productCategory" required="">
+                <option value="">-- Chọn danh mục --</option>
+                <option value="Điện tử">Điện tử</option>
+                <option value="Thời trang">Thời trang</option>
+                <option value="Thực phẩm">Thực phẩm</option>
+                <option value="Đồ gia dụng">Đồ gia dụng</option>
+                <option value="Sách">Sách</option>
+                <option value="Khác">Khác</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productPrice"
+                >Giá (VNĐ) <span class="required">*</span></label
+              >
+              <input
+                type="number"
+                id="productPrice"
+                placeholder="0"
+                min="0"
+                step="1000"
+                required=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="productQuantity"
+                >Số Lượng <span class="required">*</span></label
+              >
+              <input
+                type="number"
+                id="productQuantity"
+                placeholder="0"
+                min="0"
+                required=""
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="productDescription">Mô Tả</label>
+            <textarea
+              id="productDescription"
+              placeholder="Nhập mô tả sản phẩm..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit" id="submitBtn">
+              ➕ Thêm Sản Phẩm
+            </button>
+            <button
+              type="button"
+              class="btn-cancel"
+              id="cancelBtn"
+              style="display: none"
+            >
+              ❌ Hủy
+            </button>
+            <button type="button" class="btn-clear" id="clearAllBtn">
+              🗑️ Xóa Tất Cả
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Search & Filter Section -->
+      <section class="search-section">
+        <div class="search-group">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Tìm kiếm theo tên sản phẩm..."
+            autocomplete="off"
+          />
+          <select id="filterCategory">
+            <option value="">Tất cả danh mục</option>
+            <option value="Điện tử">Điện tử</option>
+            <option value="Thời trang">Thời trang</option>
+            <option value="Thực phẩm">Thực phẩm</option>
+            <option value="Đồ gia dụng">Đồ gia dụng</option>
+            <option value="Sách">Sách</option>
+            <option value="Khác">Khác</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Product List Section -->
+      <section class="list-section">
+        <h2>Danh Sách Sản Phẩm</h2>
+        <div class="table-container" id="table-container">
+          <table>
+            <thead>
+                <th>ID</th>
+                <th>TÊN SẢN PHẨM</th>
+                <th>DANH MỤC</th>
+                <th>GIÁ</th>
+                <th>SỐ LƯỢNG</th>
+                <th>MÔ TẢ</th>
+                <th>THAO TÁC</th>
+            </thead>
+            <tbody id = "productList">
+
+            </tbody>
+          </table>
+          <div class="empty-state show" id="emptyState">
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <!-- <div class="stats">
+          <span class="stat-item">
+            Tổng sản phẩm: <strong id="totalProducts">0</strong>
+          </span>
+          <span class="stat-item">
+            Tổng giá trị: <strong id="totalValue">0&nbsp;₫</strong>
+          </span>
+          <span class="stat-item">
+            Tổng số lượng: <strong id="totalQuantity">0</strong>
+          </span>
+        </div> -->
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
