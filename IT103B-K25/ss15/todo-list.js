@@ -92,14 +92,12 @@ function deleteTask(id_task) {
   }
 }
 
-// tạo hàm khi người dùng nhấn vào input type= checkbox
 function selectInput(index) {
   console.log("index", index);
   tasks[index].status = !tasks[index].status;
   console.log("tasks", tasks);
   renderTasks();
 }
-// function sửa công việc
 function editTask(index) {
   console.log("index", index);
   document.getElementById("task_name").value = tasks[index].taskName;
