@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem("theme");
+                const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+                if (saved === "dark" || (!saved && systemDark)) {
+                    document.documentElement.classList.add("dark");
+                }
+            } catch (e) { }
+        })();
+    </script>
+
+    <title>Rikkei Tech Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Rikkei Tech Hub</h1>
+
+        <button id="themeToggle" class="toggle">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+        </button>
+    </header>
+
+    <main class="container">
+        <article class="card">
+            <h2>AI đang thay đổi ngành công nghệ Việt Nam như thế nào?</h2>
+
+            <img src="https://autogpt.net/wp-content/uploads/2023/07/Pogla_AI_robot_holding_a_computer_8db60d9d-77b0-40fb-9f14-e74ed8f35f1a-1024x683.jpg"
+                alt="AI">
+
+            <p>
+                Trong những năm gần đây, trí tuệ nhân tạo (AI) đã không còn là khái niệm xa vời...
+            </p>
+
+            <p>
+                Từ trợ lý ảo, phân tích dữ liệu kinh doanh, nhận diện hình ảnh...
+            </p>
+
+            <p>
+                Tuy nhiên, thách thức lớn nhất không phải là công nghệ...
+            </p>
+        </article>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

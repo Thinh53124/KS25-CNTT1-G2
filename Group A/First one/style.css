@@ -1,0 +1,133 @@
+:root {
+  --bg: #f3f4f6;
+  --text: #111827;
+  --card: #ffffff;
+  --border: #e5e7eb;
+}
+
+.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+  --border: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.4s,
+    color 0.4s;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  transition: background 0.3s;
+}
+
+.icon {
+  position: absolute;
+  font-size: 18px;
+  transition: all 0.4s ease;
+}
+
+.sun {
+  left: 8px;
+  opacity: 1;
+}
+
+.moon {
+  right: 8px;
+  opacity: 0;
+}
+
+.dark .sun {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.dark .moon {
+  opacity: 1;
+  transform: translateX(-10px);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  max-width: 800px;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: all 0.4s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.card p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .toggle {
+    width: 50px;
+    height: 26px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+}
