@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K25_CMTT_HN - Toast Notification System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>K25_CMTT_HN</h1>
+            <p>Toast Notification<br>System</p>
+        </div>
+        
+        <div class="content">
+            <div class="button-group">
+                <button class="btn btn-success" onclick="showToast('success', 'Hành động của bạn đã được lưu.')">
+                    ✓ Success
+                </button>
+                <button class="btn btn-error" onclick="showToast('error', 'Có gì đó không đúng, vui lòng thử lại.')">
+                    ✕ Error
+                </button>
+                <button class="btn btn-info" onclick="showToast('info', 'Thông tin: Bạn có một tin nhắn mới.')">
+                    ℹ Info
+                </button>
+                <button class="btn btn-warning" onclick="showToast('warning', 'Hành động này không thể hoàn tác.')">
+                    ⚠ Warning
+                </button>
+            </div>
+
+            <div class="demo-section">
+                <button class="btn btn-test" onclick="testQueue()">
+                    🧪 TEST QUEUE (Bấm nhanh)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="toast.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="../style/register.css">
+</head>
+<body>
+
+  <h1>Trang đăng ký</h1>
+
+  <form id="form">
+    <div>
+      <label>Tên người dùng:</label>
+      <input type="text" id="username">
+      <p class="error" id="error-name">Tên không được để trống!</p>
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type="text" id="email">
+      <p class="error" id="error-email"></p>
+      <p class="error" id="error-email-exist"></p>
+    </div>
+
+    <div>
+      <label>Mật khẩu:</label>
+      <input type="password" id="password">
+      <p class="error" id="error-password"></p>
+    </div>
+
+    <div>
+      <label>Xác nhận mật khẩu:</label>
+      <input type="password" id="confirm-password">
+      <p class="error" id="error-confirm"></p>
+    </div>
+
+    <button type="submit">Đăng ký</button>
+  </form>
+
+  <script src="../JS/register.js"></script>
+</body>
+</html>

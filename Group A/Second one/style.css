@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0e27;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: #1a1f3a;
+    border-radius: 16px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========== HEADER ========== */
+
+.header {
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.header p {
+    color: #999;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* ========== CONTENT ========== */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: 2px solid;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* ========== BUTTON STYLES ========== */
+
+.btn-success {
+    color: #10b981;
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.btn-success:hover {
+    background: rgba(16, 185, 129, 0.2);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-error {
+    color: #ef4444;
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.btn-error:hover {
+    background: rgba(239, 68, 68, 0.2);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+.btn-info {
+    color: #3b82f6;
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.btn-info:hover {
+    background: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.btn-warning {
+    color: #f59e0b;
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.btn-warning:hover {
+    background: rgba(245, 158, 11, 0.2);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+}
+
+.demo-section {
+    margin-top: 20px;
+}
+
+.btn-test {
+    width: 100%;
+    color: #8b5cf6;
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.btn-test:hover {
+    background: rgba(139, 92, 246, 0.2);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+/* ========== TOAST CONTAINER ========== */
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    max-width: 420px;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ========== TOAST STYLES ========== */
+
+.toast {
+    background: #1e1e2e;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    pointer-events: auto;
+    border-left: 4px solid;
+    animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    word-break: break-word;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left-width: 4px;
+}
+
+.toast.removing {
+    animation: slideOut 0.4s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(420px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(420px);
+        opacity: 0;
+    }
+}
+
+.toast-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    min-width: 20px;
+    margin-top: 3px;
+    font-weight: 700;
+}
+
+.toast-content {
+    flex: 1;
+    text-align: left;
+}
+
+.toast-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.toast-message {
+    font-size: 13px;
+    color: #bbb;
+    line-height: 1.5;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+    margin-top: 0px;
+    line-height: 1;
+}
+
+.toast-close:hover {
+    color: #fff;
+}
+
+.toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 0 0 8px 0;
+}
+
+/* ========== TOAST TYPES ========== */
+
+.toast.success {
+    border-left-color: #10b981;
+}
+
+.toast.success .toast-icon {
+    color: #10b981;
+}
+
+.toast.success .toast-progress {
+    background: #10b981;
+    animation: progress 4s linear forwards;
+}
+
+.toast.error {
+    border-left-color: #ef4444;
+}
+
+.toast.error .toast-icon {
+    color: #ef4444;
+}
+
+.toast.error .toast-progress {
+    background: #ef4444;
+    animation: progress 4s linear forwards;
+}
+
+.toast.info {
+    border-left-color: #3b82f6;
+}
+
+.toast.info .toast-icon {
+    color: #3b82f6;
+}
+
+.toast.info .toast-progress {
+    background: #3b82f6;
+    animation: progress 4s linear forwards;
+}
+
+.toast.warning {
+    border-left-color: #f59e0b;
+}
+
+.toast.warning .toast-icon {
+    color: #f59e0b;
+}
+
+.toast.warning .toast-progress {
+    background: #f59e0b;
+    animation: progress 4s linear forwards;
+}
+
+@keyframes progress {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 25px;
+        border-radius: 12px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .button-group {
+        gap: 12px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .toast-container {
+        left: 10px;
+        right: 10px;
+        max-width: none;
+    }
+
+    .toast {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .button-group {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 11px 18px;
+        font-size: 12px;
+    }
+
+    .toast-container {
+        max-width: calc(100vw - 20px);
+    }
+}
