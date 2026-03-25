@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+    <h1>Đăng nhập</h1>
+
+    <form>
+        <!-- Email -->
+        <span>Email</span>
+        <input type="text" id="email" placeholder="Nhập email"><br>
+        <p class="error-email"></p>
+
+        <!-- Password -->
+        <span>Mật khẩu</span>
+        <input type="password" id="password" placeholder="Nhập mật khẩu"><br>
+        <p class="error-password"></p>
+
+        <!-- Button -->
+        <button onclick="login(event)">Đăng nhập</button>
+    </form>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>
