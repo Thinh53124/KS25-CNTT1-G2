@@ -1,58 +1,90 @@
-let users = [];
+let users = JSON.parse(localStorage.getItem("users"))||[];
+// if(users==null){
+//     users=[];
+// }
 
+// tạo hàm đi đăng ký tài khoản
 function register(e) {
   e.preventDefault();
-
-  const username = document.getElementById("username").value.trim();
-  const email = document.getElementById("email").value.trim();
-
-  const errorNameEl = document.querySelector(".error-name");
-  const errorEmailEl = document.querySelector(".error-email");
-  const errorEmailExistEl = document.querySelector(".errorEmail");
-
-  const isUsernameValid = validateUsername(username, errorNameEl);
-  const isEmailValid = validateEmailField(email, errorEmailEl);
-
-  if (!isUsernameValid || !isEmailValid) return;
-
-  if (users.some(user => user.email === email)) {
-    toggleError(errorEmailExistEl, "Email đã tồn tại", true);
+  console.log("đã gọi hàm!");
+  // lấy giá trị tên người dùng:
+  let username = document.getElementById("username").value.trim();
+  console.log("username", username);
+  if (username.length == 0) {
+    showErrorName("tên không được để trống!", "block");
     return;
   }
-
-  toggleError(errorEmailExistEl, "", false);
-
-  users.push({ username, email });
-
-  console.log("Submit thành công");
-
-  let password = document.getElementById("password").value.trim()
-  if(password.length<8){
-    document.querySelector(".error-password").style.display="block"
-  }else{
-    document.querySelector(".error-password").style.display="none"
-
+  if (username.length < 3) {
+    showErrorName("tên phải nhiều hơn 2 kí tự", "block");
+    return;
   }
-}
+  showErrorName("", "none");
 
-function validateUsername(username, element) {
-  if (!username) return toggleError(element, "Tên không được để trống!", true);
-  if (username.length < 3) return toggleError(element, "Tên phải nhiều hơn 2 kí tự!", true);
-  return toggleError(element, "", false);
-}
+  //  showErrorName("tên phải có ký tự đặc biệt")
 
-function validateEmailField(email, element) {
-  if (!email) return toggleError(element, "Email không để trống!", true);
-  if (!validateEmail(email)) return toggleError(element, "Email sai định dạng!", true);
-  return toggleError(element, "", false);
-}
+  let email = document.getElementById("email").value.trim();
 
-function toggleError(element, message, show) {
-  element.style.display = show ? "block" : "none";
-  element.textContent = message;
-  return !show;
-}
+  // REGEX
+  if (!validateEmail(email)) {
+    showErrorEmail("email không đúng định dạng", "block");
+    return;
+  } else {
+    showErrorEmail("", "none");
+  }
 
+  // Kiểm tra email đã tồn tại hay chưa?
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].email == email) {
+      console.log("email đã tồn tại!");
+      //   document.querySelector(".error-email").style.display = "none";
+      //   document.querySelector(".error-email").innerHTML = "email đã tồn tại!";
+      showErrorEmail("email đã tồn tại!", "block");
+      return;
+    }
+  }
+  showErrorEmail("", "none");
+
+  // kiểm tra mật khẩu có hợp lệ hay chưa?
+  let password = document.getElementById("password").value.trim();
+  if (password.length < 8) {
+    document.querySelector(".error-password").style.display = "block";
+    return;
+  } else {
+    document.querySelector(".error-password").style.display = "none";
+  }
+
+  // kiểm tra mật khẩu có trùng khớp hay không
+  let confirmPassword = document.getElementById("confirmPassword").value.trim();
+  if (password !== confirmPassword) {
+    document.querySelector(".error-confirm-password").style.display = "block";
+  } else {
+    document.querySelector(".error-confirm-password").style.display = "none";
+  }
+
+  // khi VALIDATE dữ liệu thành công thì đi tạo đối tượng user
+  let user = {
+    id: Math.floor(Math.random() * 99999) + new Date().getMilliseconds(),
+    name: username,
+    email: email,
+    password: password,
+  };
+  console.log("user", user);
+  users.push(user);
+  localStorage.setItem("users", JSON.stringify(users));
+  document.location.href="./login.html";
+}
+// viết hàm show lỗi khi đăng ký với thuộc tính name
+function showErrorName(errorName, display) {
+  document.querySelector(".error-name").textContent = errorName;
+  document.querySelector(".error-name").style.display = display;
+}
+// hàm kiểm tra định dạng email
 function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
+}
+// viết hàm show lỗi khi đăng ký với thuộc tính email
+function showErrorEmail(errorEmail, display) {
+  document.querySelector(".error-email").textContent = errorEmail;
+  document.querySelector(".error-email").style.display = display;
 }

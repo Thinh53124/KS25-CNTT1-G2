@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="../style/login.css">
 </head>
 <body>
-    <h1>Trang đăng nhập</h1>
+    <h1> Trang Đăng Nhập </h1>
+    <form action="">
+        <span>email</span>
+        <input type="text" id="email" placeholder="Nhập email"> <br>
+        <span>password</span>
+        <input type="text" id="password" placeholder="Nhập mật khẩu"> <br>
+        <p class="error-login">Tên đăng nhập hoặc mật khẩu không đúng!</p>
+        <button onclick="login(event)">đăng nhập</button>
+        <p>bạn chưa có tài khoản, <a href="./register.html">đăng ký</a></p>
+    </form>
+    <script src="../JS/login.js"></script>
 </body>
 </html>

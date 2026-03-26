@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Register</title>
-  <link rel="stylesheet" href="../style/register.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/register.css">
 </head>
 <body>
-
-  <h1>Trang đăng ký</h1>
-
-  <form id="form">
-    <div>
-      <label>Tên người dùng:</label>
-      <input type="text" id="username">
-      <p class="error" id="error-name">Tên không được để trống!</p>
-    </div>
-
-    <div>
-      <label>Email:</label>
-      <input type="text" id="email">
-      <p class="error" id="error-email"></p>
-      <p class="error" id="error-email-exist"></p>
-    </div>
-
-    <div>
-      <label>Mật khẩu:</label>
-      <input type="password" id="password">
-      <p class="error" id="error-password"></p>
-    </div>
-
-    <div>
-      <label>Xác nhận mật khẩu:</label>
-      <input type="password" id="confirm-password">
-      <p class="error" id="error-confirm"></p>
-    </div>
-
-    <button type="submit">Đăng ký</button>
-  </form>
-
-  <script src="../JS/register.js"></script>
+    <h1> Trang Đăng Ký!</h1>
+    <!-- trang đăng ký tài khoản của dự án thương mại điện tử
+     1. Lưu danh sách user  : local storage
+     2. Danh sách user dùng cái gì để chứa? Mảng
+     3. Từng user mới là Object, ĐỐI TƯỢNG
+        + ID
+        + name
+        + email
+        + password
+    -->
+    <form action="">
+        <span>Tên người dùng:</span>
+        <input type="text" placeholder="nhập tên" id="username"> <br>
+        <p class="error-name">tên không được để trống!</p>
+        <span>Email:</span>
+        <input type="text" id="email" placeholder="nhập email"> <br>
+        <p class="error-email">email không đúng định dạng</p>
+        <span>Mật khẩu:</span>
+        <input type="password" placeholder="nhập mật khẩu" id="password"> <br>
+        <p class="error-password">Mật khẩu phải trên 8 ký tự</p>
+        <span>Xác nhận mật khẩu</span>
+        <p class="error-confirm-password">Mật khẩu không trùng khớp!</p>
+        <input type="password" placeholder="xác nhận mật khẩu" id="confirmPassword"> <br>
+        <button onclick="register(event)">Đăng ký?</button>
+        <p> bạn đã có tài khoản, <a href="./login.html">đăng nhập</a></p>
+        
+    </form>
+   
+    <script src="../js/register.js"></script>
 </body>
 </html>

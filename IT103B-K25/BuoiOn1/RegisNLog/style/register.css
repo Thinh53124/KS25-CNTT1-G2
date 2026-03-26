@@ -3,22 +3,27 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-label {
+span {
   display: inline-block;
-  width: 150px;
+  width: 120px;
 }
-
-.error {
+.error-name {
   color: red;
-  margin-left: 155px;
+  margin-left: 120px;
   display: none;
 }
-
-form div {
-  margin-bottom: 10px;
+.error-email {
+  color: red;
+  margin-left: 120px;
+  display: none;
 }
-
-input {
-  padding: 4px;
+.error-password {
+  color: red;
+  margin-left: 120px;
+  display: none;
+}
+.error-confirm-password {
+  color: red;
+  margin-left: 120px;
+  display: none;
 }
