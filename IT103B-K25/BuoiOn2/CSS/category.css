@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.error-category{
+    color: red;
+    margin-left: 100px;
+    display: none;
+}
+ol{
+    margin-left: 50px;
+}
+
+button{
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.delete{
+    background-color: cyan;
+}
+
+.edit{
+    background-color: magenta;
+}

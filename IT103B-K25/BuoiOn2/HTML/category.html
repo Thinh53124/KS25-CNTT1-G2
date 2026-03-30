@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category</title>
     <link rel="stylesheet" href="../CSS/category.css">
 </head>
+
 <body>
     <h1>Trang quản lý danh mục</h1>
+    <span>Tên danh mục:</span>
+    <input type="text" id="category" placeholder="Nhập tên danh mục">
+    <p class="error-category">Tên danh mục không được để trống</p>
+    <button onclick="addCategory()">Thêm</button>
+    <h2>Danh sách danh mục</h2>
+    <ol id="list">
+
+    </ol>
     <script src="../JS/category.js"></script>
 </body>
+
 </html>

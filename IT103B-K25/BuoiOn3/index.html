@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Sản Phẩm</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Epilogue:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="h-left">
+            <div class="h-logo">📦</div>
+            <h1>Quản Lý Sản Phẩm</h1>
+        </div>
+        <span class="h-badge" id="totalBadge">0 sản phẩm</span>
+    </header>
+
+    <main>
+        <!-- TOOLBAR -->
+        <div class="card">
+            <div class="card-hd">
+                <div class="chip chip-blue">🔍</div>
+                <h2>Tìm kiếm & Sắp xếp</h2>
+            </div>
+            <div class="toolbar-body">
+                <div class="fg">
+                    <label>Tìm kiếm</label>
+                    <div class="sw">
+                        <span class="sw-ico">⌕</span>
+                        <input type="text" id="searchInput" placeholder="Tên sản phẩm, mã SP…" oninput="searchProduct()"/>
+                    </div>
+                </div>
+                <div class="fg">
+                    <label>Sắp xếp theo</label>
+                    <select id="sortSelect">
+                        <option value="">— Mặc định —</option>
+                        <option value="name_asc">Tên A → Z</option>
+                        <option value="name_desc">Tên Z → A</option>
+                        <option value="price_asc">Giá tăng dần</option>
+                        <option value="price_desc">Giá giảm dần</option>
+                    </select>
+                </div>
+                <div class="fg">
+                    <label>Hiển thị</label>
+                    <select id="pageSz" style="width: 110px">
+                        <option value="5">5 / trang</option>
+                        <option value="10" selected>10 / trang</option>
+                        <option value="20">20 / trang</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="card">
+            <div class="card-hd">
+                <h2 id="formTitle">Thêm sản phẩm mới</h2>
+            </div>
+            <div class="form-body">
+                <input type="hidden" id="editId" />
+                <div class="form-grid">
+                    <div class="ff">
+                        <label>Tên sản phẩm <span class="star">*</span></label>
+                        <input type="text" id="iName" placeholder="Ví dụ: Laptop Dell XPS 13" />
+                        <p class="error-name">Tên sản phẩm không được để trống</p>
+                    </div>
+                    <div class="ff">
+                        <label>Giá bán (VND) <span class="star">*</span></label>
+                        <input type="number" id="iPrice" placeholder="0" min="1000" />
+                        <p class="error-price">Giá bán không được để trống</p>
+                    </div>
+                    <div class="ff">
+                        <label>Số lượng tồn kho <span class="star">*</span></label>
+                        <input type="number" id="iStock" placeholder="0" min="0" />
+                        <p class="error-stock">Số lượng tồn kho không được để trống</p>
+                    </div>
+                    <div class="ff">
+                        <label>Trạng thái <span class="star">*</span></label>
+                        <select id="iStatus">
+                            <option>Còn hàng</option>
+                            <option>Hết hàng</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" id="btnSubmit" onclick="addProduct()">
+                        Thêm sản phẩm
+                    </button>
+                    <button class="btn btn-secondary" onclick="resetForm()">
+                        Làm mới
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABLE -->
+        <div class="card">
+            <div class="card-hd">
+                <h2>Danh sách sản phẩm</h2>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá bán</th>
+                            <th>Tồn kho</th>
+                            <th>Trạng thái</th>
+                            <th style="width: 120px">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+                <div id="emptyState" class="empty" style="display: none">
+                    <div class="empty-ico">📭</div>
+                    <p>Chưa có sản phẩm nào. Hãy thêm sản phẩm đầu tiên!</p>
+                </div>
+            </div>
+            <div class="pag-bar">
+                <div class="pag-info" id="pagInfo">
+                    Hiển thị <strong>1–10</strong> trong <strong>10</strong> sản phẩm
+                </div>
+                <div class="pag-ctrl" id="pagCtrl"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL -->
+    <div class="overlay" id="overlay">
+        <!-- <div class="modal">
+            <div class="modal-ico">🗑️</div>
+            <h3>Xác nhận xóa</h3>
+            <p id="modalMsg">Bạn có chắc muốn xóa sản phẩm này?</p>
+            <div class="modal-btns">
+                <button class="btn btn-secondary" onclick="closeModal()">Hủy</button>
+                <button class="btn btn-del" id="btnConfirm">Xóa</button>
+            </div>
+        </div> -->
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

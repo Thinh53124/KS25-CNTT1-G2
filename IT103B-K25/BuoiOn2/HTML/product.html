@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
     <link rel="stylesheet" href="../CSS/product.css">
 </head>
+
 <body>
     <h1>Trang quản lý sản phẩm</h1>
+    <span>Tên sản phẩm</span> <input type="text" name="" id="name"><br>
+    <span>Ảnh sản phẩm</span> <input type="text" name="" id="img"><br>
+    <span>Danh mục sản phẩm</span>
+    <select name="" id="option" onchange="handleChange()">
+
+    </select><br>
+    <span>Giá</span><input type="text" name="" id="price"><br>
+    <span>Số lượng trong kho</span><input type="number" id="stock"><br>
+    <button onclick="addProduct()">Thêm sản phẩm</button>
+    <input type="text" name="" id="search" placeholder="Tìm kiếm sản phẩm" oninput="search()"> <button>Tìm kiếm</button>
+    <h2>Danh sách sản phẩm</h2>
+    <table border="1" cellspacing = 0>
+        <tr>
+            <th>STT</th>
+            <th>Tên sản phẩm</th>
+            <th>Ảnh</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Hành động</th>
+        </tr>
+        <tbody id="table">
+            
+            
+        </tbody>
+    </table>
     <script src="../JS/product.js"></script>
 </body>
+
 </html>

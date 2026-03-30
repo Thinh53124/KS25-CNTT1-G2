@@ -1,144 +1,75 @@
-/**
- * Toast Notification System
- * K25_CMTT_HN Project
- * - Hiển thị cùng lúc (không queue)
- * - Animations mượt
- * - Tự động biến mất
- */
+const createToast = (type) => {
+  const container = document.getElementById("toast-container");
 
-class ToastManager {
-  constructor() {
-    this.container = document.getElementById("toast-container");
-    this.toasts = [];
-    this.toastDuration = 4000; // 4 giây
+  let title = "";
+  let msg = "";
+
+  if (type === "success") {
+    title = "✓ Thành công";
+    msg = "Hành động của bạn đã được lưu.";
+  } else if (type === "error") {
+    title = "✕ Lỗi";
+    msg = "Có gì đó không đúng, vui lòng thử lại.";
+  } else if (type === "info") {
+    title = "ℹ Thông tin";
+    msg = "Thông tin: Bạn có một tin nhắn mới.";
+  } else if (type === "warning") {
+    title = "⚠ Cảnh báo";
+    msg = "Hành động này không thể hoàn tác.";
   }
 
-  show(type, message, title = "") {
-    const toastData = {
-      type,
-      message,
-      title: title || this.getDefaultTitle(type),
-      id: Date.now() + Math.random(),
-    };
+  const toast = document.createElement("div");
+  toast.className = "toast " + type;
 
-    this.toasts.push(toastData);
-    this.displayToast(toastData);
-  }
+  const html = `
+    <span class="toast-icon"></span>
+    <div class="toast-content">
+      <div class="toast-title">${title}</div>
+      <div class="toast-message">${msg}</div>
+    </div>
+    <button class="toast-close">&times;</button>
+    <div class="toast-progress"></div>
+  `;
 
-  /**
-   * Lấy tiêu đề mặc định
-   */
-  getDefaultTitle(type) {
-    const titles = {
-      success: "✓ Thành công",
-      error: "✕ Lỗi",
-      info: "ℹ Thông tin",
-      warning: "⚠ Cảnh báo",
-    };
-    return titles[type] || "Thông báo";
-  }
+  toast.innerHTML = html;
 
-  /**
-   * Lấy icon
-   */
-  getIcon(type) {
-    const icons = {
-      success: "✓",
-      error: "✕",
-      info: "ℹ",
-      warning: "⚠",
-    };
-    return icons[type] || "●";
-  }
+  container.appendChild(toast);
 
-  /**
-   * Hiển thị toast (cùng lúc, không queue)
-   */
-  displayToast(toastData) {
-    const { type, message, title, id } = toastData;
+  const autoClose = setTimeout(() => {
+    removeToast(toast);
+  }, 4000);
 
-    // Tạo element
-    const toast = document.createElement("div");
-    toast.className = `toast ${type}`;
-    toast.id = `toast-${id}`;
-    toast.innerHTML = `
-            <span class="toast-icon">${this.getIcon(type)}</span>
-            <div class="toast-content">
-                <div class="toast-title">${this.escapeHtml(title)}</div>
-                <div class="toast-message">${this.escapeHtml(message)}</div>
-            </div>
-            <button class="toast-close" onclick="toastManager.removeToast('${id}')">×</button>
-            <div class="toast-progress"></div>
-        `;
-
-    // Thêm vào container
-    this.container.appendChild(toast);
-
-    // Trigger animation
-    requestAnimationFrame(() => {
-      toast.style.opacity = "1";
-    });
-
-    // Tự động xóa
-    setTimeout(() => {
-      this.removeToast(id);
-    }, this.toastDuration);
-  }
-
-  /**
-   * Xóa toast
-   */
-  removeToast(id) {
-    const toast = document.getElementById(`toast-${id}`);
-    if (!toast) return;
-
-    toast.classList.add("removing");
-
-    setTimeout(() => {
-      if (toast.parentNode) {
-        toast.parentNode.removeChild(toast);
-      }
-      this.toasts = this.toasts.filter((t) => t.id !== id);
-    }, 400);
-  }
-
-  /**
-   * Escape HTML
-   */
-  escapeHtml(text) {
-    const div = document.createElement("div");
-    div.textContent = text;
-    return div.innerHTML;
-  }
-}
-
-// Khởi tạo
-const toastManager = new ToastManager();
-
-/**
- * Hiển thị toast
- */
-function showToast(type, message, title = "") {
-  toastManager.show(type, message, title);
-}
-
-/**
- * Test - Bấm nhanh
- */
-function testQueue() {
-  const types = ["success", "error", "info", "warning"];
-  const messages = {
-    success: "Hành động thành công!",
-    error: "Có lỗi xảy ra, vui lòng thử lại.",
-    info: "Bạn có 1 tin nhắn mới.",
-    warning: "Hành động này không thể hoàn tác.",
+  const closeBtn = toast.querySelector(".toast-close");
+  closeBtn.onclick = () => {
+    clearTimeout(autoClose);
+    removeToast(toast);
   };
+};
 
-  // Tạo 8 toast cùng lúc
+const removeToast = (toastElement) => {
+  if (toastElement.classList.contains("removing")) {
+  }
+
+  toastElement.classList.add("removing");
+
+  toastElement.addEventListener("animationend", (event) => {
+    if (event.animationName === "slideOut") {
+      toastElement.remove();
+    }
+  });
+};
+
+const showToast = (type, message = "", title = "") => {
+  createToast(type);
+};
+
+const testQueue = () => {
+  const types = ["success", "error", "info", "warning"];
+
   for (let i = 0; i < 8; i++) {
     setTimeout(() => {
       const randomType = types[Math.floor(Math.random() * types.length)];
-      showToast(randomType, messages[randomType]);
+      createToast(randomType);
     }, i * 100);
   }
-}
+};

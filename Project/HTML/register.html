@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký - Rikkei Cinema</title>
+    <link rel="stylesheet" href="../CSS/register.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon"><img src="../img/Icon.png" alt="Rikkei Cinema"></span>
+                <span class="logo-text">Rikkei <span class="logo-cinema">Cinema</span></span>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link">Trang Chủ</a>
+                <a href="#" class="nav-link">Thông Tin</a>
+                <a href="#" class="nav-link">Liên Hệ</a>
+                <button class="btn-login">Đăng nhập</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="register-container">
+            <form class="register-form">
+                <div class="form-title">
+                    <h1>Tạo tài khoản mới</h1>
+                    <p>Đăng ký để đặt vé xem phim ngay hôm nay</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="form-label">Họ và tên</label>
+                    <input type="text" id="name" class="form-input" placeholder="Nguyễn Văn A" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-input" placeholder="email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <input type="password" id="password" class="form-input" placeholder="********" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rePassword" class="form-label">Xác nhận mật khẩu</label>
+                    <input type="password" id="rePassword" class="form-input" placeholder="********" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <span>Tôi đồng ý với <a href="#" class="terms-link">điều khoản sử dụng</a> và <a href="#" class="terms-link">chính sách bảo mật</a> của CineEdu.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit">Đăng ký →</button>
+
+                <p class="signin-text">
+                    Đã có tài khoản? <a href="login.html" class="signin-link">Đăng nhập ngay</a>
+                </p>
+            </form>
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 RikkeiEdu. Tất cả quyền được bảo mật.
+        </p>
+    </main>
+</body>
+
+</html>
