@@ -21,7 +21,7 @@ body {
     flex-direction: column;
 }
 
-/* ===== HEADER ===== */
+/* header */
 .header {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 1rem 0;
@@ -99,7 +99,7 @@ body {
     background-color: #d62828;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* main */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -286,7 +286,6 @@ body {
     text-decoration: underline;
 }
 
-/* ===== COPYRIGHT ===== */
 .copyright {
     text-align: center;
     font-size: 0.85rem;
@@ -297,7 +296,6 @@ body {
     user-select: text;
 }
 
-/* ===== PREVENT TEXT SELECTION ===== */
 .form-title h1,
 .form-title p,
 .form-label,
@@ -308,7 +306,6 @@ body {
     user-select: text;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;

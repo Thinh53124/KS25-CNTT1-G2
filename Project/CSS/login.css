@@ -20,8 +20,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+/* header */
 
-/* ===== HEADER ===== */
 .header {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 1rem 0;
@@ -99,7 +99,7 @@ body {
     background-color: #d62828;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* main */
 .main-content {
     display: flex;
     justify-content: center;
@@ -114,7 +114,6 @@ body {
     max-width: 550px;
 }
 
-/* ===== POPCORN CONTAINER ===== */
 .popcorn-container {
     width: 100%;
     display: flex;
@@ -130,7 +129,6 @@ body {
     display: block;
 }
 
-/* ===== LOGIN CONTAINER ===== */
 .login-container {
     background: #171010;
     border-radius: 12px;
@@ -142,7 +140,6 @@ body {
     z-index: 10;
 }
 
-/* ===== FORM ===== */
 .login-form {
     width: 100%;
 }
@@ -293,7 +290,6 @@ body {
     text-decoration: underline;
 }
 
-/* ===== PREVENT TEXT SELECTION ===== */
 .form-title,
 .form-label,
 .btn-submit {
@@ -303,7 +299,6 @@ body {
     user-select: text;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
