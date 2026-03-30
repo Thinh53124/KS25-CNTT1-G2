@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+span{
+    display: inline-block;
+    width: 100px;
+}
+
+button{
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.delete{
+    background-color: red;
+}
+
+.edit{
+    background-color: magenta;
+}

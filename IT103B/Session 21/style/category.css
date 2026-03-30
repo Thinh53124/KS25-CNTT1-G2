@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.error-category {
+  color: red;
+  margin-left: 155px;
+  display: none;
+}
+
+ol{
+    margin-left: 50px;
+}
+
+button{
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
