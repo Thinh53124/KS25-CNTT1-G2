@@ -5,9 +5,9 @@ let currentUser = JSON.parse(localStorage.getItem("currentUser")) || null;
 const moviesData = [
     {
         id: 1,
-        title: "Dune: Hành Trình Cát",
-        genre: "Khoa học viễn tưởng",
-        duration: 166,
+        title: "Dune",
+        genre: "Hành động, Viễn tưởng",
+        duration: 155,
         year: 2021,
         rating: 8.5,
         image: "https://tse1.mm.bing.net/th/id/OIP.Ve_LxyMF6YqhIL_XhX1WEAHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3",
@@ -16,7 +16,7 @@ const moviesData = [
     {
         id: 2,
         title: "The Batman",
-        genre: "Hành động",
+        genre: "Hành động, Tội phạm",
         duration: 176,
         year: 2022,
         rating: 8.3,
@@ -26,8 +26,8 @@ const moviesData = [
     {
         id: 3,
         title: "Spider-Man: No Way Home",
-        genre: "Hành động",
-        duration: 159,
+        genre: "Hành động, Phiêu lưu",
+        duration: 148,
         year: 2021,
         rating: 8.4,
         image: "https://static1.tribute.ca/poster/660x980/spider-man-no-way-home-163783.jpg",
@@ -36,7 +36,7 @@ const moviesData = [
     {
         id: 4,
         title: "The Matrix: Resurrections",
-        genre: "Khoa học viễn tưởng",
+        genre: "Hành dộng, Viễn tưởng",
         duration: 148,
         year: 2021,
         rating: 7.1,
@@ -75,11 +75,12 @@ function renderMovies() {
         <div class="movie-card">
             <img src="${movie.image}" class="movie-image"/>
 
-            <div class="movie-overlay"></div>
-
-            <div class="movie-content">
+            <div class="movie-info">
                 <h3 class="movie-title">${movie.title}</h3>
-                <p class="movie-meta">${movie.duration} phút • ${movie.genre}</p>
+                <p class="movie-meta">
+                    <i class="fa-regular fa-clock"></i> ${movie.duration} phút  •  ${movie.genre}
+                </p>
+
                 <button class="btn-book" onclick="bookMovie(${movie.id})">
                     Mua Vé
                 </button>
@@ -87,7 +88,6 @@ function renderMovies() {
         </div>
     `).join("");
 }
-
 // ==================== BOOK MOVIE ==================== 
 function bookMovie(movieId) {
     if (!currentUser) {

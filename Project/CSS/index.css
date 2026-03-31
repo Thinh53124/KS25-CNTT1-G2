@@ -20,7 +20,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--dark-bg);
+  background-color: #111827;
   color: var(--text-light);
   line-height: 1.6;
 }
@@ -200,10 +200,10 @@ body {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(10, 10, 25, 0.95) 0%,
-    rgba(10, 10, 25, 0.8) 35%,
-    rgba(10, 10, 25, 0.4) 65%,
-    rgba(10, 10, 25, 0.1) 100%
+    rgba(17, 24, 39, 0.95) 0%,
+    rgba(17, 24, 39, 0.85) 35%,
+    rgba(17, 24, 39, 0.5) 65%,
+    rgba(17, 24, 39, 0.1) 100%
   );
   z-index: 1;
 }
@@ -219,9 +219,9 @@ body {
 
   background: linear-gradient(
     to bottom,
-    rgba(15, 15, 30, 0) 0%,
-    rgba(15, 15, 30, 0.6) 50%,
-    rgba(15, 15, 30, 1) 100%
+    rgba(17, 24, 39, 0) 0%,
+    rgba(17, 24, 39, 0.6) 50%,
+    rgba(17, 24, 39, 1) 100%
   );
 
   z-index: 1;
@@ -229,7 +229,7 @@ body {
 /* content */
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 600px;
   padding: 3rem;
   color: white;
@@ -287,12 +287,24 @@ body {
 /* primary button */
 .btn-primary {
   background: #ee3a3a;
+  opacity: 1;
   color: white;
   border: none;
   padding: 12px 22px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700; /* 🔥 tăng độ đậm */
+  transition: 0.3s;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1.5px solid white;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700; /* 🔥 thêm dòng này */
   transition: 0.3s;
 }
 
@@ -302,16 +314,12 @@ body {
 }
 
 /* secondary button */
+.btn-primary,
 .btn-secondary {
-  background: transparent;
-  border: 1px solid white;
-  color: white;
-  padding: 12px 22px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+  font-weight: 700 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
-
 .btn-secondary:hover {
   background: white;
   color: black;
@@ -357,63 +365,68 @@ body {
 
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 1fr); 
   gap: 24px;
 }
 
 /* CARD */
+/* CARD */
 .movie-card {
-  background: #1e293b;
-  border-radius: 16px;
+  background: #111827;
+  border-radius: 8px;
   overflow: hidden;
-  padding: 12px; 
+
   border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 
-    0 10px 30px rgba(0,0,0,0.4),
-    inset 0 1px 0 rgba(255,255,255,0.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+
   transition: 0.3s;
 }
 
 .movie-card:hover {
   transform: translateY(-6px);
-  box-shadow: 
-    0 20px 50px rgba(0,0,0,0.6);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
 }
 
-/* POSTER */
+/* IMAGE */
 .movie-image {
   width: 100%;
-  height: 320px;
-  object-fit: contain; 
-  background: #0f172a; 
-  padding: 12px;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
-/* INFO BOX */
+/* INFO BLOCK (phần tối bên dưới) */
 .movie-info {
-  padding: 14px 6px 6px;
+  background: #1f2937; /* giống Figma hơn */
+  padding: 16px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
-
 .movie-title {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #e5e7eb;
   margin-bottom: 6px;
 }
 
 .movie-meta {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 16px;
 }
 
 /* BUTTON */
 .btn-book {
   width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  background: #991b1b;
-  color: #f87171;
+  padding: 14px;
+  border-radius: 4px;
+
+  background: #472330;
+  color: #E60A15;
+
   border: none;
   font-weight: 600;
   transition: 0.3s;
@@ -424,124 +437,129 @@ body {
   color: white;
 }
 
-
-
 /* ==================== FEATURES SECTION ==================== */
+/* ===== FEATURES SECTION (giống file 2) ===== */
 .features-section {
   margin: 4rem 0;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.feature-card {
-  background: linear-gradient(
-    135deg,
-    var(--card-bg) 0%,
-    rgba(238, 58, 58, 0.05) 100%
-  );
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  transition: var(--transition);
   text-align: center;
 }
 
+.features-section .section-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.features-grid {
+  display: flex;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  flex: 1;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
 .feature-card:hover {
-  border-color: var(--primary-color);
-  box-shadow: 0 10px 30px rgba(238, 58, 58, 0.15);
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  background: #374151;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  border-color: #4b5563;
 }
 
 .feature-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1rem;
-  font-size: 1.5rem;
-  color: white;
+  margin-bottom: 12px;
+}
+
+.feature-icon img {
+  width: 40px;
+  height: 40px;
 }
 
 .feature-card h3 {
-  margin-bottom: 0.5rem;
-  color: var(--text-dark);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 10px 0;
 }
 
 .feature-card p {
-  color: var(--text-light);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+  font-size: 14px;
+  color: #9CA3AF;
+  line-height: 20px;
 }
 
 .feature-link {
-  color: var(--primary-color);
-  text-decoration: none;
+  display: inline-block;
+  margin-top: 16px;
+  color: #E60A15;
   font-weight: 600;
-  transition: var(--transition);
+  text-decoration: none;
 }
 
 .feature-link:hover {
   text-decoration: underline;
 }
-
 /* ==================== WHY SECTION ==================== */
+/* ===== WHY SECTION (giống file 2) ===== */
 .why-section {
   margin: 4rem 0;
+  text-align: center;
+}
+
+.why-section .section-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
 }
 
 .why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  display: flex;
+  gap: 32px;
+  margin-top: 40px;
 }
 
 .why-card {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  transition: var(--transition);
+  flex: 1;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 24px;
+  transition: all 0.3s ease;
 }
 
 .why-card:hover {
-  border-color: var(--primary-color);
-  background: linear-gradient(
-    135deg,
-    var(--card-bg) 0%,
-    rgba(238, 58, 58, 0.05) 100%
-  );
+  transform: translateY(-6px);
+  background: #374151;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  border-color: #4b5563;
 }
 
 .why-icon {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, var(--primary-color), #ff6b6b);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  color: white;
+  margin-bottom: 12px;
+}
+
+.why-icon img {
+  width: 40px;
+  height: 40px;
 }
 
 .why-card h3 {
-  margin-bottom: 0.5rem;
-  color: var(--text-dark);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 10px 0;
 }
 
 .why-card p {
-  color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 14px;
+  color: #9CA3AF;
+  line-height: 20px;
 }
 
 /* ==================== NEWSLETTER SECTION ==================== */
@@ -725,14 +743,18 @@ body {
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1200px) {
   .movies-grid {
-    grid-template-columns: repeat(2, 284px);
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
   .movies-grid {
     grid-template-columns: 1fr;
-    justify-items: center;
   }
 }
