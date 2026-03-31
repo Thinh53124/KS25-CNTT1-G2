@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- =================== LOGIN PAGE =================== -->
+    <div id="page-login" class="page active">
+        <div class="auth-bg"></div>
+        <div class="auth-overlay"></div>
+        <div class="auth-wrap">
+            <header class="auth-header">
+                <a href="#" class="logo" onclick="navigate('landing')">
+                    <div class="logo-icon">R</div>
+                    <div class="logo-text">Rikkei<span>Cinema</span></div>
+                </a>
+                <nav class="auth-nav">
+                    <a href="#" onclick="navigate('landing')">Trang chủ</a>
+                    <a href="#" onclick="navigate('register')">Đăng ký</a>
+                </nav>
+            </header>
+            <div class="auth-content">
+                <div class="auth-card">
+                    <div class="auth-card-header">
+                        <div class="auth-card-icon">🎬</div>
+                        <div class="auth-card-title">Chào mừng trở lại</div>
+                        <div class="auth-card-sub">Đăng nhập để tiếp tục trải nghiệm</div>
+                    </div>
+                    <form id="loginForm" onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="loginEmail" class="form-control" placeholder="email@example.com">
+                            <div class="form-error" id="loginEmailErr">Email không được để trống</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Mật khẩu</label>
+                            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••">
+                            <div class="form-error" id="loginPasswordErr">Mật khẩu không được để trống</div>
+                        </div>
+                        <div class="form-error" id="loginGlobalErr" style="margin-bottom:14px"></div>
+                        <button type="submit" class="btn btn-red w-full"
+                            style="justify-content:center;font-size:16px;padding:13px">Đăng Nhập</button>
+                    </form>
+                    <div class="auth-footer" style="margin-top:20px">
+                        Chưa có tài khoản? <a href="#" onclick="navigate('register')">Tạo tài khoản ngay</a>
+                    </div>
+                    <div class="auth-footer" style="margin-top:8px;font-size:12px;color:var(--text-dim)">
+                        Demo Admin: admin@rikkei.edu / Admin@123456
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== REGISTER PAGE =================== -->
+    <div id="page-register" class="page">
+        <div class="auth-bg"></div>
+        <div class="auth-overlay"></div>
+        <div class="auth-wrap">
+            <header class="auth-header">
+                <a href="#" class="logo" onclick="navigate('landing')">
+                    <div class="logo-icon">R</div>
+                    <div class="logo-text">Rikkei<span>Cinema</span></div>
+                </a>
+                <nav class="auth-nav">
+                    <a href="#" onclick="navigate('landing')">Trang chủ</a>
+                    <a href="#" onclick="navigate('login')">Đăng nhập</a>
+                </nav>
+            </header>
+            <div class="auth-content">
+                <div class="auth-card">
+                    <div class="auth-card-header">
+                        <div class="auth-card-icon">✨</div>
+                        <div class="auth-card-title">Tạo Tài Khoản Mới</div>
+                        <div class="auth-card-sub">Trải nghiệm đặt vé dễ dàng và nhanh chóng</div>
+                    </div>
+                    <form id="registerForm" onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label class="form-label">Họ và Tên</label>
+                            <input type="text" id="regName" class="form-control" placeholder="Nguyễn Văn A">
+                            <div class="form-error" id="regNameErr">Họ và tên không được để trống</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="regEmail" class="form-control" placeholder="email@example.com">
+                            <div class="form-error" id="regEmailErr">Email không đúng định dạng</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Mật khẩu</label>
+                            <input type="password" id="regPassword" class="form-control"
+                                placeholder="Tối thiểu 8 ký tự + ký tự đặc biệt">
+                            <div class="form-error" id="regPasswordErr">Mật khẩu phải ≥ 8 ký tự và có ít nhất 1 ký tự
+                                đặc biệt</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Xác nhận mật khẩu</label>
+                            <input type="password" id="regConfirm" class="form-control" placeholder="Nhập lại mật khẩu">
+                            <div class="form-error" id="regConfirmErr">Mật khẩu không trùng khớp</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-wrap">
+                                <input type="checkbox" id="regAgree">
+                                <span>Tôi đồng ý với <a href="#" style="color:var(--red)">điều khoản dịch vụ</a> và <a
+                                        href="#" style="color:var(--red)">chính sách bảo mật</a> của RikkeiEdu
+                                    Cinema</span>
+                            </label>
+                            <div class="form-error" id="regAgreeErr">Vui lòng đồng ý với điều khoản</div>
+                        </div>
+                        <button type="submit" class="btn btn-red w-full"
+                            style="justify-content:center;font-size:16px;padding:13px">Đăng Ký Ngay</button>
+                    </form>
+                    <div class="auth-footer">
+                        Đã có tài khoản? <a href="#" onclick="navigate('login')">Đăng nhập ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== LANDING PAGE =================== -->
+    <div id="page-landing" class="page">
+        <!-- Navbar -->
+        <nav class="navbar" id="mainNavbar">
+            <a href="#" class="logo" onclick="navigate('landing')">
+                <div class="logo-icon">R</div>
+                <div class="logo-text">Rikkei<span>Cinema</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="#">Phim Đang Chiếu</a>
+                <a href="#">Suất Chiếu</a>
+                <a href="#">Ưu Đãi</a>
+                <a href="#">Giới Thiệu</a>
+            </div>
+            <div class="nav-right" id="navRight"></div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="hero" id="heroSection">
+            <div class="hero-bg" id="heroBg"></div>
+            <div class="hero-gradient"></div>
+            <div class="hero-gradient-bottom"></div>
+            <div class="hero-content" id="heroContent"></div>
+        </section>
+
+        <!-- Phim Đang Chiếu -->
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">Phim <span>Đang Chiếu</span></div>
+                    <div class="section-line"></div>
+                </div>
+                <a href="#" class="btn btn-ghost btn-sm">Xem tất cả →</a>
+            </div>
+            <div class="movies-grid" id="landingMovies"></div>
+        </section>
+
+        <!-- Ưu đãi -->
+        <section class="section" style="padding-top:0">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">Ưu Đãi <span>Đặc Biệt</span></div>
+                    <div class="section-line"></div>
+                </div>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-badge">20%</div>
+                    <div class="offer-title">Giảm ngày Thứ 3</div>
+                    <div class="offer-desc">Mọi suất chiếu thứ Ba trong tuần đều được giảm 20% cho tất cả thành viên
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">2+1</div>
+                    <div class="offer-title">Combo Gia Đình</div>
+                    <div class="offer-desc">Mua 2 vé tặng thêm 1 vé miễn phí cho buổi chiếu cuối tuần cùng gia đình
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">VIP</div>
+                    <div class="offer-title">Thành viên Vàng</div>
+                    <div class="offer-desc">Tích điểm mỗi lần đặt vé, đổi điểm lấy vé miễn phí và nhiều quà hấp dẫn
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tại sao chọn -->
+        <section class="section" style="padding-top:0">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">Tại Sao Chọn <span>RikkeiEdu?</span></div>
+                    <div class="section-line"></div>
+                </div>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🎭</div>
+                    <div class="why-title">Trải Nghiệm Đỉnh Cao</div>
+                    <div class="why-desc">Hệ thống rạp chiếu phim hiện đại với âm thanh Dolby Atmos và hình ảnh 4K sắc
+                        nét nhất
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <div class="why-title">Giá Hợp Lý</div>
+                    <div class="why-desc">Nhiều gói ưu đãi và combo hấp dẫn, cam kết mang lại giá trị tốt nhất cho mỗi
+                        trải nghiệm
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <div class="why-title">Đặt Vé Nhanh</div>
+                    <div class="why-desc">Chỉ 3 bước đơn giản để sở hữu vé xem phim, giao diện thân thiện và dễ sử dụng
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Member section -->
+        <div class="member-section">
+            <div class="member-inner">
+                <div>
+                    <div class="member-title">Đăng Ký <span>Thành Viên</span></div>
+                    <div class="member-desc">Trở thành thành viên RikkeiEdu Cinema để tận hưởng những đặc quyền độc
+                        quyền và ưu
+                        đãi không giới hạn.</div>
+                    <div class="member-benefits">
+                        <div class="member-benefit">Giảm giá 10% cho mỗi lần đặt vé</div>
+                        <div class="member-benefit">Nhận thông báo sớm về phim mới và suất chiếu hot</div>
+                        <div class="member-benefit">Tích lũy điểm đổi vé miễn phí</div>
+                        <div class="member-benefit">Ưu tiên chọn ghế VIP</div>
+                    </div>
+                </div>
+                <div class="member-form">
+                    <div class="member-form-title">Đăng ký ngay hôm nay</div>
+                    <div class="form-group">
+                        <label class="form-label">Họ và tên</label>
+                        <input type="text" class="form-control" placeholder="Nguyễn Văn A" id="memberName">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email của bạn</label>
+                        <input type="email" class="form-control" placeholder="email@example.com" id="memberEmail">
+                    </div>
+                    <button class="btn btn-red w-full" style="justify-content:center" onclick="handleMemberForm()">Đăng
+                        Ký Miễn
+                        Phí</button>
+                    <p style="font-size:12px;color:var(--text-dim);margin-top:12px;text-align:center">Không spam, hủy
+                        đăng ký bất
+                        kỳ lúc nào</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="margin-bottom:14px">
+                        <div class="logo-icon">R</div>
+                        <div class="logo-text">Rikkei<span>Cinema</span></div>
+                    </div>
+                    <div class="footer-desc">Hệ thống rạp chiếu phim hàng đầu Việt Nam với công nghệ tiên tiến và dịch
+                        vụ đẳng
+                        cấp.</div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Khám Phá</div>
+                    <div class="footer-links">
+                        <a href="#">Phim Đang Chiếu</a>
+                        <a href="#">Phim Sắp Chiếu</a>
+                        <a href="#">Suất Chiếu Hôm Nay</a>
+                        <a href="#">Ưu Đãi</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Hỗ Trợ</div>
+                    <div class="footer-links">
+                        <a href="#">Câu Hỏi Thường Gặp</a>
+                        <a href="#">Chính Sách Hoàn Vé</a>
+                        <a href="#">Liên Hệ</a>
+                        <a href="#">Điều Khoản Sử Dụng</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Kết Nối</div>
+                    <div class="footer-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">YouTube</a>
+                        <a href="#">TikTok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 RikkeiEdu Cinema. All rights reserved.</span>
+                <span>Thiết kế bởi RikkeiEdu</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =================== ADMIN MOVIES PAGE =================== -->
+    <div id="page-admin-movies" class="page">
+        <div class="admin-layout">
+            <!-- Sidebar -->
+            <div class="sidebar" id="sidebarMovies">
+                <div class="sidebar-logo">
+                    <div class="logo">
+                        <div class="logo-icon">R</div>
+                        <div class="logo-text">Rikkei<span>Cinema</span></div>
+                    </div>
+                </div>
+                <nav class="sidebar-nav">
+                    <button class="nav-item active" onclick="navigate('admin-movies')">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="2" />
+                            <path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5" />
+                        </svg>
+                        Quản lý Phim
+                    </button>
+                    <button class="nav-item" onclick="navigate('admin-tickets')">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M2 9a1 1 0 011-1h18a1 1 0 011 1v2a2 2 0 010 4v2a1 1 0 01-1 1H3a1 1 0 01-1-1v-2a2 2 0 010-4V9z" />
+                        </svg>
+                        Quản lý Vé
+                    </button>
+                    <button class="nav-item" onclick="navigate('landing')">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                            <polyline points="9,22 9,12 15,12 15,22" />
+                        </svg>
+                        Trang Chủ
+                    </button>
+                </nav>
+                <div class="sidebar-footer">
+                    <div class="admin-user">
+                        <div class="admin-avatar" id="adminAvatar1">A</div>
+                        <div>
+                            <div class="admin-name" id="adminName1">Admin</div>
+                            <div class="admin-role">Quản trị viên</div>
+                        </div>
+                    </div>
+                    <button class="nav-item" onclick="showLogoutModal()" style="margin-top:6px;color:var(--red)">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+                            <polyline points="16,17 21,12 16,7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                        Đăng xuất
+                    </button>
+                </div>
+            </div>
+            <!-- Main -->
+            <div class="admin-main">
+                <div class="admin-topbar">
+                    <div class="admin-topbar-title">Quản Lý Phim Chiếu</div>
+                    <button class="btn btn-red btn-sm" onclick="openAddMovie()">+ Thêm phim mới</button>
+                </div>
+                <div class="admin-content">
+                    <!-- Stats -->
+                    <div class="stats-row" id="movieStats"></div>
+                    <!-- Table -->
+                    <div class="table-wrap">
+                        <div class="table-header">
+                            <div class="search-box">
+                                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <path d="m21 21-4.35-4.35" />
+                                </svg>
+                                <input type="text" placeholder="Tìm kiếm theo tên phim..." id="movieSearch"
+                                    oninput="filterMovies()">
+                            </div>
+                            <div class="filter-row">
+                                <button class="filter-btn active" onclick="setMovieFilter('all',this)">Tất cả</button>
+                                <button class="filter-btn" onclick="setMovieFilter('Đang chiếu',this)">Đang
+                                    chiếu</button>
+                                <button class="filter-btn" onclick="setMovieFilter('Sắp chiếu',this)">Sắp chiếu</button>
+                                <button class="filter-btn" onclick="setMovieFilter('Đã chiếu',this)">Đã chiếu</button>
+                            </div>
+                        </div>
+                        <div id="moviesTableContainer">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Poster</th>
+                                        <th>Tên phim</th>
+                                        <th>Thể loại</th>
+                                        <th>Thời lượng</th>
+                                        <th>Ngày chiếu</th>
+                                        <th>Trạng thái</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="moviesTableBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="pagination" id="moviesPagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== ADMIN TICKETS PAGE =================== -->
+    <div id="page-admin-tickets" class="page">
+        <div class="admin-layout">
+            <div class="sidebar" id="sidebarTickets">
+                <div class="sidebar-logo">
+                    <div class="logo">
+                        <div class="logo-icon">R</div>
+                        <div class="logo-text">Rikkei<span>Cinema</span></div>
+                    </div>
+                </div>
+                <nav class="sidebar-nav">
+                    <button class="nav-item" onclick="navigate('admin-movies')">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="2" />
+                            <path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5" />
+                        </svg>
+                        Quản lý Phim
+                    </button>
+                    <button class="nav-item active" onclick="navigate('admin-tickets')">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M2 9a1 1 0 011-1h18a1 1 0 011 1v2a2 2 0 010 4v2a1 1 0 01-1 1H3a1 1 0 01-1-1v-2a2 2 0 010-4V9z" />
+                        </svg>
+                        Quản lý Vé
+                    </button>
+                    <button class="nav-item" onclick="navigate('landing')">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                            <polyline points="9,22 9,12 15,12 15,22" />
+                        </svg>
+                        Trang Chủ
+                    </button>
+                </nav>
+                <div class="sidebar-footer">
+                    <div class="admin-user">
+                        <div class="admin-avatar" id="adminAvatar2">A</div>
+                        <div>
+                            <div class="admin-name" id="adminName2">Admin</div>
+                            <div class="admin-role">Quản trị viên</div>
+                        </div>
+                    </div>
+                    <button class="nav-item" onclick="showLogoutModal()" style="margin-top:6px;color:var(--red)">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+                            <polyline points="16,17 21,12 16,7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                        Đăng xuất
+                    </button>
+                </div>
+            </div>
+            <div class="admin-main">
+                <div class="admin-topbar">
+                    <div class="admin-topbar-title">Quản Lý Vé Xem Phim</div>
+                    <button class="btn btn-red btn-sm" onclick="openAddTicket()">+ Thêm vé mới</button>
+                </div>
+                <div class="admin-content">
+                    <div class="ticket-stat-row" id="ticketStats"></div>
+                    <div class="table-wrap">
+                        <div class="table-header">
+                            <div class="search-box">
+                                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <path d="m21 21-4.35-4.35" />
+                                </svg>
+                                <input type="text" placeholder="Tìm mã vé / tên khách hàng..." id="ticketSearch"
+                                    oninput="filterTickets()">
+                            </div>
+                            <div class="filter-row">
+                                <button class="filter-btn active" onclick="setTicketFilter('all',this)">Tất cả</button>
+                                <button class="filter-btn" onclick="setTicketFilter('Đã thanh toán',this)">Đã thanh
+                                    toán</button>
+                                <button class="filter-btn" onclick="setTicketFilter('Chờ thanh toán',this)">Chờ thanh
+                                    toán</button>
+                                <button class="filter-btn" onclick="setTicketFilter('Đã hủy',this)">Đã hủy</button>
+                            </div>
+                        </div>
+                        <div id="ticketsTableContainer">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Mã vé</th>
+                                        <th>Khách hàng</th>
+                                        <th>Phim</th>
+                                        <th>Suất chiếu</th>
+                                        <th>Ghế</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Thanh toán</th>
+                                        <th>Trạng thái</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ticketsTableBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="pagination" id="ticketsPagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== MODALS =================== -->
+
+    <!-- Logout Modal -->
+    <div class="modal-overlay" id="logoutModal">
+        <div class="modal modal-sm">
+            <div class="modal-body" style="padding-top:32px">
+                <div class="confirm-icon danger">🚪</div>
+                <div class="confirm-text">
+                    <h3>Xác nhận đăng xuất</h3>
+                    <p>Bạn có chắc chắn muốn đăng xuất khỏi hệ thống không?</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" onclick="closeModal('logoutModal')">Hủy</button>
+                <button class="btn btn-red" onclick="handleLogout()">Đăng xuất</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Movie Modal -->
+    <div class="modal-overlay" id="movieModal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <div class="modal-title" id="movieModalTitle">Thêm Phim Mới</div>
+                <button class="close-btn" onclick="closeModal('movieModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Tên phim *</label>
+                        <input type="text" id="mName" class="form-control" placeholder="Tên phim">
+                        <div class="form-error" id="mNameErr">Tên phim không được để trống</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Thể loại *</label>
+                        <input type="text" id="mGenre" class="form-control" placeholder="Hành động, Tình cảm...">
+                        <div class="form-error" id="mGenreErr">Thể loại không được để trống</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Thời lượng (phút) *</label>
+                        <input type="number" id="mDuration" class="form-control" placeholder="120" min="1">
+                        <div class="form-error" id="mDurationErr">Thời lượng không hợp lệ</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ngày khởi chiếu *</label>
+                        <input type="date" id="mReleaseDate" class="form-control">
+                        <div class="form-error" id="mReleaseDateErr">Ngày chiếu không được để trống</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Trạng thái *</label>
+                        <select id="mStatus" class="form-control">
+                            <option value="">-- Chọn trạng thái --</option>
+                            <option value="Đang chiếu">Đang chiếu</option>
+                            <option value="Sắp chiếu">Sắp chiếu</option>
+                            <option value="Đã chiếu">Đã chiếu</option>
+                        </select>
+                        <div class="form-error" id="mStatusErr">Trạng thái không được để trống</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Giá vé (VNĐ)</label>
+                        <input type="number" id="mPrice" class="form-control" placeholder="85000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">URL Ảnh bìa *</label>
+                    <input type="url" id="mPoster" class="form-control" placeholder="https://...">
+                    <div class="form-error" id="mPosterErr">URL ảnh không hợp lệ</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Mô tả ngắn *</label>
+                    <textarea id="mDesc" class="form-control" rows="3" placeholder="Mô tả nội dung phim..."></textarea>
+                    <div class="form-error" id="mDescErr">Mô tả không được để trống</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" onclick="closeModal('movieModal')">Hủy</button>
+                <button class="btn btn-red" id="movieModalSubmitBtn" onclick="handleMovieSubmit()">Thêm phim</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Movie Modal -->
+    <div class="modal-overlay" id="deleteMovieModal">
+        <div class="modal modal-sm">
+            <div class="modal-body" style="padding-top:32px">
+                <div class="confirm-icon danger">🗑️</div>
+                <div class="confirm-text">
+                    <h3>Xóa Phim</h3>
+                    <p>Bạn có chắc chắn muốn xóa phim "<span id="deleteMovieName"
+                            style="color:var(--red)"></span>"?<br>Hành động
+                        này không thể hoàn tác.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" onclick="closeModal('deleteMovieModal')">Hủy</button>
+                <button class="btn btn-red" onclick="confirmDeleteMovie()">Xóa phim</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Ticket Modal -->
+    <div class="modal-overlay" id="ticketModal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <div class="modal-title" id="ticketModalTitle">Thêm Vé Mới</div>
+                <button class="close-btn" onclick="closeModal('ticketModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Khách hàng *</label>
+                        <input type="text" id="tCustomer" class="form-control" placeholder="Tên khách hàng">
+                        <div class="form-error" id="tCustomerErr">Khách hàng không được để trống</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phim *</label>
+                        <select id="tMovie" class="form-control" onchange="updateShowtimes()">
+                            <option value="">-- Chọn phim đang chiếu --</option>
+                        </select>
+                        <div class="form-error" id="tMovieErr">Vui lòng chọn phim</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Suất chiếu *</label>
+                        <select id="tShowtime" class="form-control">
+                            <option value="">-- Chọn suất chiếu --</option>
+                            <option value="09:00">09:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="19:00">19:00</option>
+                            <option value="21:30">21:30</option>
+                        </select>
+                        <div class="form-error" id="tShowtimeErr">Vui lòng chọn suất chiếu</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ghế *</label>
+                        <input type="text" id="tSeat" class="form-control" placeholder="VD: A1, B3">
+                        <div class="form-error" id="tSeatErr">Ghế không được để trống</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phương thức thanh toán *</label>
+                        <select id="tPayment" class="form-control">
+                            <option value="">-- Chọn phương thức --</option>
+                            <option value="Tiền mặt">Tiền mặt</option>
+                            <option value="Chuyển khoản">Chuyển khoản</option>
+                            <option value="Thẻ tín dụng">Thẻ tín dụng</option>
+                            <option value="Ví điện tử">Ví điện tử</option>
+                        </select>
+                        <div class="form-error" id="tPaymentErr">Vui lòng chọn phương thức thanh toán</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tổng tiền (tự động)</label>
+                        <input type="text" id="tTotal" class="form-control" readonly
+                            style="background:var(--bg4);cursor:not-allowed">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Trạng thái</label>
+                    <select id="tStatus" class="form-control">
+                        <option value="Chờ thanh toán">Chờ thanh toán</option>
+                        <option value="Đã thanh toán">Đã thanh toán</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" onclick="closeModal('ticketModal')">Hủy</button>
+                <button class="btn btn-red" id="ticketModalSubmitBtn" onclick="handleTicketSubmit()">Thêm vé</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel Ticket Modal -->
+    <div class="modal-overlay" id="cancelTicketModal">
+        <div class="modal modal-sm">
+            <div class="modal-body" style="padding-top:32px">
+                <div class="confirm-icon danger">🎫</div>
+                <div class="confirm-text">
+                    <h3>Hủy Vé</h3>
+                    <p>Bạn có chắc chắn muốn hủy vé <span id="cancelTicketId" style="color:var(--red)"></span>?<br>Hành
+                        động này
+                        không thể hoàn tác.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" onclick="closeModal('cancelTicketModal')">Quay lại</button>
+                <button class="btn btn-red" onclick="confirmCancelTicket()">Xác nhận hủy</button>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

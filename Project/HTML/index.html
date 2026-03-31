@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - Rikkei Cinema</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon"><img src="../img/Icon.png" alt=""></i></span>
+                <span class="logo-text">Rikkei <span class="logo-cinema">Cinema</span></span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Trang chủ</a>
+                <a href="#" class="nav-link">Phim</a>
+                <a href="#" class="nav-link">Rạp chiếu</a>
+            </nav>
+            <div class="nav-actions" id="navActions">
+                <a href="login.html" class="btn-login">Đăng nhập / Đăng ký</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="badge">Đang Thịnh Hành</span>
+
+                <h1 class="hero-title">Dune: Hành Tinh Cát</h1>
+
+                <p class="hero-description">
+                    Câu chuyện về cuộc hành trình của Paul Atreides, một chàng trai trẻ tài năng
+                    và rực rỡ, sinh ra với số phận vĩ đại vượt quá sự hiểu biết của mình.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary">
+                        🎟 Đặt Vé Ngay
+                    </button>
+
+                    <button class="btn-secondary">
+                        ▶ Xem Trailer
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movies Section -->
+        <section class="movies-section">
+            <div class="section-header">
+                <h2 class="section-title">Phim Đang Chiếu</h2>
+                <a href="#" class="view-all">Xem tất cả <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Phim sẽ được render bằng JS -->
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title">Ưu Đãi Độc Biệt</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Giảm 25% cho sinh viên</h3>
+                    <p>Giảm giá đặc biệt cho tất cả sinh viên khi đặt vé</p>
+                    <a href="#" class="feature-link">Tìm hiểu thêm</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Combo Bắp Nước Thìn Kiệm</h3>
+                    <p>Gói combo bắp nước siêu rẻ, đặt vé là có</p>
+                    <a href="#" class="feature-link">Tìm hiểu thêm</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Thẻ Thành Viên VIP</h3>
+                    <p>Tích điểm mỗi lần mua vé, đổi quà tặng hấp dẫn</p>
+                    <a href="#" class="feature-link">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-section">
+            <h2 class="section-title">Tại sao chọn RikkeiEdu?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Tư vấn phim hay</h3>
+                    <p>Hỗ trợ tư vấn về các bộ phim mới nhất, hot nhất trong tuần</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Đặt vé nhanh gọn</h3>
+                    <p>Dễ dàng đặt vé chỉ với vài click trên website hoặc app</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Đảm bảo an toàn thông tin</h3>
+                    <p>Bảo mật thông tin khách hàng tuyệt đối, không lo lộ lọt</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <h2 class="section-title">Đăng ký nhận thông tin</h2>
+            <div class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Nhập email của bạn">
+                <button class="btn-submit">Đăng ký</button>
+            </div>
+        </section>
+
+        <p class="copyright">
+            &copy; 2026 RikkeiEdu. Tất cả quyền được bảo mật.
+        </p>
+    </main>
+
+    <!-- Modal Logout -->
+    <div class="modal" id="logoutModal">
+        <div class="modal-content">
+            <h2>Xác nhận đăng xuất</h2>
+            <p>Bạn có chắc chắn muốn đăng xuất khỏi tài khoản?</p>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="closeLogoutModal()">Hủy</button>
+                <button class="btn-confirm" onclick="confirmLogout()">Đăng xuất</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/index.js"></script>
+    <div id="toast-container"></div>
+</body>
+
+</html>

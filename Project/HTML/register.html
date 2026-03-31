@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký - Rikkei Cinema</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../CSS/register.css">
 </head>
 
@@ -16,7 +19,7 @@
                 <span class="logo-text">Rikkei <span class="logo-cinema">Cinema</span></span>
             </div>
             <nav class="nav">
-                <a href="#" class="nav-link">Trang Chủ</a>
+                <a href="./index.html" class="nav-link">Trang Chủ</a>
                 <a href="#" class="nav-link">Thông Tin</a>
                 <a href="#" class="nav-link">Liên Hệ</a>
                 <button class="btn-login">Đăng nhập</button>
@@ -26,40 +29,48 @@
 
     <main class="main-content">
         <div class="register-container">
-            <form class="register-form">
+            <form class="register-form" onsubmit="register(event)">
                 <div class="form-title">
                     <h1>Tạo tài khoản mới</h1>
                     <p>Đăng ký để đặt vé xem phim ngay hôm nay</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="name" class="form-label">Họ và tên</label>
-                    <input type="text" id="name" class="form-input" placeholder="Nguyễn Văn A" required>
+                    <label for="username" class="form-label">Họ và tên</label>
+                    <input type="text" id="username" class="form-input" placeholder="Nguyễn Văn A" required>
+                    <p class="error-name" style="display: none;">Tên không được để trống!</p>
                 </div>
 
                 <div class="form-group">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" id="email" class="form-input" placeholder="email@example.com" required>
+                    <p class="error-email" style="display: none;">Email không được để trống!</p>
                 </div>
 
                 <div class="form-group">
                     <label for="password" class="form-label">Mật khẩu</label>
                     <input type="password" id="password" class="form-input" placeholder="********" required>
+                    <p class="error-password" style="display: none;">Mật khẩu tối thiểu 8 ký tự và có ít nhất một ký tự
+                        đặc biệt</p>
+                    <span class="input-icon" onclick="togglePassword()"><img src="../img/Icon (2).png" alt=""></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="rePassword" class="form-label">Xác nhận mật khẩu</label>
-                    <input type="password" id="rePassword" class="form-input" placeholder="********" required>
+                    <label for="confirmPassword" class="form-label">Xác nhận mật khẩu</label>
+                    <input type="password" id="confirmPassword" class="form-input" placeholder="********" required>
+                    <p class="error-confirm-password" style="display: none;">Mật khẩu không trùng khớp</p>
+                    <span class="input-icon" onclick="togglePassword()"><img src="../img/Icon (2).png" alt=""></span>
                 </div>
 
                 <div class="form-options">
                     <label class="checkbox">
                         <input type="checkbox" id="terms" required>
-                        <span>Tôi đồng ý với <a href="#" class="terms-link">điều khoản sử dụng</a> và <a href="#" class="terms-link">chính sách bảo mật</a> của CineEdu.</span>
+                        <span>Tôi đồng ý với <a href="#" class="terms-link">điều khoản sử dụng</a> và chính sách bảo
+                            <br> mật của CineEdu.</span>
                     </label>
                 </div>
 
-                <button type="submit" class="btn-submit">Đăng ký →</button>
+                <button type="submit" class="btn-submit">Đăng ký <i class="fa-solid fa-arrow-right"></i></button>
 
                 <p class="signin-text">
                     Đã có tài khoản? <a href="login.html" class="signin-link">Đăng nhập ngay</a>
@@ -71,6 +82,9 @@
             &copy; 2026 RikkeiEdu. Tất cả quyền được bảo mật.
         </p>
     </main>
+
+    <script src="../JS/register.js"></script>
+    <div id="toast-container"></div>
 </body>
 
 </html>

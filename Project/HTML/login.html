@@ -16,10 +16,10 @@
                 <span class="logo-text">Rikkei <span class="logo-cinema">Cinema</span></span>
             </div>
             <nav class="nav">
-                <a href="#" class="nav-link">Trang Chủ</a>
+                <a href="./index.html" class="nav-link">Trang Chủ</a>
                 <a href="#" class="nav-link">Thông Tin</a>
                 <a href="#" class="nav-link">Liên Hệ</a>
-                <button class="btn-login">Đăng nhập</button>
+                <button class="btn-login" onclick="login(event)">Đăng nhập</button>
             </nav>
         </div>
     </header>
@@ -31,28 +31,31 @@
             </div>
 
             <div class="login-container">
-                <form class="login-form">
-                    <h1 class="form-title">Chào mừng quay trở lại</h1>
+                <form class="login-form" onsubmit="login(event)">
+                    <h1 class="form-title">Chào mừng quay trở <br> lại</h1>
 
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" id="email" class="form-input" placeholder="Nhập email của bạn" required>
+                        <span class="input-icon"><img src="../img/icon mắt.png" alt=""></span>
                     </div>
 
                     <div class="form-group">
                         <label for="password" class="form-label">Mật khẩu</label>
                         <input type="password" id="password" class="form-input" placeholder="Nhập mật khẩu của bạn" required>
+                        <span class="toggle-password" onclick="togglePassword()"><img src="../img/Icon (1).png" alt="Toggle Password"></span>
+                        <p class="error-account" style="display: none;">Email hoặc mật khẩu không chính xác!</p>
                     </div>
 
                     <div class="form-options">
                         <label class="checkbox">
-                            <input type="checkbox" id="remember">
+                            <input type="checkbox" id="remember" onchange="rememberLogin()">
                             <span>Ghi nhớ đăng nhập</span>
                         </label>
                         <a href="#" class="forgot-password">Quên mật khẩu?</a>
                     </div>
 
-                    <button type="submit" class="btn-submit">Đăng nhập ➔</button>
+                    <button type="submit" class="btn-submit">Đăng nhập <img src="../img/Container.png" alt=""></button>
 
                     <p class="signup-text">
                         Bạn chưa có tài khoản? <a href="register.html" class="signup-link">Đăng ký ngay</a>
@@ -61,6 +64,9 @@
             </div>
         </div>
     </main>
+
+    <script src="../JS/login.js"></script>
+    <div id="toast-container"></div>
 </body>
 
 </html>

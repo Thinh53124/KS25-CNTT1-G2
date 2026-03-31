@@ -1,4 +1,3 @@
-// hàm đăng nhập
 let users = JSON.parse(localStorage.getItem("users"))||[];
 function login(e){
     e.preventDefault();
