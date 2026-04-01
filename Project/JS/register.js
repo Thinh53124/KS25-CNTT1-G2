@@ -9,7 +9,6 @@ function register(e) {
   let confirm = document.getElementById("confirmPassword").value.trim();
   let terms = document.getElementById("terms").checked;
 
-  // NAME
   if (name === "") {
     showError(".error-name", "Không được để trống!");
     return;
@@ -17,7 +16,6 @@ function register(e) {
     showError(".error-name", "");
   }
 
-  // EMAIL
   if (email === "") {
     showError(".error-email", "Không được để trống!");
     return;
@@ -35,7 +33,6 @@ function register(e) {
 
   showError(".error-email", "");
 
-  // PASSWORD
   if (password === "") {
     showError(".error-password", "Không được để trống!");
     return;
@@ -48,7 +45,6 @@ function register(e) {
 
   showError(".error-password", "");
 
-  // CONFIRM
   if (confirm === "") {
     showError(".error-confirm-password", "Không được để trống!");
     return;
@@ -61,13 +57,11 @@ function register(e) {
 
   showError(".error-confirm-password", "");
 
-  // TERMS
   if (!terms) {
     createToast("error", "Lỗi", "Bạn phải đồng ý điều khoản!");
     return;
   }
 
-  // TẠO USER
   let newUser = {
     id: Date.now(),
     name,
@@ -86,7 +80,6 @@ function register(e) {
   }, 1500);
 }
 
-// validate
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -95,14 +88,12 @@ function validatePassword(password) {
   return /^(?=.*[!@#$%^&*]).{8,}$/.test(password);
 }
 
-// show error
 function showError(selector, message) {
   const el = document.querySelector(selector);
   el.style.display = message ? "block" : "none";
   el.textContent = message;
 }
 
-// toast
 function createToast(type, title, message) {
   const container = document.getElementById("toast-container");
 

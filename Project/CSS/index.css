@@ -177,11 +177,13 @@ body {
 .main-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 ;
+  padding: 0;
 }
 
 /* ==================== HERO SECTION ==================== */
 .hero-section {
+  display: flex;
+  align-items: center;
   position: relative;
   height: 520px;
   overflow: hidden;
@@ -316,9 +318,9 @@ body {
 /* secondary button */
 .btn-primary,
 .btn-secondary {
-  font-weight: 700 !important;
+  font-weight: 700 ;
   color: #fff !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 .btn-secondary:hover {
   background: white;
@@ -354,18 +356,12 @@ body {
   gap: 1rem;
 }
 
-.movies-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
 /* CARD */
 /* ==================== MOVIE CARD (NEW UI) ==================== */
 
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -376,15 +372,15 @@ body {
   border-radius: 8px;
   overflow: hidden;
 
-  border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 
   transition: 0.3s;
 }
 
 .movie-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
 
 /* IMAGE */
@@ -394,8 +390,8 @@ body {
   object-fit: cover;
   display: block;
 
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 /* INFO BLOCK (phần tối bên dưới) */
@@ -425,7 +421,7 @@ body {
   border-radius: 4px;
 
   background: #472330;
-  color: #E60A15;
+  color: #e60a15;
 
   border: none;
   font-weight: 600;
@@ -468,7 +464,7 @@ body {
 .feature-card:hover {
   transform: translateY(-6px);
   background: #374151;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   border-color: #4b5563;
 }
 
@@ -490,14 +486,14 @@ body {
 
 .feature-card p {
   font-size: 14px;
-  color: #9CA3AF;
+  color: #9ca3af;
   line-height: 20px;
 }
 
 .feature-link {
   display: inline-block;
   margin-top: 16px;
-  color: #E60A15;
+  color: #e60a15;
   font-weight: 600;
   text-decoration: none;
 }
@@ -536,7 +532,7 @@ body {
 .why-card:hover {
   transform: translateY(-6px);
   background: #374151;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   border-color: #4b5563;
 }
 
@@ -558,7 +554,7 @@ body {
 
 .why-card p {
   font-size: 14px;
-  color: #9CA3AF;
+  color: #9ca3af;
   line-height: 20px;
 }
 
@@ -756,5 +752,11 @@ body {
 @media (max-width: 480px) {
   .movies-grid {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .features-grid,
+  .why-grid {
+    flex-direction: column;
   }
 }

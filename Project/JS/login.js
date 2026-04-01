@@ -1,6 +1,5 @@
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
-// Nếu chưa có admin thì tạo sẵn
 if (!users.find(u => u.role === "ADMIN")) {
   let admin = {
     id: 1,
@@ -19,14 +18,14 @@ function login(e) {
 
   let email = document.getElementById("email").value.trim();
   let password = document.getElementById("password").value.trim();
+  let error = document.querySelector(".error-account");
 
-  if (email === "") {
-    createToast("error", "Lỗi", "Email không được để trống!");
-    return;
-  }
+  // Ẩn lỗi trước mỗi lần submit
+  error.style.display = "none";
 
-  if (password === "") {
-    createToast("error", "Lỗi", "Mật khẩu không được để trống!");
+  if (email === "" || password === "") {
+    error.style.display = "block";
+    error.textContent = "Email và mật khẩu không được để trống!";
     return;
   }
 
@@ -35,14 +34,16 @@ function login(e) {
   );
 
   if (!user) {
-    createToast("error", "Lỗi", "Email hoặc mật khẩu không chính xác!");
+    error.style.display = "block";
+    error.textContent = "Email hoặc mật khẩu không chính xác!";
   } else {
     localStorage.setItem("currentUser", JSON.stringify(user));
+    rememberLogin();
 
+    // ✅ Chỉ giữ toast khi thành công
     createToast("success", "Thành công", "Đăng nhập thành công!");
 
     setTimeout(() => {
-      // Nếu admin thì vào admin
       if (user.role === "ADMIN") {
         window.location.href = "../HTML/admin.html";
       } else {
@@ -52,13 +53,11 @@ function login(e) {
   }
 }
 
-// show/hide password
 function togglePassword() {
   const input = document.getElementById("password");
   input.type = input.type === "password" ? "text" : "password";
 }
 
-// nhớ đăng nhập
 function rememberLogin() {
   const checked = document.getElementById("remember").checked;
   const email = document.getElementById("email").value;
@@ -73,7 +72,6 @@ function rememberLogin() {
   }
 }
 
-// load lại dữ liệu nhớ
 document.addEventListener("DOMContentLoaded", () => {
   const email = localStorage.getItem("rememberedEmail");
   const password = localStorage.getItem("rememberedPassword");
@@ -85,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// toast
 function createToast(type, title, message) {
   const container = document.getElementById("toast-container");
 

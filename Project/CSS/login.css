@@ -371,7 +371,6 @@ body {
 
 .error-account {
   color: red;
-  display: none;
 }
 #toast-container {
   position: fixed;
