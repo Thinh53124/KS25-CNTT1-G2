@@ -12,6 +12,9 @@ function register(e) {
   if (name === "") {
     showError(".error-name", "Không được để trống!");
     return;
+  } else if (name.length < 2) {
+    showError(".error-name", "Tên phải lớn hơn 2 kí tự");
+    return;
   } else {
     showError(".error-name", "");
   }
@@ -26,7 +29,7 @@ function register(e) {
     return;
   }
 
-  if (users.some((u) => u.email === email)) {
+  if (users.some((u) => u.email.toLowerCase() === email.toLowerCase())) {
     showError(".error-email", "Email đã tồn tại!");
     return;
   }

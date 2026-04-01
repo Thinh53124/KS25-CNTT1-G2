@@ -1,12 +1,12 @@
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
-if (!users.find(u => u.role === "ADMIN")) {
+if (!users.find((u) => u.role === "ADMIN")) {
   let admin = {
     id: 1,
     name: "Admin",
     email: "admin@gmail.com",
     password: "123@123",
-    role: "ADMIN"
+    role: "ADMIN",
   };
 
   users.push(admin);
@@ -20,7 +20,6 @@ function login(e) {
   let password = document.getElementById("password").value.trim();
   let error = document.querySelector(".error-account");
 
-  // Ẩn lỗi trước mỗi lần submit
   error.style.display = "none";
 
   if (email === "" || password === "") {
@@ -30,7 +29,9 @@ function login(e) {
   }
 
   let user = users.find(
-    (item) => item.email === email && item.password === password
+    (item) =>
+      item.email.toLowerCase() === email.toLowerCase() &&
+      item.password === password,
   );
 
   if (!user) {
@@ -40,7 +41,6 @@ function login(e) {
     localStorage.setItem("currentUser", JSON.stringify(user));
     rememberLogin();
 
-    // ✅ Chỉ giữ toast khi thành công
     createToast("success", "Thành công", "Đăng nhập thành công!");
 
     setTimeout(() => {

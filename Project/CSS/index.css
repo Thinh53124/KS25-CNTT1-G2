@@ -736,7 +736,6 @@ body {
   }
 }
 
-/* ==================== RESPONSIVE ==================== */
 @media (max-width: 1200px) {
   .movies-grid {
     grid-template-columns: repeat(3, 1fr);

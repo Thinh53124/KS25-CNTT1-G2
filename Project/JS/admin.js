@@ -261,7 +261,6 @@ function confirmDelete() {
     closeDeleteModal();
 }
 
-// ==================== USERS MANAGEMENT ====================
 function renderUsersTable() {
     const searchTerm = document.getElementById("searchUsers").value.toLowerCase();
     const filteredUsers = users.filter(u => 
@@ -304,7 +303,6 @@ function deleteUser(userId) {
     document.getElementById("deleteModal").classList.add("active");
 }
 
-// ==================== PAGINATION ====================
 function renderPagination(elementId, currentPage, totalPages, callback) {
     const pagination = document.getElementById(elementId);
     let html = '';
