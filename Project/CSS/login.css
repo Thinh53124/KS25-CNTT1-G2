@@ -364,14 +364,16 @@ body {
   }
 
   .form-input {
-    font-size: 0.9rem;
-    padding: 0.7rem 0.9rem;
+    font-size: 1rem;
+    padding: 15px;
   }
 }
 
 .error-account {
   color: red;
+  margin-top: 15px;
 }
+
 #toast-container {
   position: fixed;
   top: 20px;
@@ -389,8 +391,10 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  animation: slideIn 0.3s ease, fadeOut 0.5s ease 2.5s forwards;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation:
+    slideIn 0.3s ease,
+    fadeOut 0.5s ease 2.5s forwards;
 }
 
 .toast.success {

@@ -15,7 +15,7 @@
     <header class="header">
         <div class="header-container">
             <div class="logo">
-                <span class="logo-icon"><img src="../img/Icon.png" alt=""></i></span>
+                <span class="logo-icon"><img src="../assets/img/Icon.png" alt=""></i></span>
                 <span class="logo-text">Rikkei <span class="logo-cinema">Cinema</span></span>
             </div>
             <nav class="nav">
@@ -46,7 +46,7 @@
                         🎟 Đặt Vé Ngay
                     </button>
 
-                    <button class="btn-secondary">
+                    <button class="btn-secondary" id="btnTrailer">
                         <i class="fa-regular fa-circle-play"></i> Xem Trailer
                     </button>
                 </div>
@@ -60,7 +60,6 @@
             </div>
 
             <div class="movies-grid" id="moviesGrid">
-                <!-- Phim sẽ được render bằng JS -->
             </div>
         </section>
 
@@ -75,7 +74,8 @@
                     </div>
                     <h3>Giảm 20% cho sinh viên</h3>
                     <p>
-                        Áp dụng cho tất cả các suất chiếu 2D từ thứ 2 đến thứ 5 khi mang thẻ sinh viên.
+                        Áp dụng cho tất cả các suất chiếu 2D từ thứ 2 đến
+                        thứ 5 hàng tuần khi mang theo thẻ sinh viên.
                     </p>
                     <a href="#" class="feature-link">Xem chi tiết</a>
                 </div>
@@ -86,7 +86,8 @@
                     </div>
                     <h3>Combo Bắp Nước Tiết Kiệm</h3>
                     <p>
-                        Tiết kiệm đến 30% khi mua vé online kèm combo bắp nước.
+                        Tiết kiệm đến 30% khi mua vé online kèm combo
+                        bắp nước Sweet Combo.
                     </p>
                     <a href="#" class="feature-link">Xem chi tiết</a>
                 </div>
@@ -97,7 +98,8 @@
                     </div>
                     <h3>Thẻ Thành Viên VIP</h3>
                     <p>
-                        Tích điểm đổi quà, miễn phí nâng cấp combo và vé mời định kỳ.
+                        Tích điểm đổi quà, miễn phí nâng cấp bắp nước và
+                        vé mời xem phim định kỳ.
                     </p>
                     <a href="#" class="feature-link">Xem chi tiết</a>
                 </div>
@@ -116,7 +118,8 @@
                     </div>
                     <h3>Trải nghiệm đỉnh cao</h3>
                     <p>
-                        Hệ thống âm thanh Dolby Atmos và màn hình IMAX mang đến trải nghiệm sống động.
+                        Hệ thống âm thanh Dolby Atmos và màn hình IMAX
+                        mang đến trải nghiệm điện ảnh sống động nhất.
                     </p>
                 </div>
 
@@ -126,7 +129,8 @@
                     </div>
                     <h3>Giá vé hợp lý</h3>
                     <p>
-                        Giá vé tốt cho học sinh, sinh viên và nhiều ưu đãi hấp dẫn.
+                        Cam kết giá vé tốt nhất cho học sinh, sinh viên và
+                        thành viên thân thiết với nhiều ưu đãi.
                     </p>
                 </div>
 
@@ -136,13 +140,41 @@
                     </div>
                     <h3>Đặt vé nhanh chóng</h3>
                     <p>
-                        Đặt vé online tiện lợi, chọn ghế dễ dàng chỉ trong vài bước.
+                        Hệ thống đặt vé online tiện lợi, chọn ghế dễ dàng
+                        và thanh toán an toàn chỉ trong vài bước.
                     </p>
                 </div>
 
             </div>
         </section>
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <div class="newsletter-text">
+                    <h2>Đăng ký thành viên CineEdu</h2>
+                    <p>Nhận ưu đãi vé xem phim và bắp nước hàng tuần.</p>
+                </div>
 
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email của bạn" required>
+                    <button type="submit">Đăng ký</button>
+                </form>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-links">
+                    <a href="#">Liên hệ</a>
+                    <a href="#">Điều khoản</a>
+                    <a href="#">Tuyển dụng</a>
+                    <a href="#">Về chúng tôi</a>
+                </div>
+
+                <div class="footer-social">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </footer>
         <p class="copyright">
             &copy; 2026 RikkeiEdu. Tất cả quyền được bảo mật.
         </p>
@@ -161,6 +193,16 @@
 
     <script src="../JS/index.js"></script>
     <div id="toast-container"></div>
+    <div class="modal" id="trailerModal">
+        <div class="modal-content" style="max-width: 800px; background: black;">
+
+            <span onclick="closeTrailerModal()" style="cursor:pointer;font-size:24px;color:white;">✖</span>
+
+            <iframe id="trailerFrame" width="100%" height="420" src="" allow="autoplay" allowfullscreen>
+            </iframe>
+
+        </div>
+    </div>
 </body>
 
 </html>

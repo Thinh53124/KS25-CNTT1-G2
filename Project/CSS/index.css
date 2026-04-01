@@ -1,4 +1,4 @@
-/* ==================== GENERAL STYLES ==================== */
+/* Variables */
 :root {
   --primary-color: #ee3a3a;
   --secondary-color: #1a1a2e;
@@ -25,7 +25,7 @@ body {
   line-height: 1.6;
 }
 
-/* ==================== HEADER ==================== */
+/* Header */
 .header {
   background: linear-gradient(
     135deg,
@@ -47,6 +47,7 @@ body {
   align-items: center;
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -75,6 +76,7 @@ body {
   color: rgba(230, 10, 21, 1);
 }
 
+/* Nav */
 .nav {
   display: flex;
   align-items: center;
@@ -106,6 +108,7 @@ body {
   background: var(--primary-color);
 }
 
+/* Actions */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -133,6 +136,7 @@ body {
   transform: translateY(-2px);
 }
 
+/* User */
 .user-menu {
   display: flex;
   align-items: center;
@@ -173,29 +177,26 @@ body {
   background: #d63030;
 }
 
-/* ==================== MAIN CONTENT ==================== */
+/* Main */
 .main-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0;
 }
 
-/* ==================== HERO SECTION ==================== */
+/* Hero */
 .hero-section {
   display: flex;
   align-items: center;
   position: relative;
   height: 520px;
   overflow: hidden;
-
-  margin: 0; /* ❌ bỏ margin */
-  background-image: url("../img/dune.jpg");
+  margin: 0;
+  background-image: url("../assets/img/dune.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* overlay tối */
-/* overlay tối bên trái (giữ nguyên) */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -210,7 +211,6 @@ body {
   z-index: 1;
 }
 
-/* overlay fade xuống dưới */
 .hero-section::after {
   content: "";
   position: absolute;
@@ -218,17 +218,15 @@ body {
   right: 0;
   bottom: 0;
   height: 180px;
-
   background: linear-gradient(
     to bottom,
     rgba(17, 24, 39, 0) 0%,
     rgba(17, 24, 39, 0.6) 50%,
     rgba(17, 24, 39, 1) 100%
   );
-
   z-index: 1;
 }
-/* content */
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -237,24 +235,20 @@ body {
   color: white;
 }
 
-/* badge */
+/* Hero Text */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   padding: 8px 18px;
   border-radius: 999px;
-
   background: rgba(230, 10, 21, 0.1);
   border: 1px solid rgba(230, 10, 21, 0.3);
-
   color: #ff2d2d;
   font-size: 0.85rem;
   font-weight: 500;
 }
 
-/* chấm đỏ */
 .badge::before {
   content: "";
   width: 10px;
@@ -264,29 +258,25 @@ body {
   display: inline-block;
 }
 
-/* title */
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1.2rem;
 }
 
-/* description */
 .hero-description {
-  color: #ccc;
   margin-bottom: 2rem;
   line-height: 32.5px;
   font-size: 20px;
   color: rgba(209, 213, 219, 1);
 }
 
-/* buttons */
+/* Hero Buttons */
 .hero-buttons {
   display: flex;
   gap: 1rem;
 }
 
-/* primary button */
 .btn-primary {
   background: #ee3a3a;
   opacity: 1;
@@ -295,7 +285,7 @@ body {
   padding: 12px 22px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 700; /* 🔥 tăng độ đậm */
+  font-weight: 700;
   transition: 0.3s;
 }
 
@@ -306,7 +296,7 @@ body {
   padding: 12px 22px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 700; /* 🔥 thêm dòng này */
+  font-weight: 700;
   transition: 0.3s;
 }
 
@@ -315,18 +305,19 @@ body {
   box-shadow: 0 8px 20px rgba(238, 58, 58, 0.4);
 }
 
-/* secondary button */
 .btn-primary,
 .btn-secondary {
-  font-weight: 700 ;
+  font-weight: 700;
   color: #fff !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
+
 .btn-secondary:hover {
   background: white;
   color: black;
 }
-/* ==================== MOVIES SECTION ==================== */
+
+/* Movies */
 .movies-section {
   margin: 3rem 0;
 }
@@ -356,25 +347,19 @@ body {
   gap: 1rem;
 }
 
-/* CARD */
-/* ==================== MOVIE CARD (NEW UI) ==================== */
-
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
-/* CARD */
-/* CARD */
+/* Movie Card */
 .movie-card {
   background: #111827;
   border-radius: 8px;
   overflow: hidden;
-
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-
   transition: 0.3s;
 }
 
@@ -383,24 +368,22 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
 
-/* IMAGE */
 .movie-image {
   width: 100%;
   height: 420px;
   object-fit: cover;
   display: block;
-
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 
-/* INFO BLOCK (phần tối bên dưới) */
 .movie-info {
-  background: #1f2937; /* giống Figma hơn */
+  background: #1f2937;
   padding: 16px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
 .movie-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -414,15 +397,12 @@ body {
   margin-bottom: 16px;
 }
 
-/* BUTTON */
 .btn-book {
   width: 100%;
   padding: 14px;
   border-radius: 4px;
-
   background: #472330;
   color: #e60a15;
-
   border: none;
   font-weight: 600;
   transition: 0.3s;
@@ -433,8 +413,7 @@ body {
   color: white;
 }
 
-/* ==================== FEATURES SECTION ==================== */
-/* ===== FEATURES SECTION (giống file 2) ===== */
+/* Features */
 .features-section {
   margin: 4rem 0;
   text-align: center;
@@ -501,11 +480,10 @@ body {
 .feature-link:hover {
   text-decoration: underline;
 }
-/* ==================== WHY SECTION ==================== */
-/* ===== WHY SECTION (giống file 2) ===== */
+
+/* Why */
 .why-section {
   margin: 4rem 0;
-  text-align: center;
 }
 
 .why-section .section-title {
@@ -541,8 +519,8 @@ body {
 }
 
 .why-icon img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .why-card h3 {
@@ -556,75 +534,115 @@ body {
   font-size: 14px;
   color: #9ca3af;
   line-height: 20px;
+  font-weight: 400;
+}
+/* Newsletter */
+.newsletter-section {
+  margin: 4rem 0 0;
+  padding: 40px 60px;
+  background: #1f2937;
+  width: 99.5vw;
+  margin-left: calc(-50vw + 50%);
+}
+.newsletter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 
-/* ==================== NEWSLETTER SECTION ==================== */
-.newsletter-section {
-  margin: 4rem 0;
-  padding: 3rem 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color) 0%,
-    rgba(238, 58, 58, 0.7) 100%
-  );
-  border-radius: 12px;
-  text-align: center;
+.newsletter-text h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.newsletter-text p {
+  color: #9ca3af;
+  font-size: 14px;
 }
 
 .newsletter-form {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 10px;
 }
 
-.newsletter-input {
-  flex: 1;
-  padding: 0.8rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
+.newsletter-form input {
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(55, 65, 81, 1);
+  width: 287.69000244140625px;
+  height: 40px;
+  background: #111827;
   color: white;
-  font-size: 1rem;
 }
 
-.newsletter-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+.newsletter-form input::placeholder {
+  color: #9ca3af;
 }
 
-.newsletter-input:focus {
-  outline: 2px solid white;
-}
-
-.newsletter-form .btn-submit {
-  background: white;
-  color: var(--primary-color);
-  padding: 0.8rem 2rem;
+.newsletter-form button {
+  background: rgba(230, 10, 21, 1);
+  color: white;
   border: none;
-  border-radius: 6px;
-  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
 }
 
-.newsletter-form .btn-submit:hover {
-  background: rgba(255, 255, 255, 0.9);
-  transform: translateY(-2px);
+.newsletter-form button:hover {
+  background: #dc2626;
 }
 
-/* ==================== FOOTER ==================== */
+/* Footer */
 .copyright {
   text-align: center;
   padding: 2rem 0;
-  color: var(--text-light);
+  color: rgba(156, 163, 175, 1);
   border-top: 1px solid var(--border-color);
   margin-top: 3rem;
   font-size: 0.9rem;
 }
+.footer {
+  border-top: 1px solid #374151;
+  padding: 2rem 0;
+  margin-top: 10px;
+}
 
-/* ==================== MODAL ==================== */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;   
+  text-align: center;
+  gap: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: rgba(156, 163, 175, 1);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-social i {
+  color: rgba(156, 163, 175, 1);
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.footer-social i:hover {
+  color: white;
+}
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -696,7 +714,7 @@ body {
   background: #d63030;
 }
 
-/* ==================== TOAST ==================== */
+/* Toast */
 #toast-container {
   position: fixed;
   bottom: 2rem;
@@ -736,6 +754,7 @@ body {
   }
 }
 
+/* Responsive */
 @media (max-width: 1200px) {
   .movies-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -746,6 +765,11 @@ body {
   .movies-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .features-grid,
+  .why-grid {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
@@ -754,8 +778,22 @@ body {
   }
 }
 @media (max-width: 768px) {
-  .features-grid,
-  .why-grid {
+  .newsletter-container {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter-form {
+    width: 100%;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    width: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
   }
 }

@@ -10,7 +10,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-image: url(../img/Blurred\ Background\ Image.png);
+  background-image: url(../assets/img/Blurred\ Background\ Image.png);
   color: #ffffff;
   min-height: 100vh;
   background-size: cover;
@@ -315,22 +315,22 @@ body {
 }
 .error-name {
   color: red;
-  margin-left: 120px;
+  margin-top: 15px;
   display: none;
 }
 .error-email {
   color: red;
-  margin-left: 120px;
+  margin-top: 15px;
   display: none;
 }
 .error-password {
   color: red;
-  margin-left: 120px;
+  margin-top: 15px;
   display: none;
 }
 .error-confirm-password {
   color: red;
-  margin-left: 120px;
+  margin-top: 15px;
   display: none;
 }
 
@@ -383,8 +383,8 @@ body {
   }
 
   .form-input {
-    font-size: 0.9rem;
-    padding: 0.7rem 0.9rem;
+    font-size: 1rem;
+    padding: 15px;
   }
 
   .copyright {
@@ -408,8 +408,10 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  animation: slideIn 0.3s ease, fadeOut 0.5s ease 2.5s forwards;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation:
+    slideIn 0.3s ease,
+    fadeOut 0.5s ease 2.5s forwards;
 }
 
 .toast.success {

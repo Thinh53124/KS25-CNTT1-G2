@@ -59,9 +59,6 @@ function renderNavActions() {
     navActions.innerHTML = `
             <div class="user-menu">
                 <span class="user-name">${currentUser.name}</span>
-                <div class="user-avatar">
-                    ${currentUser.name.charAt(0).toUpperCase()}
-                </div>
                 <button class="logout-btn" onclick="showLogoutModal()">
                     Đăng xuất
                 </button>
@@ -117,6 +114,38 @@ function bookMovie(movieId) {
   );
 }
 
+const trailerUrl = "https://www.youtube.com/watch?v=n9xhJrPXop4";
+
+function handleTrailerClick(url) {
+  if (!url) {
+    createToast("error", "Lỗi", "Chưa có trailer!");
+    return;
+  }
+
+  const videoId = getYouTubeId(url);
+
+  if (!videoId) {
+    window.open(url, "_blank");
+    return;
+  }
+
+  document.getElementById("trailerFrame").src =
+    `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+
+  document.getElementById("trailerModal").classList.add("active");
+}
+
+function closeTrailerModal() {
+  document.getElementById("trailerFrame").src = "";
+  document.getElementById("trailerModal").classList.remove("active");
+}
+
+function getYouTubeId(url) {
+  const regExp = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/;
+  const match = url.match(regExp);
+  return match ? match[1] : null;
+}
+
 function showLogoutModal() {
   document.getElementById("logoutModal").classList.add("active");
 }
@@ -131,7 +160,7 @@ function confirmLogout() {
   createToast("success", "Thành công", "Đã đăng xuất!");
 
   setTimeout(() => {
-    window.location.href = "login.html"; 
+    window.location.href = "login.html";
   }, 1500);
 }
 
@@ -155,5 +184,25 @@ document.addEventListener("click", (e) => {
   const modal = document.getElementById("logoutModal");
   if (e.target === modal) {
     closeLogoutModal();
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  renderNavActions();
+  renderMovies();
+
+  const trailerUrl = "https://www.youtube.com/watch?v=n9xhJrPXop4";
+
+  const btn = document.getElementById("btnTrailer");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      handleTrailerClick(trailerUrl);
+    });
+  }
+});
+document.addEventListener("click", (e) => {
+  const trailerModal = document.getElementById("trailerModal");
+
+  if (e.target === trailerModal) {
+    closeTrailerModal();
   }
 });
