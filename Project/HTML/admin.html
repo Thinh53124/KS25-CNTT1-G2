@@ -1,67 +1,282 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Eater&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Staatliches&display=swap"
-      rel="stylesheet"
-    />
-    <script src="../JS/admin.js" defer></script>
-    <link rel="stylesheet" href="../css/admin.css" />
-  </head>
-  <body>
-    <div class="sidebar">
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rikkei Cinema Admin - Quản lý Phim</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <link rel="stylesheet" href="../CSS/admin.css">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div>
       <div class="logo">
-        <div class="img-logo">
-          <img src="../assets/img/Icon.png" alt="" />
-        </div>
-        <span class="logo1">Rikkei</span>
-        <span class="logo2">Cinema</span>
+        <img src="../assets/icons/admin/Background (1).png" alt="">
+        <span><span class="logo1">Rikkei</span><span class="logo2"> Cinema</span></span>
       </div>
+
       <div class="tabs">
-        <div class="tab tab-select">
+        <div class="tab tab-select" onclick="switchTab(0)">
           <i class="fa-solid fa-clapperboard"></i>
-          <p>Quản lý phim</p>
+          <span>Quản lý phim</span>
         </div>
-        <div class="tab">
-          <i class="fa-solid fa-ticket"></i>
-          <p>Quản lý vé</p>
+        <div class="tab" onclick="switchTab(1)">
+          <i class="fas fa-ticket"></i>
+          <span>Quản lý vé</span>
         </div>
-      </div>
-      <div class="sidebar-footer">
-        <img src="../assets/img/4b3c32e708cfeaf4ac3b720d07977c0fcfc63eec.jpg" alt="" />
-        <div class="admin-info">
-          <p class="footer-name">Admin Quản lý</p>
-          <p class="footer-email">LQTuan@rikkei.edu.vn</p>
-        </div>
-        <i class="fa-solid fa-arrow-right-from-bracket" onclick="showLogout()"></i>
       </div>
     </div>
-    <main>
-        <div id="logout">
-            <div id="logout-content">
-                <div id="logout-icon">
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                </div>
-                <h2>Đăng xuất</h2>
-                <p>Bạn có chắc chắn muốn đăng xuất không?</p>
-            </div>
-            <div id="logout-btn">
-                <button id="logout-cancel-btn" onclick="hideLogout()">Hủy</button>
-                <button id="logout-submit-btn" onclick="logoutToLogin()">Đồng ý</button>
-            </div>
+
+    <div class="sidebar-footer" onclick="showLogoutModal()">
+      <img src="../assets/img/4b3c32e708cfeaf4ac3b720d07977c0fcfc63eec.jpg" alt="Admin">
+      <div class="admin-info">
+        <div class="admin-name">Admin Quản Lý</div>
+        <div class="admin-email">LQTuan@rikkei.edu.vn</div>
+      </div>
+      <i class="fas fa-arrow-right-from-bracket" style="margin-left: auto; color: #999;"></i>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- TAB: MOVIE -->
+    <div id="movieTab">
+
+      <!-- HEADER -->
+      <div class="content-header">
+        <div class="header-left">
+          <h1>Quản lý danh sách phim</h1>
+          <p>Xem, chỉnh sửa và quản lý tất cả phim hiện có trên hệ thống.</p>
         </div>
-    </main>
-  </body>
+        <div class="actions">
+          <input type="text" id="searchInput" placeholder="Tìm phim..." onkeyup="searchMovies(this.value)">
+          <button class="btn-add" onclick="openAddModal()">
+            <i class="fas fa-plus"></i> Thêm phim mới
+          </button>
+        </div>
+      </div>
+
+      <!-- FILTER -->
+      <div class="filter">
+        <button class="active" onclick="filterMovies('all', this)">Tất cả (<span id="countAll">24</span>)</button>
+        <button onclick="filterMovies('Đang chiếu', this)">Đang chiếu (<span id="countShowing">8</span>)</button>
+        <button onclick="filterMovies('Sắp chiếu', this)">Sắp chiếu (<span id="countComing">5</span>)</button>
+        <button onclick="filterMovies('Đã chiếu', this)">Đã chiếu (<span id="countEnded">11</span>)</button>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-container" id="tableContainer"></div>
+
+        <div class="pagination-footer">
+          <div class="pagination-info">
+            Hiển thị <strong id="itemStart">1</strong>-<strong id="itemEnd">5</strong> trên <strong
+              id="totalItems">24</strong> phim
+          </div>
+          <div class="pagination-controls" id="paginationControls"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB: TICKET -->
+    <div id="ticketTab" style="display: none;">
+      <div class="content-header">
+        <div class="header-left">
+          <h1>Quản lý vé đã đặt</h1>
+        </div>
+        <div class="actions">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm mã vé, tên khách..." onkeyup="searchTickets(this.value)">
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ADD MOVIE MODAL -->
+  <div class="modal" id="addModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2>Thêm Phim Mới</h2>
+        <button class="close-btn" onclick="closeAddModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Tên phim <span style="color: #ff2d2d;">*</span></label>
+          <input type="text" id="addName" placeholder="Nhập tên phim">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Thể loại <span style="color: #ff2d2d;">*</span></label>
+            <input type="text" id="addGenre" placeholder="Ví dụ: Hành động, Kinh dị">
+          </div>
+          <div class="form-group">
+            <label>Thời lượng (phút) <span style="color: #ff2d2d;">*</span></label>
+            <input type="number" id="addDuration" placeholder="120" min="1">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ngày khởi chiếu <span style="color: #ff2d2d;">*</span></label>
+            <input type="date" id="addDate">
+          </div>
+          <div class="form-group">
+            <label>Trạng thái <span style="color: #ff2d2d;">*</span></label>
+            <select id="addStatus">
+              <option value="">-- Chọn trạng thái --</option>
+              <option value="Đang chiếu">Đang chiếu</option>
+              <option value="Sắp chiếu">Sắp chiếu</option>
+              <option value="Đã chiếu">Đã chiếu</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Giá vé (VNĐ) <span style="color: #ff2d2d;">*</span></label>
+          <input type="number" id="addPrice" placeholder="90000" min="1">
+        </div>
+
+        <div class="form-group">
+          <label>URL Ảnh bìa <span style="color: #ff2d2d;">*</span></label>
+          <input type="text" id="addPoster" placeholder="https://example.com/poster.jpg">
+        </div>
+
+        <div class="form-group">
+          <label>Mô tả phim <span style="color: #ff2d2d;">*</span></label>
+          <textarea id="addDesc" placeholder="Nhập mô tả chi tiết về phim..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeAddModal()">Hủy</button>
+        <button class="btn-submit" onclick="addMovie()"><i class="fas fa-plus"></i> Thêm phim</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT MOVIE MODAL -->
+  <div class="modal" id="editModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2>Cập Nhật Phim</h2>
+        <button class="close-btn" onclick="closeEditModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Tên phim <span style="color: #ff2d2d;">*</span></label>
+          <input type="text" id="editName" placeholder="Nhập tên phim">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Thể loại <span style="color: #ff2d2d;">*</span></label>
+            <input type="text" id="editGenre" placeholder="Ví dụ: Hành động, Kinh dị">
+          </div>
+          <div class="form-group">
+            <label>Thời lượng (phút) <span style="color: #ff2d2d;">*</span></label>
+            <input type="number" id="editDuration" placeholder="120" min="1">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ngày khởi chiếu <span style="color: #ff2d2d;">*</span></label>
+            <input type="date" id="editDate">
+          </div>
+          <div class="form-group">
+            <label>Trạng thái <span style="color: #ff2d2d;">*</span></label>
+            <select id="editStatus">
+              <option value="">-- Chọn trạng thái --</option>
+              <option value="Đang chiếu">Đang chiếu</option>
+              <option value="Sắp chiếu">Sắp chiếu</option>
+              <option value="Đã chiếu">Đã chiếu</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Giá vé (VNĐ) <span style="color: #ff2d2d;">*</span></label>
+          <input type="number" id="editPrice" placeholder="90000" min="1">
+        </div>
+
+        <div class="form-group">
+          <label>URL Ảnh bìa <span style="color: #ff2d2d;">*</span></label>
+          <input type="text" id="editPoster" placeholder="https://example.com/poster.jpg">
+        </div>
+
+        <div class="form-group">
+          <label>Mô tả phim <span style="color: #ff2d2d;">*</span></label>
+          <textarea id="editDesc" placeholder="Nhập mô tả chi tiết về phim..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeEditModal()">Hủy</button>
+        <button class="btn-submit" onclick="updateMovie()"><i class="fas fa-check"></i> Cập nhật</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALIDATION ERROR MODAL -->
+  <div class="modal" id="validationModal">
+    <div class="modal-container validation-modal">
+      <div class="modal-header error-header">
+        <h2><i class="fas fa-exclamation-circle"></i> Lỗi Xác Thực</h2>
+        <button class="close-btn" onclick="closeValidationModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ul class="validation-errors" id="validationErrors"></ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-submit" onclick="closeValidationModal()"><i class="fas fa-check"></i> Đã hiểu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELETE CONFIRMATION MODAL -->
+  <div class="modal" id="deleteModal">
+    <div class="modal-container" style="max-width: 380px;">
+      <div class="modal-header error-header">
+        <h2><i class="fas fa-trash"></i> Xác Nhận Xóa</h2>
+        <button class="close-btn" onclick="closeDeleteModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <p style="margin-bottom: 20px; color: #bbb;">Bạn có chắc muốn xóa phim <strong id="deleteMovieName"></strong>
+          này? Hành động này không thể được hoàn tác.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeDeleteModal()">Hủy</button>
+        <button class="btn-submit" onclick="confirmDeleteMovie()"><i class="fas fa-trash"></i> Xóa</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGOUT MODAL -->
+  <div id="logoutModal" class="modal">
+    <div class="modal-container" style="max-width: 300px;">
+      <div class="modal-header">
+        <h2><i class="fas fa-sign-out-alt"></i> Đăng xuất</h2>
+        <button class="close-btn" onclick="hideLogoutModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <p style="margin-bottom: 20px;">Bạn có chắc muốn đăng xuất khỏi hệ thống?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="hideLogoutModal()">Hủy</button>
+        <button class="btn-submit" onclick="logout()">Đăng xuất</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT NOTIFICATION -->
+  <div id="toast-container"></div>
+
+  <script src="../JS/admin.js"></script>
+
+</body>
+
 </html>
