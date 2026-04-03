@@ -14,7 +14,7 @@ if (movies.length === 0) {
     {
       id: 1,
       name: "Dune: Part Two",
-      genre: "Hành động, Khoa học viễn tưởng",
+      genre: "Khoa học viễn tưởng",
       duration: 166,
       releaseDate: "2024-03-01",
       status: "Đã chiếu",
@@ -25,7 +25,7 @@ if (movies.length === 0) {
     {
       id: 2,
       name: "Kung Fu Panda 4",
-      genre: "Hoạt hình, Hành động",
+      genre: "Hoạt hình",
       duration: 94,
       releaseDate: "2024-03-08",
       status: "Đã chiếu",
@@ -36,7 +36,7 @@ if (movies.length === 0) {
     {
       id: 3,
       name: "Godzilla x Kong",
-      genre: "Hành động, Phiêu lưu",
+      genre: "Hành động",
       duration: 115,
       releaseDate: "2024-03-29",
       status: "Đã chiếu",
@@ -47,7 +47,7 @@ if (movies.length === 0) {
     {
       id: 4,
       name: "Mai",
-      genre: "Tình cảm, Chính kịch",
+      genre: "Tình cảm",
       duration: 131,
       releaseDate: "2024-02-10",
       status: "Đã chiếu",
@@ -58,7 +58,7 @@ if (movies.length === 0) {
     {
       id: 5,
       name: "Exhuma",
-      genre: "Kinh dị, Tâm lý",
+      genre: "Kinh dị",
       duration: 134,
       releaseDate: "2024-03-15",
       status: "Đã chiếu",
@@ -69,7 +69,7 @@ if (movies.length === 0) {
     {
       id: 6,
       name: "Super Mario Thiên Hà",
-      genre: "Hoạt hình, Hành động, Phiêu lưu",
+      genre: "Hoạt hình",
       duration: 92,
       releaseDate: "2026-04-01",
       status: "Đang chiếu",
@@ -80,7 +80,7 @@ if (movies.length === 0) {
     {
       id: 7,
       name: "Thunderbolts",
-      genre: "Hành động, Siêu anh hùng",
+      genre: "Siêu anh hùng",
       duration: 140,
       releaseDate: "2025-05-02",
       status: "Đang chiếu",
@@ -91,7 +91,7 @@ if (movies.length === 0) {
     {
       id: 8,
       name: "Snow White",
-      genre: "Gia đình, Giả tưởng",
+      genre: "Gia đình",
       duration: 120,
       releaseDate: "2025-03-21",
       status: "Đang chiếu",
@@ -102,7 +102,7 @@ if (movies.length === 0) {
     {
       id: 9,
       name: "Minecraft",
-      genre: "Phiêu lưu, Gia đình",
+      genre: "Phiêu lưu",
       duration: 110,
       releaseDate: "2025-04-04",
       status: "Đang chiếu",
@@ -113,7 +113,7 @@ if (movies.length === 0) {
     {
       id: 10,
       name: "Doraemon: Nobita's Earth Symphony",
-      genre: "Hoạt hình, Gia đình",
+      genre: "Hoạt hình",
       duration: 115,
       releaseDate: "2024-05-24",
       status: "Đang chiếu",
@@ -124,7 +124,7 @@ if (movies.length === 0) {
     {
       id: 11,
       name: "Detective Conan: The Million-dollar Pentagram",
-      genre: "Hoạt hình, Trinh thám",
+      genre: "Trinh thám",
       duration: 110,
       releaseDate: "2024-04-12",
       status: "Đang chiếu",
@@ -146,7 +146,7 @@ if (movies.length === 0) {
     {
       id: 13,
       name: "Civil War",
-      genre: "Hành động, Chính kịch",
+      genre: "Hành động",
       duration: 109,
       releaseDate: "2024-04-12",
       status: "Đang chiếu",
@@ -157,7 +157,7 @@ if (movies.length === 0) {
     {
       id: 14,
       name: "Abigail",
-      genre: "Kinh dị, Giật gân",
+      genre: "Kinh dị",
       duration: 109,
       releaseDate: "2024-04-19",
       status: "Đang chiếu",
@@ -168,7 +168,7 @@ if (movies.length === 0) {
     {
       id: 15,
       name: "The Fall Guy",
-      genre: "Hành động, Hài",
+      genre: "Hành động",
       duration: 126,
       releaseDate: "2024-05-03",
       status: "Đang chiếu",
@@ -179,7 +179,7 @@ if (movies.length === 0) {
     {
       id: 16,
       name: "Michael",
-      genre: "Âm nhạc, Tiểu sử",
+      genre: "Tiểu sử",
       duration: 138,
       releaseDate: "2026-04-26",
       status: "Sắp chiếu",
@@ -190,7 +190,7 @@ if (movies.length === 0) {
     {
       id: 17,
       name: "Đại Tiệc Trăng Máu 8",
-      genre: "Kinh dí, Hài",
+      genre: "Hài",
       duration: 110,
       releaseDate: "2026-04-30",
       status: "Sắp chiếu",
@@ -201,7 +201,7 @@ if (movies.length === 0) {
     {
       id: 18,
       name: "Heo Năm Móng",
-      genre: "Kinh dí, Chính kịch, Việt Nam",
+      genre: "Kinh dị",
       duration: 105,
       releaseDate: "2026-04-30",
       status: "Sắp chiếu",
@@ -212,7 +212,7 @@ if (movies.length === 0) {
     {
       id: 19,
       name: "Toy Story 5",
-      genre: "Hoạt hình, Gia đình, Hành động",
+      genre: "Hoạt hình",
       duration: 95,
       releaseDate: "2026-05-15",
       status: "Sắp chiếu",
@@ -223,7 +223,7 @@ if (movies.length === 0) {
     {
       id: 20,
       name: "Moana 2",
-      genre: "Hoạt hình, Phiêu lưu, Âm nhạc",
+      genre: "Hoạt hình",
       duration: 114,
       releaseDate: "2026-06-20",
       status: "Sắp chiếu",
@@ -234,7 +234,7 @@ if (movies.length === 0) {
     {
       id: 21,
       name: "Frozen 3 - Nữ Hoàng Băng Giá 3",
-      genre: "Hoạt hình, Gia đình, Âm nhạc",
+      genre: "Hoạt hình",
       duration: 120,
       releaseDate: "2026-07-10",
       status: "Sắp chiếu",
@@ -245,7 +245,7 @@ if (movies.length === 0) {
     {
       id: 22,
       name: "Avatar 4",
-      genre: "Khoa học viễn tưởng, Hành động, Phiêu lưu",
+      genre: "Khoa học viễn tưởng",
       duration: 185,
       releaseDate: "2026-12-18",
       status: "Sắp chiếu",
@@ -256,7 +256,7 @@ if (movies.length === 0) {
     {
       id: 23,
       name: "Thám Tử Kiên 2: Lời Nguyền Hoàng Kim",
-      genre: "Chính kịch, Hành động, Việt Nam",
+      genre: "Chính kịch",
       duration: 115,
       releaseDate: "2026-05-30",
       status: "Sắp chiếu",
@@ -267,7 +267,7 @@ if (movies.length === 0) {
     {
       id: 24,
       name: "Avengers: Ngày Tận Thế",
-      genre: "Siêu anh hùng, Hành động, Khoa học viễn tưởng",
+      genre: "Siêu anh hùng",
       duration: 180,
       releaseDate: "2026-11-06",
       status: "Sắp chiếu",
