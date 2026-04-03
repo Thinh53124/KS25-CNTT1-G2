@@ -86,15 +86,33 @@ document.addEventListener("DOMContentLoaded", () => {
 function createToast(type, title, message) {
   const container = document.getElementById("toast-container");
 
+  let icon = "";
+
+  if (type === "success") {
+    icon = '<i class="fa-regular fa-circle-check"></i>';
+  } else if (type === "error") {
+    icon = '<i class="fa-solid fa-xmark"></i>';
+  } else if (type === "warning") {
+    icon = '<i class="fa-solid fa-triangle-exclamation"></i>';
+  }
+
   const toast = document.createElement("div");
   toast.className = `toast ${type}`;
 
   toast.innerHTML = `
-    <div>${title}</div>
-    <div>${message}</div>
+    <div class="icon">${icon}</div>
+    <div class="content">
+      <div class="title">${title}</div>
+      <div class="message">${message}</div>
+    </div>
+    <div class="close" onclick="this.parentElement.remove()">✖</div>
   `;
 
   container.appendChild(toast);
 
-  setTimeout(() => toast.remove(), 3000);
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(120%)";
+    setTimeout(() => toast.remove(), 500);
+  }, 2500);
 }

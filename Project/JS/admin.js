@@ -355,11 +355,15 @@ function validateMovie(data) {
       "<i class='fas fa-times'></i> <strong>URL ảnh bìa</strong> không được để trống",
     );
   } else {
-    try {
-      new URL(data.poster);
-    } catch {
+    const isBase64 = data.poster.startsWith("data:image/");
+    const isUrl =
+      data.poster.startsWith("http://") ||
+      data.poster.startsWith("https://") ||
+      data.poster.startsWith("../");
+
+    if (!isBase64 && !isUrl) {
       errors.push(
-        "<i class='fas fa-times'></i> <strong>URL ảnh bìa</strong> không hợp lệ",
+        "<i class='fas fa-times'></i> <strong>URL ảnh bìa</strong> không hợp lệ (Phải là link hoặc ảnh tải lên)",
       );
     }
   }
@@ -651,7 +655,7 @@ function addMovie() {
   currentFilter = "all";
   currentSearch = "";
   renderTable();
-  showAlert("✓ Thêm phim thành công!", "success");
+  showAlert("Thêm phim thành công!", "success");
 }
 
 // ============ EDIT MOVIE ============
@@ -710,7 +714,7 @@ function updateMovie() {
   saveMovies();
   closeEditModal();
   renderTable();
-  showAlert("✓ Cập nhật phim thành công!", "success");
+  showAlert("Cập nhật phim thành công!", "success");
 }
 
 // ============ DELETE MOVIE ============
@@ -735,7 +739,7 @@ function confirmDeleteMovie() {
   saveMovies();
   closeDeleteModal();
   renderTable();
-  showAlert("✓ Xóa phim thành công!", "success");
+  showAlert("Xóa phim thành công!", "success");
   deleteMovieId = null;
 }
 
@@ -768,9 +772,24 @@ function logout() {
 function showAlert(message, type = "success") {
   const container = document.getElementById("toast-container");
 
+  let icon = "";
+
+  if (type === "success") {
+    icon = '<i class="fa-regular fa-circle-check"></i>';
+  } else if (type === "error") {
+    icon = '<i class="fa-solid fa-xmark"></i>';
+  } else if (type === "warning") {
+    icon = '<i class="fa-solid fa-triangle-exclamation"></i>';
+  }
+
   const toast = document.createElement("div");
   toast.className = `toast ${type}`;
-  toast.innerHTML = message;
+  toast.innerHTML = `
+    <div style="display:flex; align-items:center; gap:10px;">
+      ${icon}
+      <span>${message}</span>
+    </div>
+  `;
 
   container.appendChild(toast);
 
@@ -810,3 +829,27 @@ document.addEventListener("DOMContentLoaded", () => {
   updateFilterCounts();
   renderTable();
 });
+
+document.getElementById("uploadImage").addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function (event) {
+    document.getElementById("addPoster").value = event.target.result;
+  };
+  reader.readAsDataURL(file);
+});
+document
+  .getElementById("uploadEditImage")
+  .addEventListener("change", function (e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      document.getElementById("editPoster").value = event.target.result;
+      showAlert("Đã tải ảnh lên thành công!", "success");
+    };
+    reader.readAsDataURL(file);
+  });

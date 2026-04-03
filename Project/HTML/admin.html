@@ -11,7 +11,6 @@
 
 <body>
 
-  <!-- SIDEBAR -->
   <div class="sidebar">
     <div>
       <div class="logo">
@@ -41,27 +40,26 @@
     </div>
   </div>
 
-  <!-- MAIN -->
   <main>
 
-    <!-- TAB: MOVIE -->
     <div id="movieTab">
 
-      <!-- HEADER -->
       <div class="content-header">
         <div class="header-left">
           <h1>Quản lý danh sách phim</h1>
           <p>Xem, chỉnh sửa và quản lý tất cả phim hiện có trên hệ thống.</p>
         </div>
         <div class="actions">
-          <input type="text" id="searchInput" placeholder="Tìm phim..." onkeyup="searchMovies(this.value)">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Tìm phim..." onkeyup="searchMovies(this.value)">
+          </div>
           <button class="btn-add" onclick="openAddModal()">
             <i class="fas fa-plus"></i> Thêm phim mới
           </button>
         </div>
       </div>
 
-      <!-- FILTER -->
       <div class="filter">
         <button class="active" onclick="filterMovies('all', this)">Tất cả (<span id="countAll">24</span>)</button>
         <button onclick="filterMovies('Đang chiếu', this)">Đang chiếu (<span id="countShowing">8</span>)</button>
@@ -83,23 +81,22 @@
 
     </div>
 
-    <!-- TAB: TICKET -->
     <div id="ticketTab" style="display: none;">
       <div class="content-header">
         <div class="header-left">
           <h1>Quản lý vé đã đặt</h1>
         </div>
         <div class="actions">
-          <input type="text" id="searchInput" placeholder="Tìm kiếm mã vé, tên khách..." onkeyup="searchTickets(this.value)">
-          
+          <input type="text" id="searchInput tickets" placeholder="Tìm kiếm mã vé, tên khách..."
+            onkeyup="searchTickets(this.value)">
+          <i class="fa-regular fa-bell" style="color: rgba(148, 163, 184, 1); margin-left: auto"></i>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- ADD MOVIE MODAL -->
   <div class="modal" id="addModal">
-    <div class="modal-container">
+    <div class="modal-container add-modal">
       <div class="modal-header">
         <h2>Thêm Phim Mới</h2>
         <button class="close-btn" onclick="closeAddModal()">&times;</button>
@@ -117,7 +114,7 @@
           </div>
           <div class="form-group">
             <label>Thời lượng (phút) <span style="color: #ff2d2d;">*</span></label>
-            <input type="number" id="addDuration" placeholder="120" min="1">
+            <input type="number" id="addDuration" placeholder="Ví dụ: 120" min="1">
           </div>
         </div>
 
@@ -139,81 +136,97 @@
 
         <div class="form-group">
           <label>Giá vé (VNĐ) <span style="color: #ff2d2d;">*</span></label>
-          <input type="number" id="addPrice" placeholder="90000" min="1">
+          <input type="number" id="addPrice" placeholder="Nhập giá vé...." min="1">
         </div>
 
         <div class="form-group">
           <label>URL Ảnh bìa <span style="color: #ff2d2d;">*</span></label>
-          <input type="text" id="addPoster" placeholder="https://example.com/poster.jpg">
+
+          <div class="upload-group">
+            <div class="input-icon">
+              <img src="https://img.icons8.com/?size=100&id=UMm5uUxFeg9c&format=png&color=000000" alt="">
+              <input type="text" id="addPoster" placeholder="       https://example.com/poster.jpg">
+            </div>
+
+            <input type="file" id="uploadImage" accept="image/*" hidden>
+
+            <button type="button" class="btn-upload" onclick="document.getElementById('uploadImage').click()">
+              Tải ảnh
+            </button>
+          </div>
         </div>
 
         <div class="form-group">
           <label>Mô tả phim <span style="color: #ff2d2d;">*</span></label>
-          <textarea id="addDesc" placeholder="Nhập mô tả chi tiết về phim..."></textarea>
+          <textarea id="addDesc" placeholder="Nhập tóm tắt nội dung phim..."></textarea>
         </div>
       </div>
       <div class="modal-footer">
         <button class="btn-cancel" onclick="closeAddModal()">Hủy</button>
-        <button class="btn-submit" onclick="addMovie()"><i class="fas fa-plus"></i> Thêm phim</button>
+        <button class="btn-submit" onclick="addMovie()"><i class="fas fa-plus"></i> Thêm mới</button>
       </div>
     </div>
   </div>
 
-  <!-- EDIT MOVIE MODAL -->
   <div class="modal" id="editModal">
-    <div class="modal-container">
+    <div class="modal-container edit-modal">
       <div class="modal-header">
-        <h2>Cập Nhật Phim</h2>
+        <h2>Cập Nhật Thông Tin Phim</h2>
         <button class="close-btn" onclick="closeEditModal()">&times;</button>
       </div>
       <div class="modal-body">
-        <div class="form-group">
-          <label>Tên phim <span style="color: #ff2d2d;">*</span></label>
-          <input type="text" id="editName" placeholder="Nhập tên phim">
-        </div>
-
         <div class="form-row">
+          <div class="form-group">
+            <label>Tên phim</label>
+            <input type="text" id="editName" value="Dune: Hành Tinh Cát - Phần 2">
+          </div>
           <div class="form-group">
             <label>Thể loại <span style="color: #ff2d2d;">*</span></label>
-            <input type="text" id="editGenre" placeholder="Ví dụ: Hành động, Kinh dị">
-          </div>
-          <div class="form-group">
-            <label>Thời lượng (phút) <span style="color: #ff2d2d;">*</span></label>
-            <input type="number" id="editDuration" placeholder="120" min="1">
+            <input type="text" id="editGenre" placeholder="Hành động, Viễn tưởng">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label>Ngày khởi chiếu <span style="color: #ff2d2d;">*</span></label>
-            <input type="date" id="editDate">
+            <label>Thời lượng (phút)</label>
+            <input type="number" id="editDuration" value="168">
           </div>
           <div class="form-group">
-            <label>Trạng thái <span style="color: #ff2d2d;">*</span></label>
-            <select id="editStatus">
-              <option value="">-- Chọn trạng thái --</option>
-              <option value="Đang chiếu">Đang chiếu</option>
-              <option value="Sắp chiếu">Sắp chiếu</option>
-              <option value="Đã chiếu">Đã chiếu</option>
-            </select>
+            <label>Ngày khởi chiếu</label>
+            <input type="date" id="editDate" value="2024-03-01">
           </div>
         </div>
 
         <div class="form-group">
-          <label>Giá vé (VNĐ) <span style="color: #ff2d2d;">*</span></label>
-          <input type="number" id="editPrice" placeholder="90000" min="1">
+          <label>Mô tả ngắn</label>
+          <textarea id="editDesc"
+            rows="4">Tiếp nối câu chuyện của phần trước, Paul Atreides hợp nhất với người Fremen để trả thù những kẻ đã hủy diệt gia tộc anh...</textarea>
         </div>
 
         <div class="form-group">
           <label>URL Ảnh bìa <span style="color: #ff2d2d;">*</span></label>
-          <input type="text" id="editPoster" placeholder="https://example.com/poster.jpg">
+          <div class="upload-group">
+            <input type="text" id="editPoster" placeholder="https://example.com/poster.jpg">
+            <label for="uploadEditImage" class="btn-upload">Tải ảnh lên</label>
+            <input type="file" id="uploadEditImage" hidden accept="image/*">
+          </div>
         </div>
 
         <div class="form-group">
-          <label>Mô tả phim <span style="color: #ff2d2d;">*</span></label>
-          <textarea id="editDesc" placeholder="Nhập mô tả chi tiết về phim..."></textarea>
+          <label>Trạng thái</label>
+          <select id="editStatus">
+            <option>Đã chiếu</option>
+            <option>Đang chiếu</option>
+            <option>Sắp chiếu</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Giá vé</label>
+          <input type="text" id="editPrice" value="90.000 VNĐ">
         </div>
       </div>
+
       <div class="modal-footer">
         <button class="btn-cancel" onclick="closeEditModal()">Hủy</button>
         <button class="btn-submit" onclick="updateMovie()"><i class="fas fa-check"></i> Cập nhật</button>
@@ -221,7 +234,6 @@
     </div>
   </div>
 
-  <!-- VALIDATION ERROR MODAL -->
   <div class="modal" id="validationModal">
     <div class="modal-container validation-modal">
       <div class="modal-header error-header">
@@ -237,25 +249,37 @@
     </div>
   </div>
 
-  <!-- DELETE CONFIRMATION MODAL -->
   <div class="modal" id="deleteModal">
-    <div class="modal-container" style="max-width: 380px;">
-      <div class="modal-header error-header">
-        <h2><i class="fas fa-trash"></i> Xác Nhận Xóa</h2>
-        <button class="close-btn" onclick="closeDeleteModal()">&times;</button>
+    <div class="modal-container delete-modal">
+
+      <div class="delete-body">
+        <div class="delete-content">
+
+          <div class="delete-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+
+          <h2>Xác nhận xóa phim</h2>
+
+          <p>
+            Bạn có chắc chắn muốn xóa phim
+            <strong id="deleteMovieName">"Dune: Hành Tinh Cát"</strong>
+            không? Hành động này không thể hoàn tác.
+          </p>
+
+        </div>
       </div>
-      <div class="modal-body" style="text-align: center;">
-        <p style="margin-bottom: 20px; color: #bbb;">Bạn có chắc muốn xóa phim <strong id="deleteMovieName"></strong>
-          này? Hành động này không thể được hoàn tác.</p>
+
+      <div class="delete-footer">
+        <button class="btn-cancel-delete" onclick="closeDeleteModal()">Hủy</button>
+        <button class="btn-delete" onclick="confirmDeleteMovie()">
+          Xóa ngay
+        </button>
       </div>
-      <div class="modal-footer">
-        <button class="btn-cancel" onclick="closeDeleteModal()">Hủy</button>
-        <button class="btn-submit" onclick="confirmDeleteMovie()"><i class="fas fa-trash"></i> Xóa</button>
-      </div>
+
     </div>
   </div>
 
-  <!-- LOGOUT MODAL -->
   <div id="logoutModal" class="modal">
     <div class="modal-container" style="max-width: 300px;">
       <div class="modal-header">
@@ -272,7 +296,6 @@
     </div>
   </div>
 
-  <!-- ALERT NOTIFICATION -->
   <div id="toast-container"></div>
 
   <script src="../JS/admin.js"></script>

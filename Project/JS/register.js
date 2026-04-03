@@ -100,10 +100,31 @@ function showError(selector, message) {
 function createToast(type, title, message) {
   const container = document.getElementById("toast-container");
 
+  const icons = {
+    success: "fa-solid fa-circle-check",
+    error: "fa-solid fa-circle-xmark",
+    warning: "fa-solid fa-triangle-exclamation",
+  };
+
   const toast = document.createElement("div");
   toast.className = `toast ${type}`;
-  toast.innerHTML = `<b>${title}</b><div>${message}</div>`;
+
+  toast.innerHTML = `
+    <div class="icon">
+      <i class="${icons[type]}"></i>
+    </div>
+    <div class="content">
+      <div class="title">${title}</div>
+      <div class="message">${message}</div>
+    </div>
+    <div class="close" onclick="this.parentElement.remove()">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  `;
 
   container.appendChild(toast);
-  setTimeout(() => toast.remove(), 3000);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
 }

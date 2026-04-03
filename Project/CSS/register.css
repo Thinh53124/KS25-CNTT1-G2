@@ -400,15 +400,19 @@ body {
 
 .toast {
   min-width: 320px;
+  max-width: 360px;
   background: #1f2937;
   color: white;
   padding: 16px;
   border-radius: 10px;
   margin-bottom: 12px;
+
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
   animation:
     slideIn 0.3s ease,
     fadeOut 0.5s ease 2.5s forwards;
@@ -427,7 +431,20 @@ body {
 }
 
 .toast .icon {
-  font-size: 18px;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.toast.success .icon {
+  color: #22c55e;
+}
+
+.toast.error .icon {
+  color: #ef4444;
+}
+
+.toast.warning .icon {
+  color: orange;
 }
 
 .toast .content {
@@ -435,7 +452,9 @@ body {
 }
 
 .toast .title {
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 2px;
 }
 
 .toast .message {
@@ -445,6 +464,12 @@ body {
 
 .toast .close {
   cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.toast .close:hover {
+  opacity: 1;
 }
 
 @keyframes slideIn {

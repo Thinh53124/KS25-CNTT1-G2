@@ -1,51 +1,7 @@
 let currentUser = JSON.parse(localStorage.getItem("currentUser")) || null;
 
-const moviesData = [
-  {
-    id: 1,
-    title: "Dune",
-    genre: "Hành động, Viễn tưởng",
-    duration: 155,
-    year: 2021,
-    rating: 8.5,
-    image:
-      "https://tse1.mm.bing.net/th/id/OIP.Ve_LxyMF6YqhIL_XhX1WEAHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3",
-    description: "Theo chân Paul Atreides, một cậu bé trẻ được định mệnh...",
-  },
-  {
-    id: 2,
-    title: "The Batman",
-    genre: "Hành động, Tội phạm",
-    duration: 176,
-    year: 2022,
-    rating: 8.3,
-    image:
-      "https://tse3.mm.bing.net/th/id/OIP.YlsRzv5cBk2Gnd-RD-EAtwHaK-?rs=1&pid=ImgDetMain&o=7&rm=3",
-    description: "Một thợ săn quay về nhân dân để tìm kiếm sự trả thù.",
-  },
-  {
-    id: 3,
-    title: "Spider-Man: No Way Home",
-    genre: "Hành động, Phiêu lưu",
-    duration: 148,
-    year: 2021,
-    rating: 8.4,
-    image:
-      "https://static1.tribute.ca/poster/660x980/spider-man-no-way-home-163783.jpg",
-    description: "Peter Parker và Doctor Strange mở ra đa vũ trụ.",
-  },
-  {
-    id: 4,
-    title: "The Matrix: Resurrections",
-    genre: "Hành dộng, Viễn tưởng",
-    duration: 148,
-    year: 2021,
-    rating: 7.1,
-    image:
-      "https://image.tmdb.org/t/p/original/aSZiRMu05JqjvjUac8W3Y5TbtgG.jpg",
-    description: "Trở lại vào thế giới The Matrix.",
-  },
-];
+const KEY = "rikkei_movies";
+let moviesData = JSON.parse(localStorage.getItem(KEY)) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
   renderNavActions();
@@ -75,21 +31,28 @@ function renderNavActions() {
 
 function renderMovies() {
   const moviesGrid = document.getElementById("moviesGrid");
+  if (!moviesGrid) return;
 
-  moviesGrid.innerHTML = moviesData
+  const showingMovies = moviesData.filter((m) => m.status === "Đang chiếu");
+
+  if (showingMovies.length === 0) {
+    moviesGrid.innerHTML =
+      "<p style='color: white; text-align: center; grid-column: 1/-1;'>Hiện không có phim nào đang chiếu.</p>";
+    return;
+  }
+
+  moviesGrid.innerHTML = showingMovies
     .map(
       (movie) => `
         <div class="movie-card">
-            <img src="${movie.image}" class="movie-image"/>
-
+            <img src="${movie.poster}" class="movie-image" onerror="this.src='https://via.placeholder.com/300x450?text=No+Image'"/>
             <div class="movie-info">
-                <h3 class="movie-title">${movie.title}</h3>
+                <h3 class="movie-title">${movie.name}</h3>
                 <p class="movie-meta">
                     <i class="fa-regular fa-clock"></i> ${movie.duration} phút  •  ${movie.genre}
                 </p>
-
                 <button class="btn-book" onclick="bookMovie(${movie.id})">
-                    Mua Vé
+                    Mua Vé - ${movie.price.toLocaleString("vi-VN")}đ
                 </button>
             </div>
         </div>
@@ -97,6 +60,7 @@ function renderMovies() {
     )
     .join("");
 }
+
 function bookMovie(movieId) {
   if (!currentUser) {
     createToast("warning", "Thông báo", "Vui lòng đăng nhập để đặt vé!");
@@ -107,11 +71,13 @@ function bookMovie(movieId) {
   }
 
   const movie = moviesData.find((m) => m.id === movieId);
-  createToast(
-    "success",
-    "Thành công",
-    `Đã thêm "${movie.title}" vào giỏ hàng!`,
-  );
+  if (movie) {
+    createToast(
+      "success",
+      "Thành công",
+      `Đã thêm "${movie.name}" vào giỏ hàng!`,
+    );
+  }
 }
 
 const trailerUrl = "https://www.youtube.com/watch?v=n9xhJrPXop4";
@@ -166,9 +132,16 @@ function confirmLogout() {
 
 function createToast(type, title, message) {
   const container = document.getElementById("toast-container");
+
   const toast = document.createElement("div");
   toast.className = `toast ${type}`;
-  toast.innerHTML = `<b>${title}</b><div>${message}</div>`;
+
+  toast.innerHTML = `
+    <div class="content">
+      <div class="title">${title}</div>
+      <div class="message">${message}</div>
+    </div>
+  `;
 
   container.appendChild(toast);
   setTimeout(() => toast.remove(), 3000);
