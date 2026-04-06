@@ -81,19 +81,338 @@
 
     </div>
 
+    <!-- Thay thế phần ticketTab trong HTML -->
     <div id="ticketTab" style="display: none;">
       <div class="content-header">
         <div class="header-left">
           <h1>Quản lý vé đã đặt</h1>
+          <p>Xem, tìm kiếm và quản lý tất cả vé xem phim.</p>
         </div>
         <div class="actions">
-          <input type="text" id="searchInput tickets" placeholder="Tìm kiếm mã vé, tên khách..."
-            onkeyup="searchTickets(this.value)">
-          <i class="fa-regular fa-bell" style="color: rgba(148, 163, 184, 1); margin-left: auto"></i>
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Tìm kiếm mã vé, tên khách..." onkeyup="searchTickets(this.value)">
+          </div>
+          <button class="btn-add" onclick="openAddTicketModal()">
+            <i class="fas fa-plus"></i> Đặt vé
+          </button>
+        </div>
+      </div>
+
+      <!-- Statistics Cards -->
+      <div class="ticket-stats">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Tổng vé hôm nay</span>
+            <i class="fas fa-ticket"></i>
+          </div>
+          <div class="stat-value" id="totalTickets">0</div>
+          <div class="stat-change positive">+12% so với hôm qua</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Doanh thu ngày</span>
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <div class="stat-value" id="totalRevenue">0</div>
+          <div class="stat-change positive">+5% so với dự tiêu</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Vé chờ xử lý</span>
+            <i class="fas fa-hourglass-end"></i>
+          </div>
+          <div class="stat-value warning" id="pendingTickets">0</div>
+          <div class="stat-change warning">⚠ Cần xử lý ngay</div>
+        </div>
+      </div>
+
+      <!-- Filter -->
+      <div class="filter ticket-filter">
+        <button class="active" onclick="filterTickets('all', this)">Tất cả</button>
+        <button onclick="filterTickets('Đã thanh toán', this)">Đã thanh toán</button>
+        <button onclick="filterTickets('Chờ xử lý', this)">Chờ xử lý</button>
+        <button onclick="filterTickets('Đã hủy', this)">Đã hủy</button>
+      </div>
+
+      <!-- Table -->
+      <div class="table-wrapper">
+        <div class="table-container" id="ticketTableContainer"></div>
+
+        <div class="pagination-footer">
+          <div class="pagination-info">
+            Hiển thị <strong id="ticketItemStart">0</strong>-<strong id="ticketItemEnd">0</strong> trên <strong
+              id="ticketTotalItems">0</strong> vé
+          </div>
+          <div class="pagination-controls" id="ticketPaginationControls"></div>
         </div>
       </div>
     </div>
   </main>
+
+  <!-- ADD TICKET MODAL -->
+  <div class="modal" id="addTicketModal">
+    <div class="modal-container ticket-modal">
+      <div class="modal-header">
+        <h2>Thêm Mới Đặt Vé</h2>
+        <button class="close-btn" onclick="closeAddTicketModal()">&times;</button>
+      </div>
+
+      <!-- Error message -->
+      <div class="error-account" style="display: none;"></div>
+
+      <div class="modal-body">
+        <!-- Chọn khách hàng -->
+        <div class="form-group">
+          <label><i class="fas fa-user"></i> Chọn khách hàng</label>
+          <select id="addTicketCustomer">
+            <option value="">-- Tìm kiếm tên khách...</option>
+          </select>
+        </div>
+
+        <!-- Chọn phim & suất chiếu -->
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-film"></i> Chọn phim</label>
+            <select id="addTicketMovie" onchange="updateShowtimeOptions()">
+              <option value="">-- Chọn phim đang chiếu...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-clock"></i> Suất chiếu</label>
+            <select id="addTicketShowtime" onchange="calculateTicketPrice()">
+              <option value="">-- Chọn Suất--</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Chọn ghế & phương thức thanh toán -->
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-chair"></i> Vị trí ghế</label>
+            <input type="text" id="addTicketSeats" placeholder="F5, F6" onchange="calculateTicketPrice()">
+            <small style="color: #666; margin-top: 6px; display: block;">Nhập mã ghế cách nhau bằng dấu phẩy</small>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-credit-card"></i> Trạng thái thanh toán</label>
+            <select id="addTicketPayment">
+              <option value="">-- Chọn Suất--</option>
+              <option value="Tiền mặt">Tiền mặt</option>
+              <option value="Thẻ">Đã thanh toán</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Ghi chú -->
+        <div class="form-group">
+          <label><i class="fas fa-note-sticky"></i> Ghi chú</label>
+          <textarea id="addTicketNotes" placeholder="Nhập ghi chú của admin..."></textarea>
+        </div>
+
+        <!-- Tổng tiền -->
+        <div class="ticket-summary">
+          <div class="summary-item">
+            <span>Tổng số ghế: <strong id="addSeatCount">2</strong></span>
+          </div>
+          <div class="summary-item total">
+            <span>Tổng tiền dự kiến</span>
+            <span class="price" id="addTicketPrice">240.000đ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeAddTicketModal()">Hủy</button>
+        <button class="btn-submit" onclick="addTicket()"><i class="fas fa-check"></i> Xác nhận đặt vé</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT TICKET MODAL -->
+  <div class="modal" id="editTicketModal">
+    <div class="modal-container ticket-modal">
+      <div class="modal-header">
+        <h2>Cập Nhật Thông Tin Vé</h2>
+        <div class="ticket-code-info">Mã vé: <span id="editTicketCodeDisplay">VE-1001</span></div>
+        <button class="close-btn" onclick="closeEditTicketModal()">&times;</button>
+      </div>
+
+      <!-- Error message -->
+      <div class="error-account" style="display: none;"></div>
+
+      <!-- Warning message for paid tickets -->
+      <div class="warning-message hidden" id="paidTicketWarning">
+        <i class="fas fa-exclamation-circle"></i>
+        Vé đã thanh toán không thể thay đổi phim/suất chiếu
+      </div>
+
+      <div class="modal-body">
+        <!-- Khách hàng -->
+        <div class="form-group">
+          <label><i class="fas fa-user"></i> Khách hàng</label>
+          <select id="editTicketCustomer">
+            <option value="">-- Chọn khách hàng --</option>
+          </select>
+        </div>
+
+        <!-- Phim & Suất chiếu -->
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-film"></i> Phim</label>
+            <select id="editTicketMovie" onchange="updateShowtimeOptions()">
+              <option value="">-- Chọn phim --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-clock"></i> Suất chiếu</label>
+            <select id="editTicketShowtime" onchange="calculateTicketPrice()">
+              <option value="">-- Chọn Suất--</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Vị trí ghế & Trạng thái thanh toán -->
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-chair"></i> Vị trí ghế</label>
+            <input type="text" id="editTicketSeats" placeholder="H12, H13" onchange="calculateTicketPrice()">
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-credit-card"></i> Trạng thái thanh toán</label>
+            <select id="editTicketStatus">
+              <option value="Chờ xử lý">Chờ xử lý</option>
+              <option value="Đã thanh toán">Đã thanh toán</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Ghi chú -->
+        <div class="form-group">
+          <label><i class="fas fa-note-sticky"></i> Ghi chú</label>
+          <textarea id="editTicketNotes" placeholder="Nhập ghi chú của admin..."></textarea>
+        </div>
+
+        <!-- Tổng tiền -->
+        <div class="ticket-summary">
+          <div class="summary-item">
+            <span>Tổng số ghế: <strong id="editSeatCount">2</strong></span>
+          </div>
+          <div class="summary-item total">
+            <span>Tổng tiền thanh toán</span>
+            <span class="price" id="editTicketPrice">240.000đ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeEditTicketModal()">Hủy</button>
+        <button class="btn-submit" onclick="updateTicket()"><i class="fas fa-arrow-rotate-right"></i> Lưu thay
+          đổi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT TICKET MODAL -->
+  <div class="modal" id="editTicketModal">
+    <div class="modal-container edit-modal">
+      <div class="modal-header">
+        <h2>Cập Nhật Vé</h2>
+        <button class="close-btn" onclick="closeEditTicketModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="edit-ticket-warning hidden"
+          style="background: rgba(255, 152, 0, 0.1); border: 1px solid rgba(255, 152, 0, 0.3); padding: 12px; border-radius: 8px; margin-bottom: 16px; color: #ffb74d; font-size: 12px;">
+          <i class="fas fa-exclamation-circle"></i> Vé đã thanh toán không thể thay đổi phim/suất chiếu
+        </div>
+
+        <div class="form-group">
+          <label>Khách hàng <span style="color: #ff2d2d;">*</span></label>
+          <select id="editTicketCustomer">
+            <option value="">-- Chọn khách hàng --</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phim <span style="color: #ff2d2d;">*</span></label>
+            <select id="editTicketMovie" onchange="updateShowtimeOptions()">
+              <option value="">-- Chọn phim --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Suất chiếu <span style="color: #ff2d2d;">*</span></label>
+            <select id="editTicketShowtime" onchange="calculateTicketPrice()">
+              <option value="">-- Chọn suất chiếu --</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Chọn ghế <span style="color: #ff2d2d;">*</span></label>
+          <input type="text" id="editTicketSeats" placeholder="Ví dụ: A1, A2, A3" onchange="calculateTicketPrice()">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phương thức thanh toán <span style="color: #ff2d2d;">*</span></label>
+            <select id="editTicketPayment">
+              <option value="">-- Chọn phương thức --</option>
+              <option value="Tiền mặt">Tiền mặt</option>
+              <option value="Thẻ">Thẻ</option>
+              <option value="Chuyển khoản">Chuyển khoản</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Trạng thái <span style="color: #ff2d2d;">*</span></label>
+            <select id="editTicketStatus">
+              <option value="Chờ xử lý">Chờ xử lý</option>
+              <option value="Đã thanh toán">Đã thanh toán</option>
+              <option value="Đã hủy">Đã hủy</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tổng tiền (VNĐ) <span style="color: #ff2d2d;">*</span></label>
+          <input type="text" id="editTicketPrice" placeholder="Tính tự động" readonly style="background: #1a1a1a;">
+        </div>
+
+        <div class="form-group">
+          <label>Ghi chú</label>
+          <textarea id="editTicketNotes" placeholder="Thêm ghi chú nếu cần..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeEditTicketModal()">Hủy</button>
+        <button class="btn-submit" onclick="updateTicket()"><i class="fas fa-check"></i> Cập nhật</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELETE TICKET MODAL -->
+  <div class="modal" id="deleteTicketModal">
+    <div class="modal-container delete-modal">
+      <div class="delete-body">
+        <div class="delete-content">
+          <div class="delete-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <h2>Xác nhận hủy vé</h2>
+          <p>
+            Bạn có chắc chắn muốn xóa vé
+            <strong id="deleteTicketCode"></strong>
+            không? Hành động này không thể hoàn tác.
+          </p>
+        </div>
+      </div>
+      <div class="delete-footer">
+        <button class="btn-cancel-delete" onclick="closeDeleteTicketModal()">Hủy</button>
+        <button class="btn-delete" onclick="confirmDeleteTicket()">Xóa ngay</button>
+      </div>
+    </div>
+  </div>
 
   <div class="modal" id="addModal">
     <div class="modal-container add-modal">
@@ -110,7 +429,21 @@
         <div class="form-row">
           <div class="form-group">
             <label>Thể loại <span style="color: #ff2d2d;">*</span></label>
-            <input type="text" id="addGenre" placeholder="Ví dụ: Hành động, Kinh dị">
+            <select id="addGenre">
+              <option value="">-- Chọn thể loại --</option>
+              <option value="Hành động">Hành động</option>
+              <option value="Kinh dị">Kinh dị</option>
+              <option value="Khoa học viễn tưởng">Khoa học viễn tưởng</option>
+              <option value="Tình cảm">Tình cảm</option>
+              <option value="Hài">Hài</option>
+              <option value="Hoạt hình">Hoạt hình</option>
+              <option value="Gia đình">Gia đình</option>
+              <option value="Phiêu lưu">Phiêu lưu</option>
+              <option value="Trinh thám">Trinh thám</option>
+              <option value="Siêu anh hùng">Siêu anh hùng</option>
+              <option value="Chính kịch">Chính kịch</option>
+              <option value="Tiểu sử">Tiểu sử</option>
+            </select>
           </div>
           <div class="form-group">
             <label>Thời lượng (phút) <span style="color: #ff2d2d;">*</span></label>
@@ -182,7 +515,21 @@
           </div>
           <div class="form-group">
             <label>Thể loại <span style="color: #ff2d2d;">*</span></label>
-            <input type="text" id="editGenre" placeholder="Hành động, Viễn tưởng">
+            <select id="editGenre">
+              <option value="">-- Chọn thể loại --</option>
+              <option value="Hành động">Hành động</option>
+              <option value="Kinh dị">Kinh dị</option>
+              <option value="Khoa học viễn tưởng">Khoa học viễn tưởng</option>
+              <option value="Tình cảm">Tình cảm</option>
+              <option value="Hài">Hài</option>
+              <option value="Hoạt hình">Hoạt hình</option>
+              <option value="Gia đình">Gia đình</option>
+              <option value="Phiêu lưu">Phiêu lưu</option>
+              <option value="Trinh thám">Trinh thám</option>
+              <option value="Siêu anh hùng">Siêu anh hùng</option>
+              <option value="Chính kịch">Chính kịch</option>
+              <option value="Tiểu sử">Tiểu sử</option>
+            </select>
           </div>
         </div>
 
