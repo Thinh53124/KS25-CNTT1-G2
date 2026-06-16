@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi trạng thái sáng/tối</title>
+    <script>
+        try {
+            const theme = localStorage.getItem("theme");
+
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark");
+            } else if (theme === "auto") {
+                const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (isDark) document.documentElement.classList.add("dark");
+            }
+        } catch (e) { }
+    </script>
+    <link rel="stylesheet" href="nv1.css">
+</head>
+
+<body>
+    <div class="around">
+        <div class="container">
+            <div class="header">
+                <h2>Rikkei Tech Hub</h2>
+                <div class="dropdown">
+                    <button id="iconBtn" class="dropdown-btn">☀️</button>
+
+                    <div id="themeSelect" class="themeSelect">
+                        <div value="light">☀️ Light</div>
+                        <div value="dark">🌙 Dark</div>
+                        <div value="auto">🤖 Auto</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <h3>AI đang thay đổi ngành công nghệ Việt Nam như thế nào?</h3>
+                <img src="https://aitcv.ac.vn/wp-content/uploads/where-is-ai-used-1024x683.jpeg" alt="AI">
+                <p>Trong những năm gần đây, trí tuệ nhân tạo (AI) không chỉ là khái niệm xa vời. Tại Việt Nam, hàng loạt startup và doanh nghiệp đã bắt đầu tích hợp AI vào sản phẩm và quy trình vận hành.</p> <br>
+                <p>Từ trợ lý ảo, phân tích dữ liệu kinh doanh, nhận diện hình ảnh, đến tối ưu hóa chuối cung ứng - AI đang hiện diện ở hòa hết các lính vực. Đặc biệt sau đại dịch, nhu cầu chuyển đổi số tăng vọt, đã thúc đẩy làn sóng ứng dụng AI hơn bao giờ hết.</p> <br>
+                <p>Tuy nhiên, thách thức lớn nhất không phải là công nghệ, mà là con người: thiếu nhân lực chất lượng cao, nhận thức về đạo đức AI còn hạn chế, và nguy cơ mất việc ở một số ngành truyền thông.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./nv1.js"></script>
+</body>
+
+</html>

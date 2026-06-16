@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Danh Sách Sản Phẩm Tết</title>
+
+    <style>
+      .product {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 5px 0;
+      }
+
+      .sort-controls {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Danh Sách Sản Phẩm Cho Tết</h1>
+
+    <div class="sort-controls">
+      <button onclick="sortAsc()">Sap xep gia: Thấp > Cao</button>
+      <button onclick="sortDesc()">Sắp xếp giá: Cao > Thấp</button>
+    </div>
+
+    <ul id="product-list"></ul>
+
+    <script src="b6.js"></script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Sản Phẩm</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Epilogue:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="h-left">
+        <div class="h-logo">📦</div>
+        <h1>Quản Lý Sản Phẩm</h1>
+      </div>
+      <span class="h-badge" id="totalBadge">0 sản phẩm</span>
+    </header>
+
+    <main>
+      <!-- TOOLBAR -->
+      <div class="card">
+        <div class="card-hd">
+          <div class="chip chip-blue">🔍</div>
+          <h2>Tìm kiếm & Sắp xếp</h2>
+        </div>
+        <div class="toolbar-body">
+          <div class="fg">
+            <label>Tìm kiếm</label>
+            <div class="sw">
+              <span class="sw-ico">⌕</span>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Tên sản phẩm, mã SP…"
+              />
+            </div>
+          </div>
+          <div class="fg">
+            <label>Sắp xếp theo</label>
+            <select id="sortSelect">
+              <option value="">— Mặc định —</option>
+              <option value="name_asc">Tên A → Z</option>
+              <option value="name_desc">Tên Z → A</option>
+              <option value="price_asc">Giá tăng dần</option>
+              <option value="price_desc">Giá giảm dần</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Hiển thị</label>
+            <select id="pageSz" style="width: 110px">
+              <option value="5">5 / trang</option>
+              <option value="10" selected>10 / trang</option>
+              <option value="20">20 / trang</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="card">
+        <div class="card-hd">
+          <h2 id="formTitle">Thêm sản phẩm mới</h2>
+        </div>
+        <div class="form-body">
+          <input type="hidden" id="editId" value="id"/>
+          <div class="form-grid">
+            <div class="ff">
+              <label>Tên sản phẩm <span class="star">*</span></label>
+              <input type="text" id="name" />
+              <small class="error" id="errName"></small>
+            </div>
+
+            <div class="ff">
+              <label>Giá bán (VND) <span class="star">*</span></label>
+              <input type="number" id="price" />
+              <small class="error" id="errPrice"></small>
+            </div>
+
+            <div class="ff">
+              <label>Số lượng tồn kho <span class="star">*</span></label>
+              <input type="number" id="quantity" />
+              <small class="error" id="errQuantity"></small>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button
+              class="btn btn-primary"
+              id="btnSubmit"
+              onclick="addProduct()"
+            >
+              Thêm sản phẩm
+            </button>
+            <button class="btn btn-secondary" onclick="resetForm()">
+              Làm mới
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="card">
+        <div class="card-hd">
+          <h2>Danh sách sản phẩm</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>STT</th>
+                <!-- <th>Id</th> -->
+                <th>Tên sản phẩm</th>
+                <th>Giá bán</th>
+                <th>Tồn kho</th>
+                <th>Trạng thái</th>
+                <th style="width: 120px">Hành động</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <tr id="row-SPJ806NEC">
+                <td>1</td>
+                <!-- <td class="td-id">SPJ806NEC</td> -->
+                <td class="td-name" id="name">Laptop Dell XPS 13</td>
+                <td class="td-price" id="price">28.500.000 ₫</td>
+                <td class="center" style="font-weight: 700" id="quantity">12</td>
+                <td class="td-status" id="status">Còn hàng</td>
+                <td>
+                  <div class="td-actions">
+                    <button class="btn btn-sm btn-edit" onclick="editProduct()">✏ Sửa</button>
+                    <button class="btn btn-sm btn-del" onclick="deleteProduct()">✕ Xóa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr id="row-SPJ806VAO">
+                <td>2</td>
+                <!-- <td class="td-id">SPJ806VAO</td> -->
+                <td class="td-name">Chuột Logitech MX Master</td>
+                <td class="td-price">1.850.000 ₫</td>
+                <td class="center" style="font-weight: 700">34</td>
+                <td class="td-status" id="status">Còn hàng</td>
+                <td>
+                  <div class="td-actions">
+                    <button class="btn btn-sm btn-edit" onclick="editProduct()">✏ Sửa</button>
+                    <button class="btn btn-sm btn-del" onclick="deleteProduct()">✕ Xóa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr id="row-SPJ8067PK">
+                <td>3</td>
+                <!-- <td class="td-id">SPJ8067PK</td> -->
+                <td class="td-name">Bàn phím Keychron K2</td>
+                <td class="td-price">2.200.000 ₫</td>
+                <td class="center" style="font-weight: 700">7</td>
+                <td class="td-status" id="status">Còn hàng</td>
+                <td>
+                  <div class="td-actions">
+                    <button class="btn btn-sm btn-edit" onclick="editProduct()">✏ Sửa</button>
+                    <button class="btn btn-sm btn-del" onclick="deleteProduct()">✕ Xóa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr id="row-SPJ806IHC">
+                <td>4</td>
+                <!-- <td class="td-id">SPJ806IHC</td> -->
+                <td class="td-name">Áo thun Basic Uniqlo</td>
+                <td class="td-price">390.000 ₫</td>
+                <td class="center" style="font-weight: 700">0</td>
+                <td class="td-status" id="status">Hết hàng</td>
+                <td>
+                  <div class="td-actions">
+                    <button class="btn btn-sm btn-edit" onclick="editProduct()">✏ Sửa</button>
+                    <button class="btn btn-sm btn-del" onclick="deleteProduct()">✕ Xóa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr id="row-SPJ8061MB">
+                <td>5</td>
+                <!-- <td class="td-id">SPJ8061MB</td> -->
+                <td class="td-name">Cà phê rang xay 500g</td>
+                <td class="td-price">185.000 ₫</td>
+                <td class="center" style="font-weight: 700">58</td>
+                <td class="td-status" id="status">Còn hàng</td>
+                <td>
+                  <div class="td-actions">
+                    <button class="btn btn-sm btn-edit" onclick="editProduct()">✏ Sửa</button>
+                    <button class="btn btn-sm btn-del" onclick="deleteProduct()">✕ Xóa</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="emptyState" class="empty" style="display: none">
+            <div class="empty-ico">📭</div>
+            <p>Chưa có sản phẩm nào. Hãy thêm sản phẩm đầu tiên!</p>
+          </div>
+        </div>
+        <div class="pag-bar">
+          <div class="pag-info" id="pagInfo">
+            Hiển thị <strong>1–10</strong> trong <strong>10</strong> sản phẩm
+          </div>
+          <div class="pag-ctrl" id="pagCtrl"></div>
+        </div>
+      </div>
+      <!-- MODAL -->
+    <div class="overlay" id="overlay">
+      <div class="modal">
+        <div class="modal-ico">🗑️</div>
+        <h3>Xác nhận xóa</h3>
+        <p id="modalMsg">Bạn có chắc muốn xóa sản phẩm này?</p>
+        <div class="modal-btns">
+          <button class="btn btn-secondary" onclick="closeModal()">Hủy</button>
+          <button class="btn btn-del" id="btnConfirm">Xóa</button>
+        </div>
+      </div>
+    </div>
+    </main>
+
+    
+    <script src="main.js"></script>
+  </body>
+</html>
